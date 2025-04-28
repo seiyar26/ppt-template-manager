@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test de connexion API</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+    .result { margin-top: 20px; padding: 10px; border: 1px solid #ccc; }
+    .success { background-color: #d4edda; color: #155724; }
+    .error { background-color: #f8d7da; color: #721c24; }
+    button { padding: 10px; background: #007bff; color: white; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Test de connexion à l'API</h1>
+  <p>Cette page permet de tester la connexion au serveur backend sur différents ports.</p>
+  
+  <div>
+    <button id="testHealth">Tester /health (GET)</button>
+    <button id="testLogin">Tester /api/auth/login (POST)</button>
+  </div>
+  
+  <div id="result" class="result"></div>
+
+  <script>
+    // Fonction pour afficher les résultats
+    function showResult(message, isSuccess) {
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = message;
+      resultDiv.className = isSuccess ? 'result success' : 'result error';
+    }
+
+    // Test de l'endpoint /health
+    document.getElementById('testHealth').addEventListener('click', async () => {
+      try {
+        showResult('Test en cours...', true);
+        
+        const response = await fetch('http://localhost:2324/health', {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        const data = await response.text();
+        
+        showResult(`
+          <h3>Succès !</h3>
+          <p>Le serveur backend répond correctement sur le port 4333.</p>
+          <p>Réponse : ${data}</p>
+          <p>Status : ${response.status}</p>
+          <p>Headers : ${JSON.stringify([...response.headers])}</p>
+        `, true);
+      } catch (error) {
+        showResult(`
+          <h3>Erreur !</h3>
+          <p>Impossible de se connecter au serveur backend sur le port 4333.</p>
+          <p>Message d'erreur : ${error.message}</p>
+          <p>Vérifiez que le serveur est bien démarré et que le port 4333 est accessible.</p>
+        `, false);
+      }
+    });
+
+    // Test de l'endpoint /api/auth/login
+    document.getElementById('testLogin').addEventListener('click', async () => {
+      try {
+        showResult('Test en cours...', true);
+        
+        const response = await fetch('http://localhost:2324/api/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            email: 'admin@example.com',
+            password: 'admin123'
+          })
+        });
+        
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(`Erreur ${response.status}: ${errorData.message || 'Erreur inconnue'}`);
+        }
+        
+        const data = await response.json();
+        
+        showResult(`
+          <h3>Succès !</h3>
+          <p>Connexion réussie à l'API d'authentification.</p>
+          <p>Token reçu : ${data.token ? 'Oui (masqué pour sécurité)' : 'Non'}</p>
+          <p>Utilisateur : ${data.user ? JSON.stringify(data.user.name || data.user.email) : 'Non reçu'}</p>
+        `, true);
+      } catch (error) {
+        showResult(`
+          <h3>Erreur !</h3>
+          <p>Impossible de se connecter à l'API d'authentification.</p>
+          <p>Message d'erreur : ${error.message}</p>
+        `, false);
+      }
+    });
+  </script>
+</body>
+</html>
