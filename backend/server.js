@@ -231,8 +231,28 @@ const runMigrations = require('./config/zeabur-migrate');
 // Vérification de l'existence des répertoires de stockage
 const { ensureLocalDirectories } = require('./utils/storageConfig');
 
+// Diagnostic pour vérifier les variables d'environnement importantes
+function logEnvironmentVariables() {
+  console.log('==== DIAGNOSTIC DES VARIABLES D\'ENVIRONNEMENT ====');
+  console.log(`NODE_ENV: ${process.env.NODE_ENV || 'non défini'}`);
+  console.log(`DATABASE_URL: ${process.env.DATABASE_URL ? 'Défini' : 'Non défini'}`);
+  console.log(`POSTGRES_CONNECTION_STRING: ${process.env.POSTGRES_CONNECTION_STRING ? 'Défini' : 'Non défini'}`);
+  
+  // Si DATABASE_URL n'est pas défini mais POSTGRES_CONNECTION_STRING l'est, l'utiliser
+  if (!process.env.DATABASE_URL && process.env.POSTGRES_CONNECTION_STRING) {
+    process.env.DATABASE_URL = process.env.POSTGRES_CONNECTION_STRING + '?sslmode=require';
+    console.log('DATABASE_URL automatiquement défini à partir de POSTGRES_CONNECTION_STRING');
+  }
+  
+  console.log(`Port configuré: ${process.env.PORT || '5000 (par défaut)'}`);
+  console.log('=================================================');
+}
+
 const startServer = async () => {
   try {
+    // Afficher les variables d'environnement importantes
+    logEnvironmentVariables();
+    
     // S'assurer que les répertoires de stockage existent
     ensureLocalDirectories();
     

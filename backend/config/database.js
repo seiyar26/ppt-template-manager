@@ -4,6 +4,12 @@ require('dotenv').config();
 // Configuration pour PostgreSQL (local ou cloud)
 let sequelize;
 
+// En environnement Zeabur, POSTGRES_CONNECTION_STRING est fourni au lieu de DATABASE_URL
+if (process.env.POSTGRES_CONNECTION_STRING && !process.env.DATABASE_URL) {
+  console.log('Variable POSTGRES_CONNECTION_STRING détectée, conversion en DATABASE_URL');
+  process.env.DATABASE_URL = process.env.POSTGRES_CONNECTION_STRING + '?sslmode=require';
+}
+
 // Vérifier si on a une URL de connexion complète
 if (process.env.DATABASE_URL) {
   console.log('Utilisation de l\'URL de connexion PostgreSQL complète');
