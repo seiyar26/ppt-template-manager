@@ -349,3 +349,42 @@ DATA: {
   }
 }
 --------------------------------------------
+[2025-04-29T22:55:31.782Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-04-29T22:55:31.781Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '89 MB', total: '49152 MB' },
+    uptime: '415 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
