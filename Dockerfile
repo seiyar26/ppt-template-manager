@@ -1,9 +1,10 @@
 FROM node:20-slim
 
-# Installer les dépendances nécessaires
+# Installer les dépendances nécessaires incluant PostgreSQL client pour la vérification de connexion
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
+    postgresql-client \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
@@ -31,8 +32,13 @@ RUN npm run build
 # Retourner au backend pour le démarrage
 WORKDIR /app/backend
 
-# Créer les répertoires nécessaires pour les uploads
-RUN mkdir -p logs uploads/templates uploads/temp uploads/exports
+# Créer les répertoires nécessaires pour les uploads et ajuster les permissions
+RUN mkdir -p logs uploads/templates uploads/temp uploads/exports && \
+    chmod -R 777 logs uploads
+
+# Copier le script d'attente pour PostgreSQL
+COPY backend/scripts/wait-for-postgres.sh /app/wait-for-postgres.sh
+RUN chmod +x /app/wait-for-postgres.sh
 
 # Exposer le port pour le backend
 EXPOSE 3000
@@ -41,5 +47,5 @@ EXPOSE 3000
 ENV NODE_ENV=production
 ENV PORT=3000
 
-# Démarrer l'application avec options de performances
-CMD ["node", "--max-old-space-size=512", "server.js"]
+# Script de démarrage qui vérifie la disponibilité de PostgreSQL avant de lancer l'application
+CMD ["/app/wait-for-postgres.sh", "node", "--max-old-space-size=512", "server.js"]

@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # Service PostgreSQL
+  postgres:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: michaeltenenbaum
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ppt_template_manager
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app_network
+
+  # Service Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/app/backend
+      - /app/backend/node_modules
+    depends_on:
+      - postgres
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_URL: postgresql://michaeltenenbaum:postgres@postgres:5432/ppt_template_manager
+      JWT_SECRET: ppt_template_manager_secret_key
+      CONVERT_API_SECRET: secret_q4Pjq2F9FCU9ypDJ
+    networks:
+      - app_network
+
+  # Service Frontend (si nécessaire)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./frontend:/app/frontend
+      - /app/frontend/node_modules
+    depends_on:
+      - backend
+    networks:
+      - app_network
+
+volumes:
+  postgres_data:
+
+networks:
+  app_network:
+    driver: bridge
