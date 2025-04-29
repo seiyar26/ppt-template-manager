@@ -43,34 +43,39 @@ const initDb = async () => {
     await sequelize.sync({ alter: true });
     console.log('Synchronisation terminée avec succès');
     
-    // Vérifier si l'utilisateur admin existe déjà
-    const adminExists = await User.findOne({ where: { email: 'admin@example.com' } });
+    // Vérifier si un utilisateur admin existe déjà
+    let adminUser = await User.findOne({ where: { email: 'admin@example.com' } });
     
-    if (!adminExists) {
+    if (!adminUser) {
       console.log('Création de l\'utilisateur admin par défaut...');
-      await User.create({
-        name: 'Administrateur',
+      const hashedPassword = await bcryptjs.hash('admin123', 10);
+      
+      adminUser = await User.create({
         email: 'admin@example.com',
-        password_hash: 'admin123', // Sera haché par le hook beforeCreate dans le modèle User
-        is_admin: true
+        password_hash: hashedPassword,
+        name: 'Administrateur'
       });
+      
       console.log('Utilisateur admin créé avec succès');
-    } else {
-      console.log('L\'utilisateur admin existe déjà');
     }
     
-    // Créer des catégories par défaut si aucune n'existe
+    // Vérifier si des catégories existent déjà
     const categoriesCount = await Category.count();
-    if (categoriesCount === 0) {
-      console.log('Création des catégories par défaut...');
+    
+    if (categoriesCount === 0 && adminUser) {
+      console.log('Création des catégories par défaut pour l\'utilisateur admin...');
+      
       await Category.bulkCreate([
-        { name: 'Présentations commerciales', position: 1 },
-        { name: 'Rapports financiers', position: 2 },
-        { name: 'Présentations marketing', position: 3 },
-        { name: 'Pitchs startup', position: 4 },
-        { name: 'Autres', position: 5 }
+        { name: 'Présentations commerciales', color: '#3B82F6', icon: 'folder', is_default: false, position: 1, user_id: adminUser.id },
+        { name: 'Rapports financiers', color: '#3B82F6', icon: 'folder', is_default: false, position: 2, user_id: adminUser.id },
+        { name: 'Présentations marketing', color: '#3B82F6', icon: 'folder', is_default: false, position: 3, user_id: adminUser.id },
+        { name: 'Pitchs startup', color: '#3B82F6', icon: 'folder', is_default: false, position: 4, user_id: adminUser.id },
+        { name: 'Autres', color: '#3B82F6', icon: 'folder', is_default: false, position: 5, user_id: adminUser.id }
       ]);
+      
       console.log('Catégories par défaut créées avec succès');
+    } else if (categoriesCount === 0) {
+      console.error('Impossible de créer les catégories par défaut : utilisateur admin non trouvé');
     }
     
     return true;
