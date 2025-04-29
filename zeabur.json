@@ -6,12 +6,8 @@
       "envPrefix": "POSTGRES_"
     },
     {
-      "name": "backend",
-      "dir": "backend",
-      "commands": {
-        "build": "npm install",
-        "start": "node server.js"
-      },
+      "name": "app",
+      "dockerfile": "./Dockerfile",
       "envs": [
         {
           "key": "DATABASE_URL",
@@ -48,26 +44,8 @@
       ],
       "domains": [{
         "domain": "${APP_DOMAIN}",
-        "path": "/api"
-      }]
-    },
-    {
-      "name": "frontend",
-      "dir": "frontend",
-      "commands": {
-        "build": "REACT_APP_API_URL=https://${APP_DOMAIN}/api npm run build",
-        "start": "npx serve -s build"
-      },
-      "domains": [{
-        "domain": "${APP_DOMAIN}",
         "path": "/"
-      }],
-      "envs": [
-        {
-          "key": "REACT_APP_API_URL",
-          "value": "https://${APP_DOMAIN}/api"
-        }
-      ]
+      }]
     }
   ]
 }
