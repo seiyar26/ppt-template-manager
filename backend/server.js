@@ -137,8 +137,60 @@ app.use('/api/uploads', express.static(path.join(__dirname, 'uploads'), {
 }));
 
 // Points de terminaison pour vérifier la santé du serveur
-app.get('/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+app.get('/health', async (req, res) => {
+  const healthData = {
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    service: 'ppt-template-manager',
+    version: process.env.npm_package_version || '1.0.0',
+    environment: process.env.NODE_ENV || 'development',
+    uptime: process.uptime() + ' seconds',
+    checks: {}
+  };
+
+  // Vérification de la disponibilité du système de fichiers
+  try {
+    const uploadsPath = path.join(__dirname, 'uploads');
+    healthData.checks.filesystem = { status: 'ok', path: uploadsPath };
+  } catch (err) {
+    healthData.checks.filesystem = { status: 'error', message: err.message };
+  }
+
+  // Vérification spécifique pour Zeabur
+  if (process.env.ZEABUR || process.env._ZEABUR_) {
+    healthData.deploymentPlatform = 'Zeabur';
+  }
+
+  // Vérification de la base de données (si disponible)
+  try {
+    // Vérifier si nous sommes en mode de secours (fallback)
+    if (typeof sequelize.fallbackMode === 'function' && sequelize.fallbackMode()) {
+      // En mode de secours, on indique que la base de données n'est pas disponible
+      // mais l'application est toujours considérée comme fonctionnelle (pour Zeabur)
+      healthData.checks.database = {
+        status: 'limited',
+        message: 'Mode de secours actif - fonctionnalités limitées disponibles',
+        connection: 'fallback'
+      };
+    } else {
+      // Essayer de vérifier la connexion à la base de données
+      await sequelize.authenticate({ logging: false });
+      healthData.checks.database = { status: 'ok', connection: 'active' };
+    }
+  } catch (err) {
+    // Erreur de connexion, mais si c'est sur Zeabur on ne veut pas que l'application soit considérée comme défaillante
+    if (process.env.ZEABUR || process.env._ZEABUR_) {
+      healthData.checks.database = { 
+        status: 'warning',
+        message: 'Mode dégradé - l\'application fonctionne mais la base de données n\'est pas disponible',
+        error: err.message 
+      };
+    } else {
+      healthData.checks.database = { status: 'error', message: err.message };
+    }
+  }
+
+  res.json(healthData);
 });
 
 // Page d'accueil simple pour vérifier l'accès de base

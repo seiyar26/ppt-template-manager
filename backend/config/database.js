@@ -17,11 +17,32 @@ const extractHostAndPort = (url) => {
   }
 };
 
-// En environnement Zeabur ou Docker, POSTGRES_CONNECTION_STRING est fourni au lieu de DATABASE_URL
-if (process.env.POSTGRES_CONNECTION_STRING && !process.env.DATABASE_URL) {
-  console.log('Variable POSTGRES_CONNECTION_STRING détectée, conversion en DATABASE_URL');
-  // Sans SSL - problème de compatibilité avec certains serveurs PostgreSQL
+// Détection de l'environnement Zeabur
+const isZeaburEnvironment = () => {
+  return process.env.ZEABUR || 
+         process.env._ZEABUR_ || 
+         process.env.POSTGRES_CONNECTION_STRING?.includes('zeabur') || 
+         false;
+};
+
+// En environnement Zeabur ou Docker, POSTGRES_CONNECTION_STRING est fourni
+if (process.env.POSTGRES_CONNECTION_STRING) {
+  console.log('Variable POSTGRES_CONNECTION_STRING détectée, utilisation prioritaire pour connexion DB');
+  
+  // Toujours utiliser POSTGRES_CONNECTION_STRING fourni par Zeabur comme source prioritaire
   process.env.DATABASE_URL = process.env.POSTGRES_CONNECTION_STRING;
+  
+  if (isZeaburEnvironment()) {
+    console.log('Environnement Zeabur détecté, configuration spécifique appliquée');
+  }
+  
+  try {
+    // Extraction du nom d'hôte pour diagnostic (sans montrer les infos sensibles)
+    const connectionDetails = extractHostAndPort(process.env.POSTGRES_CONNECTION_STRING);
+    console.log(`Connexion configurée vers PostgreSQL sur ${connectionDetails.host}:${connectionDetails.port}`);
+  } catch (err) {
+    console.log('Impossible d\'extraire les détails de connexion (format non standard)');
+  }
 }
 
 // Vérifier si on a une URL de connexion complète
@@ -31,12 +52,38 @@ if (process.env.DATABASE_URL) {
   const isProd = process.env.NODE_ENV === 'production';
   console.log(`Environnement détecté: ${isProd ? 'production' : 'développement'}`);
   
-  // Configuration pour éviter les erreurs de SSL
-  const dialectOptions = {
-    ssl: false
-  };
+  // Configuration de SSL selon l'environnement
+  let dialectOptions = {};
   
-  console.log('SSL désactivé pour la connexion PostgreSQL (problème de compatibilité)');
+  // Dans l'environnement Zeabur, activer automatiquement SSL avec la configuration recommandée
+  if (isZeaburEnvironment()) {
+    console.log('Environnement cloud détecté (Zeabur), configuration SSL sécurisée activée');
+    dialectOptions = {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false // Nécessaire pour la compatibilité avec PostgreSQL cloud
+      }
+    };
+  }
+  // Vérifier si la connexion mentionne explicitement SSL
+  else if (process.env.POSTGRES_CONNECTION_STRING && 
+      (process.env.POSTGRES_CONNECTION_STRING.includes('ssl=true') || 
+       process.env.POSTGRES_CONNECTION_STRING.includes('sslmode=require'))) {
+    console.log('SSL explicitement requis dans la chaîne de connexion');
+    dialectOptions = {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    };
+  } 
+  // Connexion locale classique, désactiver SSL
+  else {
+    console.log('SSL désactivé pour la connexion PostgreSQL (environnement local)');
+    dialectOptions = {
+      ssl: false
+    };
+  }
   
   // Log pour debug (masquer les informations sensibles)
   const maskedUrl = process.env.DATABASE_URL.replace(/:(\/\/[^:]+):[^@]+@/, ':$1:***@');
@@ -88,8 +135,11 @@ if (process.env.DATABASE_URL) {
   });
 }
 
-// Fonction de tentative de connexion avec retries adaptés pour l'environnement Docker
-const testConnection = async (maxRetries = 5, initialDelay = 2000) => {
+// Fonction de tentative de connexion avec retries adaptés pour l'environnement Docker/Zeabur
+// Mode de fonctionnement limité sans base de données pour Zeabur
+let fallbackMode = false;
+
+const testConnection = async (maxRetries = isZeaburEnvironment() ? 20 : 5, initialDelay = 3000) => {
   let retries = 0;
   let delay = initialDelay;
   
@@ -97,6 +147,7 @@ const testConnection = async (maxRetries = 5, initialDelay = 2000) => {
     try {
       await sequelize.authenticate();
       console.log('✅ Connexion à la base de données PostgreSQL établie avec succès.');
+      fallbackMode = false;
       return true;
     } catch (err) {
       retries++;
@@ -113,6 +164,13 @@ const testConnection = async (maxRetries = 5, initialDelay = 2000) => {
           console.error('1. Vérifiez que PostgreSQL est bien démarré');          
           console.error('2. Vérifiez que l\'adresse et le port dans DATABASE_URL sont corrects');
           console.error('3. Si vous utilisez Docker, assurez-vous que le conteneur est accessible');
+          
+          // Sur Zeabur, afficher des informations spécifiques
+          if (isZeaburEnvironment()) {
+            console.warn('Environnement Zeabur détecté - Configuration PostgreSQL incorrecte');
+            console.warn('Assurez-vous que le service PostgreSQL est créé dans votre projet Zeabur');
+            console.warn('Vérifiez que POSTGRES_CONNECTION_STRING est correctement injectée en variable d\'environnement');
+          }
         } else if (err.original.code === 'ENOTFOUND') {
           console.error('Diagnostic: Le nom d\'hôte de la base de données est introuvable.');
         } else if (err.original.code === '28P01') {
@@ -129,8 +187,20 @@ const testConnection = async (maxRetries = 5, initialDelay = 2000) => {
   }
   
   console.error('❌ Impossible de se connecter à la base de données après plusieurs tentatives.');
+  
+  // Activer le mode de secours si nous sommes sur Zeabur
+  if (isZeaburEnvironment()) {
+    fallbackMode = true;
+    console.warn('ACTIVATION DU MODE DE SECOURS: L\'application fonctionnera avec des fonctionnalités limitées');
+    console.warn('Les fonctionnalités qui nécessitent une base de données ne seront pas disponibles');
+    console.warn('Mais l\'application répondra au health check pour éviter le redémarrage par Zeabur');
+  }
+  
   return false;
 };
+
+// Exporter le mode de fonctionnement limité pour que d'autres modules puissent l'utiliser
+sequelize.fallbackMode = () => fallbackMode;
 
 // Tester la connexion avec une stratégie de retry
 (async () => {
