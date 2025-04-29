@@ -14,6 +14,19 @@ const app = express();
 const PORT = process.env.PORT || 5000; // Changement de port pour éviter les conflits potentiels
 
 // Middleware
+// Configuration CORS extensive pour le déploiement
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
+}));
+
+// Middleware pour journaliser toutes les requêtes
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+  next();
+});
+
 // Configuration CORS plus permissive en mode développement
 const corsOptions = {
   origin: function (origin, callback) {
@@ -122,6 +135,63 @@ app.use('/api/uploads', express.static(path.join(__dirname, 'uploads'), {
     res.setHeader('Access-Control-Allow-Origin', '*');
   }
 }));
+
+// Points de terminaison pour vérifier la santé du serveur
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
+// Page d'accueil simple pour vérifier l'accès de base
+app.get('/', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>PPT Template Manager</title>
+      <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; text-align: center; }
+        h1 { color: #3B82F6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .status { padding: 20px; background-color: #f0f9ff; border-radius: 8px; margin-top: 20px; }
+        .api-link { margin-top: 20px; }
+        .api-link a { color: #3B82F6; text-decoration: none; }
+        .api-link a:hover { text-decoration: underline; }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1>PPT Template Manager</h1>
+        <div class="status">
+          <p><strong>Statut du serveur:</strong> En ligne</p>
+          <p><strong>Environnement:</strong> ${process.env.NODE_ENV || 'développement'}</p>
+          <p><strong>Heure du serveur:</strong> ${new Date().toLocaleString()}</p>
+        </div>
+        <div class="api-link">
+          <p><a href="/api">Accéder à l'API</a> | <a href="/health">Vérification de santé</a></p>
+        </div>
+      </div>
+    </body>
+    </html>
+  `);
+});
+
+// Route de diagnostic pour vérifier les variables d'environnement (sans les secrets)
+app.get('/diagnostic', (req, res) => {
+  const safeEnv = {
+    NODE_ENV: process.env.NODE_ENV || 'non défini',
+    PORT: process.env.PORT || '3000',
+    DATABASE_CONNECTION: process.env.DATABASE_URL ? 'Configuré' : 'Non configuré',
+    CONVERT_API: process.env.CONVERT_API_SECRET ? 'Configuré' : 'Non configuré',
+    SUPABASE: process.env.SUPABASE_URL ? 'Configuré' : 'Non configuré'
+  };
+  
+  res.json({
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    environment: safeEnv,
+    serverUptime: `${Math.floor(process.uptime() / 60)} minutes`
+  });
+});
 
 // Routes de santé pour vérifier la connexion (supportant les deux chemins pour compatibilité)
 const healthResponse = {
