@@ -11,7 +11,7 @@
       "envs": [
         {
           "key": "DATABASE_URL",
-          "value": "${POSTGRES_CONNECTION_STRING}"
+          "value": "${POSTGRES_CONNECTION_STRING}?sslmode=require"
         },
         {
           "key": "NODE_ENV",

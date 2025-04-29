@@ -1,22 +1,46 @@
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
-// Configuration pour PostgreSQL local sur VPS
+// Configuration pour PostgreSQL (local ou cloud)
 let sequelize;
 
 // Vérifier si on a une URL de connexion complète
 if (process.env.DATABASE_URL) {
   console.log('Utilisation de l\'URL de connexion PostgreSQL complète');
+  
+  const isProd = process.env.NODE_ENV === 'production';
+  console.log(`Environnement détecté: ${isProd ? 'production' : 'développement'}`);
+  
+  // Options spécifiques pour Zeabur en production
+  const dialectOptions = isProd ? {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false // Nécessaire pour certains providers dont Zeabur
+    }
+  } : {
+    // En développement, SSL désactivé
+    ssl: false
+  };
+  
+  // Log pour debug (en mode dev uniquement)
+  if (!isProd) {
+    const maskedUrl = process.env.DATABASE_URL.replace(/:\/\/([^:]+):[^@]+@/, '://***:***@');
+    console.log(`URL de connexion (masqu\u00e9e): ${maskedUrl}`);
+  }
+  
   sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'postgres',
-    dialectOptions: {
-      // SSL peut être désactivé pour une connexion locale sur VPS
-      ssl: false
-    },
-    logging: console.log,
+    dialectOptions,
+    logging: isProd ? false : console.log, // Désactiver les logs SQL en production
     define: {
       timestamps: true,
       underscored: true
+    },
+    pool: {
+      max: 10,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
     }
   });
 } else {
