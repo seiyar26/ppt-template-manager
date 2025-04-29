@@ -1,0 +1,55 @@
+{
+  "stacks": [
+    {
+      "name": "database",
+      "service": "postgresql",
+      "envPrefix": "POSTGRES_"
+    },
+    {
+      "name": "backend",
+      "dir": "backend",
+      "commands": {
+        "build": "npm install",
+        "start": "node server.js"
+      },
+      "envs": [
+        {
+          "key": "DATABASE_URL",
+          "value": "${POSTGRES_CONNECTION_STRING}"
+        },
+        {
+          "key": "NODE_ENV",
+          "value": "production"
+        },
+        {
+          "key": "PORT",
+          "value": "3000"
+        },
+        {
+          "key": "JWT_SECRET",
+          "value": "ppt_template_manager_production_key_change_this"
+        },
+        {
+          "key": "CONVERT_API_SECRET",
+          "value": "secret_q4Pjq2F9FCU9ypDJ"
+        },
+        {
+          "key": "FRONTEND_URL",
+          "value": "https://${APP_DOMAIN}"
+        },
+        {
+          "key": "SUPABASE_URL",
+          "value": "http://57.129.65.95:8000"
+        }
+      ]
+    },
+    {
+      "name": "frontend",
+      "dir": "frontend",
+      "commands": {
+        "build": "REACT_APP_API_URL=https://${BACKEND_DOMAIN}/api npm run build",
+        "start": "npx serve -s build"
+      }
+    }
+  ]
+}

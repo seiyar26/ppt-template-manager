@@ -3,6 +3,7 @@ const path = require('path');
 const { Template, Slide, Field, Category, TemplateCategory } = require('../models');
 const { convertPptxToImages } = require('../utils/pptxConverter');
 const { generateDocument } = require('../utils/pptxGenerator');
+const storageConfig = require('../utils/storageConfig');
 const { Op } = require('sequelize');
 const storageService = require('../utils/storageService');
 const diagnosticLogger = require('../utils/diagnosticLogger');

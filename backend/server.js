@@ -25,6 +25,7 @@ const corsOptions = {
     } else {
       // En production, vérifier les origines
       const allowedOrigins = [
+        // Origines locales pour le développement
         'http://localhost:4322',
         'http://127.0.0.1:4322',
         'http://localhost:4323',
@@ -33,15 +34,27 @@ const corsOptions = {
         'http://127.0.0.1:4324',
         'http://localhost:4325',
         'http://127.0.0.1:4325',
+        
+        // Origines de déploiement
         'https://cousbo-hoshah1jy-seiyar26s-projects.vercel.app',
-        'https://cousbo.vercel.app'
+        'https://cousbo.vercel.app',
+        
+        // Domaines Zeabur (permettre tous les sous-domaines de zeabur.app)
+        '.zeabur.app'
       ];
       
       if (!origin) {
         // Autorise les requêtes sans en-tête d'origine (comme les appels API d'outils)
         callback(null, true);
-      } else if (allowedOrigins.some(allowed => origin.startsWith(allowed))) {
-        // Autorise les origines qui commencent par une origine autorisée
+      } else if (allowedOrigins.some(allowed => {
+        // Si c'est un domaine avec préfixe wildcard (comme .zeabur.app)
+        if (allowed.startsWith('.') && origin.endsWith(allowed)) {
+          return true;
+        }
+        // Sinon, vérifier l'origine exacte ou le préfixe
+        return origin.startsWith(allowed);
+      })) {
+        // Autorise les origines qui correspondent à nos critères
         callback(null, true);
       } else {
         console.log(`CORS refusé pour l'origine: ${origin}`);
@@ -212,27 +225,41 @@ app.use((err, req, res, next) => {
 // Database connection and server start
 const { initDb } = require('./models');
 
+// Import du script de migration pour Zeabur
+const runMigrations = require('./config/zeabur-migrate');
+
+// Vérification de l'existence des répertoires de stockage
+const { ensureLocalDirectories } = require('./utils/storageConfig');
+
 const startServer = async () => {
   try {
+    // S'assurer que les répertoires de stockage existent
+    ensureLocalDirectories();
+    
     console.log('Initialisation de la connexion à la base de données PostgreSQL...');
     // Vérification de la connexion à la base de données
     await sequelize.authenticate();
     console.log('Connexion à la base de données établie avec succès.');
     
-    // Synchronisation des modèles avec la base de données (en développement)
-    if (process.env.NODE_ENV === 'development') {
+    // Gestion différente selon l'environnement
+    if (process.env.NODE_ENV === 'production') {
+      // En production (Zeabur), utiliser les migrations automatiques
+      console.log('Environnement de production détecté, exécution des migrations automatiques...');
+      await runMigrations();
+    } else {
+      // En développement, synchroniser simplement les modèles
       console.log('Synchronisation des modèles avec la base de données...');
       await sequelize.sync({ alter: true });
       console.log('Synchronisation terminée avec succès');
-    }
-    
-    // Initialiser la base de données avec les tables et données par défaut
-    console.log('Initialisation de la base de données...');
-    const dbInitialized = await initDb();
-    if (dbInitialized) {
-      console.log('Base de données initialisée avec succès');
-    } else {
-      console.warn('\x1b[33m%s\x1b[0m', 'Avertissement: L\'initialisation de la base de données a échoué');
+      
+      // Initialiser la base de données avec les tables et données par défaut
+      console.log('Initialisation de la base de données...');
+      const dbInitialized = await initDb();
+      if (dbInitialized) {
+        console.log('Base de données initialisée avec succès');
+      } else {
+        console.warn('\x1b[33m%s\x1b[0m', 'Avertissement: L\'initialisation de la base de données a échoué');
+      }
     }
   } catch (error) {
     console.error('\x1b[31m%s\x1b[0m', 'Erreur de connexion à la base de données:', error);
@@ -243,7 +270,7 @@ const startServer = async () => {
       console.log('\x1b[32m%s\x1b[0m', `Serveur démarré et en écoute sur le port ${PORT}`);
       console.log(`URL API: http://localhost:${PORT}/api`);
       console.log(`Vérification santé: http://localhost:${PORT}/health`);
-      console.log('\x1b[36m%s\x1b[0m', `Identificant par défaut: admin@example.com / mot de passe: admin123`);
+      console.log('\x1b[36m%s\x1b[0m', `Identifiant par défaut: admin@example.com / mot de passe: admin123`);
     });
   }
 };
