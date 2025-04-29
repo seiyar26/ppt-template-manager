@@ -55,17 +55,14 @@ if (process.env.DATABASE_URL) {
   // Configuration de SSL selon l'environnement
   let dialectOptions = {};
   
-  // Dans l'environnement Zeabur, activer automatiquement SSL avec la configuration recommandée
+  // L'instance PostgreSQL gérée par Zeabur ne supporte pas SSL selon les logs
   if (isZeaburEnvironment()) {
-    console.log('Environnement cloud détecté (Zeabur), configuration SSL sécurisée activée');
+    console.log('Environnement Zeabur détecté, SSL désactivé (PostgreSQL Zeabur sans support SSL)');
     dialectOptions = {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false // Nécessaire pour la compatibilité avec PostgreSQL cloud
-      }
+      ssl: false
     };
   }
-  // Vérifier si la connexion mentionne explicitement SSL
+  // Vérifier si la connexion mentionne explicitement SSL=true
   else if (process.env.POSTGRES_CONNECTION_STRING && 
       (process.env.POSTGRES_CONNECTION_STRING.includes('ssl=true') || 
        process.env.POSTGRES_CONNECTION_STRING.includes('sslmode=require'))) {
@@ -76,10 +73,19 @@ if (process.env.DATABASE_URL) {
         rejectUnauthorized: false
       }
     };
-  } 
-  // Connexion locale classique, désactiver SSL
+  }
+  // SSL explicitement désactivé dans la chaîne de connexion
+  else if (process.env.POSTGRES_CONNECTION_STRING && 
+      (process.env.POSTGRES_CONNECTION_STRING.includes('ssl=false') || 
+       process.env.POSTGRES_CONNECTION_STRING.includes('sslmode=disable'))) {
+    console.log('SSL explicitement désactivé dans la chaîne de connexion');
+    dialectOptions = {
+      ssl: false
+    };
+  }
+  // Connexion locale classique, désactiver SSL par défaut
   else {
-    console.log('SSL désactivé pour la connexion PostgreSQL (environnement local)');
+    console.log('SSL désactivé par défaut pour la connexion PostgreSQL');
     dialectOptions = {
       ssl: false
     };
