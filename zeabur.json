@@ -34,22 +34,40 @@
           "value": "secret_q4Pjq2F9FCU9ypDJ"
         },
         {
-          "key": "FRONTEND_URL",
-          "value": "https://${APP_DOMAIN}"
-        },
-        {
           "key": "SUPABASE_URL",
           "value": "http://57.129.65.95:8000"
+        },
+        {
+          "key": "SUPABASE_ANON_KEY",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE"
+        },
+        {
+          "key": "SUPABASE_SERVICE_KEY",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJzZXJ2aWNlX3JvbGUiLAogICAgImlzcyI6ICJzdXBhYmFzZS1kZW1vIiwKICAgICJpYXQiOiAxNjQxNzY5MjAwLAogICAgImV4cCI6IDE3OTk1MzU2MDAKfQ.DaYlNEoUrrEn2Ig7tqibS-PHK5vgusbcbo7X36XVt4Q"
         }
-      ]
+      ],
+      "domains": [{
+        "domain": "${APP_DOMAIN}",
+        "path": "/api"
+      }]
     },
     {
       "name": "frontend",
       "dir": "frontend",
       "commands": {
-        "build": "REACT_APP_API_URL=https://${BACKEND_DOMAIN}/api npm run build",
+        "build": "REACT_APP_API_URL=https://${APP_DOMAIN}/api npm run build",
         "start": "npx serve -s build"
-      }
+      },
+      "domains": [{
+        "domain": "${APP_DOMAIN}",
+        "path": "/"
+      }],
+      "envs": [
+        {
+          "key": "REACT_APP_API_URL",
+          "value": "https://${APP_DOMAIN}/api"
+        }
+      ]
     }
   ]
 }
