@@ -1,0 +1,14 @@
+{
+  "name": "ppt-template-manager",
+  "version": "1.0.0",
+  "description": "Gestionnaire de templates PowerPoint",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "build": "cd frontend && npm run build",
+    "postinstall": "npm install --prefix backend && npm install --prefix frontend"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
