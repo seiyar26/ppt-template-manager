@@ -65,21 +65,48 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Ajout de journalisation pour débogage statique
+app.use((req, res, next) => {
+  if (req.path.includes('/uploads/')) {
+    console.log('Requête de fichier statique:', req.path);
+  }
+  next();
+});
+
 // Serve static files with proper MIME types
 app.use('/uploads', express.static(path.join(__dirname, 'uploads'), {
   setHeaders: (res, path) => {
+    console.log('Servir fichier statique:', path);
     // Définir les types MIME appropriés pour les fichiers PPTX et PDF
     if (path.endsWith('.pptx')) {
       res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.presentationml.presentation');
       res.setHeader('Content-Disposition', 'attachment; filename="' + path.split('/').pop() + '"');
     } else if (path.endsWith('.pdf')) {
       res.setHeader('Content-Type', 'application/pdf');
+    } else if (path.endsWith('.jpg') || path.endsWith('.jpeg')) {
+      res.setHeader('Content-Type', 'image/jpeg');
+    } else if (path.endsWith('.png')) {
+      res.setHeader('Content-Type', 'image/png');
     }
     
     // Désactiver la mise en cache pour les fichiers générés
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
     res.setHeader('Pragma', 'no-cache');
     res.setHeader('Expires', '0');
+    
+    // Permettre le partage des ressources cross-origin (CORS)
+    res.setHeader('Access-Control-Allow-Origin', '*');
+  }
+}));
+
+// Ajout d'un middleware spécifique pour le dossier templates
+app.use('/api/uploads', express.static(path.join(__dirname, 'uploads'), {
+  setHeaders: (res, path) => {
+    console.log('Servir fichier via /api/uploads:', path);
+    if (path.endsWith('.jpg') || path.endsWith('.jpeg')) {
+      res.setHeader('Content-Type', 'image/jpeg');
+    }
+    res.setHeader('Access-Control-Allow-Origin', '*');
   }
 }));
 

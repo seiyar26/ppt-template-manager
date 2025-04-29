@@ -78,33 +78,79 @@ const TemplateUpload = () => {
     try {
       console.log('Envoi du modèle...');
       
-      // Simulation de progression pour l'interface utilisateur
+      // Ajout d'un timeout pour éviter de rester bloqué indéfiniment
+      const UPLOAD_TIMEOUT = 60000; // 60 secondes maximum pour l'upload
+      let uploadTimedOut = false;
+      
+      // Timer de timeout qui sera annulé si l'upload réussit
+      const timeoutTimer = setTimeout(() => {
+        uploadTimedOut = true;
+        clearInterval(progressInterval);
+        setProgress(0); // Remise à zéro pour indiquer l'échec
+        setError('L\'upload a pris trop de temps. Veuillez réessayer.');
+        setUploading(false);
+      }, UPLOAD_TIMEOUT);
+      
+      // Simulation de progression avec feedback visuel plus précis
+      let lastProgressUpdate = Date.now();
       const progressInterval = setInterval(() => {
+        // Si ça fait plus de 5 secondes qu'on est bloqué à 90%, on avance quand même
+        const now = Date.now();
+        const timeAtCurrentProgress = now - lastProgressUpdate;
+        
         setProgress(prev => {
-          if (prev >= 90) {
-            clearInterval(progressInterval);
-            return 90; // On reste à 90% jusqu'à confirmation du serveur
+          // Si on est à 90% depuis plus de 5 secondes, on continue jusqu'à 95%
+          if (prev >= 90 && prev < 95 && timeAtCurrentProgress > 5000) {
+            lastProgressUpdate = now;
+            return 95; // Avancer jusqu'à 95% après 5 secondes d'attente
           }
-          return prev + 5;
+          
+          // Si on est en dessous de 90%, progresser normalement
+          if (prev < 90) {
+            lastProgressUpdate = now;
+            return prev + 5;
+          }
+          
+          return prev; // Maintenir la valeur actuelle
         });
       }, 500);
       
       // Utiliser directement axios pour avoir plus de contrôle sur l'upload
       try {
+        // Journal de débogage (pour voir ce qui est envoyé)
+        console.log('Début de l\'upload du template avec FormData');
+        
         // Créer le template avec le FormData
         const response = await templateService.createTemplate(formData);
+        
+        // Annuler le timeout puisque l'upload a réussi
+        clearTimeout(timeoutTimer);
+        
+        // Vérifier si l'opération n'a pas déjà été annulée par le timeout
+        if (uploadTimedOut) {
+          console.log('L\'upload a réussi mais avait déjà été annulé par timeout');
+          return;
+        }
         
         // Terminé avec succès
         clearInterval(progressInterval);
         setProgress(100);
+        
+        console.log('Upload réussi:', response);
         
         // Attendre un peu pour montrer 100% avant de rediriger
         setTimeout(() => {
           navigate(`/templates/${response.template.id}/edit`);
         }, 1000);
       } catch (apiError) {
+        // Annuler le timeout puisque nous avons déjà une réponse (erreur)
+        clearTimeout(timeoutTimer);
         clearInterval(progressInterval);
-        throw apiError; // Remonter l'erreur pour la gestion ci-dessous
+        
+        // Si l'opération n'a pas déjà été annulée par le timeout
+        if (!uploadTimedOut) {
+          throw apiError; // Remonter l'erreur pour la gestion ci-dessous
+        }
       }
     } catch (err) {
       console.error('Erreur lors de l\'upload du modèle:', err);

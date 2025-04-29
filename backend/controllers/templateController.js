@@ -185,84 +185,172 @@ const createTemplate = async (req, res) => {
     
     console.log(`Template créé: ${template.id}`);
     
-    // Télécharger le fichier PPTX vers Supabase
+    // Télécharger le fichier PPTX vers Supabase - avec timeout et gestion d'erreurs améliorée
     const pptxDestPath = `templates/${userId}/${template.id}/${path.basename(file.path)}`;
-    const uploadResult = await storageService.uploadFile(file.path, pptxDestPath);
+    let supabaseUploadSuccess = false;
     
-    if (!uploadResult.success) {
-      console.error("Erreur lors du téléchargement du fichier vers Supabase:", uploadResult.error);
-    } else {
-      // Mettre à jour le chemin du fichier dans la base de données
-      await template.update({
-        file_path: pptxDestPath,
-        file_url: uploadResult.url
+    try {
+      // Ajouter un timeout pour l'upload Supabase (5 secondes max)
+      const uploadPromise = storageService.uploadFile(file.path, pptxDestPath);
+      
+      // Créer une promesse de timeout
+      const timeoutPromise = new Promise((_, reject) => {
+        setTimeout(() => reject(new Error('Timeout lors de l\'upload vers Supabase')), 5000);
       });
+      
+      // Utiliser Promise.race pour implémenter le timeout
+      const uploadResult = await Promise.race([uploadPromise, timeoutPromise])
+        .catch(error => {
+          console.warn(`Upload Supabase ignoré: ${error.message}`);
+          return { success: false, error: error.message };
+        });
+      
+      if (!uploadResult.success) {
+        console.warn("L'upload vers Supabase a échoué ou a été ignoré:", uploadResult.error);
+        // Continuer malgré l'erreur d'upload Supabase
+      } else {
+        // Mettre à jour le chemin du fichier dans la base de données
+        await template.update({
+          file_path: pptxDestPath,
+          file_url: uploadResult.url
+        });
+        supabaseUploadSuccess = true;
+      }
+    } catch (uploadError) {
+      // Journaliser l'erreur mais continuer le processus
+      console.warn("Erreur lors de l'upload vers Supabase, le processus continue:", uploadError.message);
+      diagnosticLogger.logUploadError(uploadError, req, 'supabase_upload');
+      // Ne pas faire échouer le processus complet pour un problème Supabase
     }
+    
+    // Mettre à jour le template pour indiquer si l'upload Supabase a réussi
+    await template.update({
+      supabase_upload_success: supabaseUploadSuccess
+    });
     
     // Convertir le PPTX en images - passage de l'ID du template
     console.log(`Conversion du PPTX en images pour le template ${template.id}...`);
     try {
-      // Utilisation de l'ID du template pour organiser les fichiers
-      const images = await convertPptxToImages(file.path, template.id.toString());
-      console.log(`${images.length} diapositives converties en images`);
+      // Définir un timeout pour la conversion PPTX (60 secondes max)
+      const conversionPromise = convertPptxToImages(file.path, template.id.toString());
+      const conversionTimeoutPromise = new Promise((_, reject) => {
+        setTimeout(() => reject(new Error('Timeout lors de la conversion PPTX')), 60000);
+      });
+      
+      // Utilisation de Promise.race pour implémenter le timeout
+      const images = await Promise.race([conversionPromise, conversionTimeoutPromise])
+        .catch(error => {
+          console.error(`⚠️ Conversion PPTX échouée: ${error.message}`);
+          diagnosticLogger.logConversionError(error, template.id);
+          throw error; // Remonter l'erreur pour arrêter le processus
+        });
+      
+      console.log(`✅ ${images.length} diapositives converties en images`);
       diagnosticLogger.logConversionSuccess(template.id, images.length);
       
-      // Créer les entrées de diapositives
-      for (let i = 0; i < images.length; i++) {
-        const image = images[i];
+      // Compteur pour savoir combien de diapositives ont été créées avec succès
+      let successCount = 0;
+      
+      // Traiter les images par lots de 3 pour éviter de surcharger le serveur
+      const processBatch = async (startIndex, batchSize) => {
+        const endIndex = Math.min(startIndex + batchSize, images.length);
+        const batchPromises = [];
         
-        // Vérification défensive de la structure de l'image
-        if (!image || typeof image !== 'object') {
-          console.error(`Image invalide à l'index ${i}:`, image);
-          continue;
+        for (let i = startIndex; i < endIndex; i++) {
+          batchPromises.push(processImage(images[i], i));
         }
         
-        // Télécharger l'image de la diapositive vers Supabase
-        const imageDestPath = `templates/${userId}/${template.id}/slides/slide_${i}.png`;
-        
-        // Vérifier que le chemin de l'image existe
-        const imagePath = image.path || '';
-        if (!imagePath || !fs.existsSync(imagePath)) {
-          console.error(`Chemin d'image invalide à l'index ${i}:`, imagePath);
-          continue;
-        }
-        
-        const slideUploadResult = await storageService.uploadFile(imagePath, imageDestPath);
-        
-        // Utiliser les chemins définis par la fonction de conversion
-        let finalImagePath = image.image_path; // Utiliser la propriété image_path fournie
-        let imageUrl = '';
-        
-        if (slideUploadResult.success) {
-          // Conserver image_path local et ajouter l'URL Supabase
-          imageUrl = slideUploadResult.url;
-          console.log(`Image ${i} téléchargée avec succès:`, imageUrl);
-        } else {
-          console.error("Erreur lors du téléchargement de l'image vers Supabase:", slideUploadResult.error);
-        }
-        
-        // Obtenir les dimensions à partir des métadonnées de l'image
-        const width = image.width || 800; // Valeur par défaut si non disponible
-        const height = image.height || 600; // Valeur par défaut si non disponible
-        
-        // Créer la diapositive dans la base de données
+        return Promise.allSettled(batchPromises);
+      };
+      
+      // Traitement d'une image individuelle
+      const processImage = async (image, i) => {
         try {
-          await Slide.create({
-            template_id: template.id,
-            slide_index: i,
-            image_path: finalImagePath,
-            image_url: imageUrl,
-            width: width,
-            height: height,
-            thumbnail_path: image.thumbnailPath || finalImagePath
-          });
-          console.log(`Diapositive ${i} enregistrée en base de données`);
-        } catch (dbError) {
-          console.error(`Erreur lors de l'enregistrement de la diapositive ${i}:`, dbError);
+          // Vérification défensive de la structure de l'image
+          if (!image || typeof image !== 'object') {
+            console.error(`❌ Image invalide à l'index ${i}:`, image);
+            return { success: false, error: 'Structure d\'image invalide' };
+          }
+          
+          // Vérifier que le chemin de l'image existe
+          const imagePath = image.path || '';
+          if (!imagePath || !fs.existsSync(imagePath)) {
+            console.error(`❌ Chemin d'image invalide à l'index ${i}:`, imagePath);
+            return { success: false, error: 'Chemin d\'image invalide' };
+          }
+          
+          // Définir les variables pour la base de données
+          let finalImagePath = image.image_path; // Utiliser la propriété image_path fournie
+          let imageUrl = '';
+          
+          // Télécharger l'image vers Supabase avec un timeout court (2 secondes max)
+          try {
+            const imageDestPath = `templates/${userId}/${template.id}/slides/slide_${i}.png`;
+            
+            const uploadImagePromise = storageService.uploadFile(imagePath, imageDestPath);
+            const uploadImageTimeoutPromise = new Promise((_, reject) => {
+              setTimeout(() => reject(new Error('Timeout d\'upload d\'image')), 2000);
+            });
+            
+            const slideUploadResult = await Promise.race([uploadImagePromise, uploadImageTimeoutPromise])
+              .catch(error => {
+                console.warn(`Upload image ${i} ignoré: ${error.message}`);
+                return { success: false, error: error.message };
+              });
+            
+            if (slideUploadResult.success) {
+              imageUrl = slideUploadResult.url;
+              console.log(`✅ Image ${i} téléchargée vers Supabase`);
+            } else {
+              console.warn(`⚠️ Image ${i} non téléchargée vers Supabase:`, slideUploadResult.error);
+            }
+          } catch (uploadError) {
+            console.warn(`⚠️ Erreur d'upload de l'image ${i}, mais le processus continue:`, uploadError.message);
+          }
+          
+          // Obtenir les dimensions de l'image
+          const width = image.width || 800; // Valeur par défaut
+          const height = image.height || 600; // Valeur par défaut
+          
+          // Créer la diapositive dans la base de données
+          try {
+            await Slide.create({
+              template_id: template.id,
+              slide_index: i,
+              image_path: finalImagePath, // Chemin local pour accès Express
+              image_url: imageUrl,         // URL Supabase si disponible
+              width: width,
+              height: height,
+              thumbnail_path: image.thumbnailPath || finalImagePath
+            });
+            console.log(`✅ Diapositive ${i} enregistrée en base de données`);
+            successCount++;
+            return { success: true, slide_index: i };
+          } catch (dbError) {
+            console.error(`❌ Erreur d'enregistrement de la diapositive ${i}:`, dbError.message);
+            return { success: false, error: dbError.message, slide_index: i };
+          }
+        } catch (processError) {
+          console.error(`❌ Erreur de traitement de l'image ${i}:`, processError.message);
+          return { success: false, error: processError.message, slide_index: i };
         }
+      };
+      
+      // Traitement par lots avec une taille de lot de 3
+      const batchSize = 3;
+      for (let startIdx = 0; startIdx < images.length; startIdx += batchSize) {
+        await processBatch(startIdx, batchSize);
       }
       
+      console.log(`✅ Traitement terminé: ${successCount}/${images.length} diapositives créées avec succès`);
+      
+      // Mettre à jour le template avec le nombre de diapositives
+      await template.update({
+        slide_count: successCount
+      });
+      
       console.log(`Traitement des images terminé pour le template ${template.id}`);
+      diagnosticLogger.logSuccess(`Template ${template.id} créé avec succès, ${images.length} diapositives`);
     } catch (conversionError) {
       console.error('Erreur lors de la conversion du PPTX en images:', conversionError);
       // On continue même en cas d'erreur de conversion pour ne pas bloquer la création du template

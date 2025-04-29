@@ -5,7 +5,9 @@ import axios from 'axios';
 // En développement, on utilise localhost avec le port 12000
 // ⚠️ IMPORTANT: Force l'utilisation du port 12000 explicitement pour éviter tout problème de cache
 export const API_URL = 'http://localhost:12000/api';
+// Base URL pour les images - forcer http explicitement pour éviter les problèmes de protocole
 const IMAGE_BASE_URL = 'http://localhost:12000';
+console.log('URL de base des images:', IMAGE_BASE_URL);
 
 // Vérification des variables d'environnement (pour debug seulement)
 if (process.env.REACT_APP_API_URL) {
@@ -507,7 +509,32 @@ const emailService = {
 // Fonction utilitaire pour construire des URLs d'images
 const getImageUrl = (imagePath) => {
   if (!imagePath) return null;
-  return `${IMAGE_BASE_URL}${imagePath}`;
+  
+  // Déboguer le format du chemin d'image
+  console.log('Construction URL d\'image à partir de:', imagePath);
+  
+  // Si le chemin est un chemin absolu complet (à partir de /Users/...)
+  if (imagePath.includes('/Users/')) {
+    // Extraire seulement la partie après /uploads/
+    const uploadsIndex = imagePath.indexOf('/uploads/');
+    if (uploadsIndex !== -1) {
+      const relativePath = imagePath.substring(uploadsIndex);
+      console.log('Chemin relatif extrait:', relativePath);
+      return `${IMAGE_BASE_URL}${relativePath}`;
+    }
+  }
+  
+  // Si le chemin contient déjà /api/ au début, ne pas ajouter le préfixe
+  if (imagePath.startsWith('/api/')) {
+    return `${IMAGE_BASE_URL.split('/api')[0]}${imagePath}`;
+  }
+  
+  // Vérifier si le chemin commence par / pour éviter les doubles slashes
+  const path = imagePath.startsWith('/') ? imagePath : `/${imagePath}`;
+  
+  const finalUrl = `${IMAGE_BASE_URL}${path}`;
+  console.log('URL d\'image finalisée:', finalUrl);
+  return finalUrl;
 };
 
 export {

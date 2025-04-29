@@ -1,36 +1,50 @@
 const fs = require('fs');
 const path = require('path');
 const ConvertApi = require('convertapi');
-const fetch = require('node-fetch');
+const axios = require('axios');
 const { conversionDiagnostic } = require('./diagnosticService');
-require('dotenv').config();
 
-// Initialize ConvertAPI with secret
-const CONVERT_API_SECRET = process.env.CONVERT_API_SECRET || '';
-if (!CONVERT_API_SECRET) {
-  console.error('AVERTISSEMENT: Variable CONVERT_API_SECRET non définie dans .env');
-}
+// Configuration d'axios pour les téléchargements
+axios.defaults.timeout = 30000; // 30 secondes de timeout
+axios.defaults.maxContentLength = 50 * 1024 * 1024; // 50 MB max
+
+// Charger les variables d'environnement en utilisant le chemin absolu vers le fichier .env
+// pour éviter les problèmes de chemin relatif
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 // Vérification explicite de la clé API
 const CONVERT_API_SECRET = process.env.CONVERT_API_SECRET || '';
 if (!CONVERT_API_SECRET) {
   console.error('ERREUR CRITIQUE: Variable CONVERT_API_SECRET non définie dans .env');
+  console.error('Chemin du fichier .env recherché:', path.resolve(__dirname, '../.env'));
+  console.error('Variables d\'environnement disponibles:', Object.keys(process.env).filter(key => !key.includes('SECRET') && !key.includes('KEY')).join(', '));
+  
   // En production, nous lançons une erreur
   if (process.env.NODE_ENV === 'production') {
     throw new Error('Configuration ConvertAPI manquante');
   }
 }
-const convertApi = new ConvertApi(CONVERT_API_SECRET);
 
-// Vérification de la clé API au démarrage
+// Initialisation avec la clé API
+let convertApi = null;
+try {
+  convertApi = new ConvertApi(CONVERT_API_SECRET);
+  console.log('Clé ConvertAPI configurée:', CONVERT_API_SECRET ? `${CONVERT_API_SECRET.substring(0, 6)}...` : 'Manquante');
+} catch (error) {
+  console.error('Erreur lors de l\'initialisation de ConvertAPI:', error.message);
+}
+
+// Vérification de la clé API au démarrage (une seule fois)
 (async () => {
   try {
-    if (CONVERT_API_SECRET) {
+    if (CONVERT_API_SECRET && convertApi) {
       const userInfo = await convertApi.getUser();
       console.log('ConvertAPI connecté avec succès - Secondes disponibles:', userInfo.SecondsLeft);
+    } else {
+      console.error('Impossible de vérifier la connexion ConvertAPI: Clé manquante ou API non initialisée');
     }
   } catch (error) {
-    console.error('Erreur de connexion à ConvertAPI:', error.message);
+    console.error('Erreur lors de la vérification de la clé API ConvertAPI:', error.message);
   }
 })();
 
@@ -92,16 +106,95 @@ const convertPptxToImages = async (filePath, templateId = null) => {
     
     console.log('Réponse de ConvertAPI:', JSON.stringify(responseData, null, 2));
     
-    // Journaliser la réponse complète pour analyse
-    fs.writeFileSync(
-      path.join(__dirname, '../logs/convertapi_response.json'), 
-      JSON.stringify(result, null, 2)
-    );
+    // Journaliser la réponse complète pour analyse - avec gestion des structures circulaires
+    try {
+      // Extraction sécurisée des propriétés importantes uniquement pour éviter les références circulaires
+      const safeResult = {
+        ConversionCost: result.ConversionCost,
+        Files: result.Files ? result.Files.map(file => ({
+          FileName: file.FileName,
+          FileExt: file.FileExt,
+          FileSize: file.FileSize,
+          FileId: file.FileId,
+          Url: file.Url
+        })) : []
+      };
+
+      fs.writeFileSync(
+        path.join(__dirname, '../logs/convertapi_response.json'), 
+        JSON.stringify(safeResult, null, 2)
+      );
+    } catch (logError) {
+      console.error('Erreur lors de la journalisation de la réponse ConvertAPI:', logError.message);
+    }
     
     // Adaptation à la structure réelle de la réponse ConvertAPI
-    // Les propriétés commencent par des majuscules et les fichiers sont dans Files (pas files)
-    const files = result.Files || result.files || [];
-    console.log(`${files.length} fichiers reçus de ConvertAPI`);
+    // Déterminer la structure de la réponse et extraire les fichiers de manière robuste
+    let files = [];
+    
+    // Vérification complète de la structure de la réponse
+    console.log('Analyse complète de la réponse ConvertAPI:', JSON.stringify(result, (key, value) => {
+      // Éviter les références circulaires
+      if (key === 'client' || key === 'api') return '[Circular]';
+      return value;
+    }, 2).substring(0, 1000));
+    
+    // Tenter d'extraire les fichiers avec différentes stratégies
+    if (result.Files && Array.isArray(result.Files)) {
+      // Cas 1: Files est un tableau (structure attendue)
+      files = result.Files;
+      console.log('Structure standard détectée: Files est un tableau');
+    } else if (result.files && Array.isArray(result.files)) {
+      // Cas 2: files est en minuscule
+      files = result.files;
+      console.log('Structure alternative détectée: files est en minuscule');
+    } else if (result.File && Array.isArray(result.File)) {
+      // Cas 3: File au singulier
+      files = result.File;
+      console.log('Structure alternative détectée: File au singulier');
+    } else if (result.Response && result.Response.Files && Array.isArray(result.Response.Files)) {
+      // Cas 4: Sous-propriété Response
+      files = result.Response.Files;
+      console.log('Structure imbriquée détectée: Response.Files');
+    } else {
+      // Cas d'échec: Explorer manuellement pour trouver un tableau d'URLs
+      console.log('Aucune structure standard détectée, recherche manuelle de fichiers...');
+      
+      // Cas 5: Explorer les propriétés de premier niveau pour trouver une URL
+      const urlProperties = Object.entries(result)
+        .filter(([key, value]) => {
+          return typeof value === 'string' && 
+                 (value.startsWith('http://') || value.startsWith('https://')) &&
+                 (value.includes('.jpg') || value.includes('.jpeg') || value.includes('.png'));
+        })
+        .map(([key, value]) => ({ Url: value, FileName: `slide_${key}.jpg` }));
+      
+      if (urlProperties.length > 0) {
+        files = urlProperties;
+        console.log('URLs trouvées comme propriétés de premier niveau');
+      }
+    }
+    
+    console.log(`Nombre de fichiers convertis: ${files.length}`);
+    
+    // Journalisation détaillée du premier fichier pour vérification
+    if (files.length > 0) {
+      // Vérifier si les propriétés attendues existent et normaliser les noms
+      const firstFile = files[0];
+      const normalizedFile = {
+        FileName: firstFile.FileName || firstFile.fileName || firstFile.filename || `slide_0.jpg`,
+        FileExt: firstFile.FileExt || firstFile.fileExt || firstFile.ext || 'jpg',
+        FileSize: firstFile.FileSize || firstFile.fileSize || firstFile.size || 0,
+        FileId: firstFile.FileId || firstFile.fileId || firstFile.id || '0',
+        Url: firstFile.Url || firstFile.url || firstFile.URL || firstFile.href || ''
+      };
+      
+      console.log('Premier fichier converti (normalisé):', normalizedFile);
+    }
+    
+    if (files.length === 0) {
+      throw new Error('La conversion n\'a produit aucun fichier');
+    }
     
     // Télécharger et sauvegarder chaque image
     const imagePaths = [];
@@ -110,8 +203,15 @@ const convertPptxToImages = async (filePath, templateId = null) => {
       const slideIndex = i;
       const outputPath = path.join(outputDir, `slide_${slideIndex}.jpg`);
       
-      // L'URL de téléchargement est dans la propriété Url (majuscule)
-      const downloadUrl = file.Url || file.url;
+      // Normaliser l'accès à l'URL (peu importe la casse: Url, url, URL...)
+      const downloadUrl = file.Url || file.url || file.URL || file.href || '';
+      
+      if (!downloadUrl) {
+        console.error(`Fichier ${i+1}/${files.length}: URL manquante`);
+        console.log('Propriétés disponibles:', Object.keys(file).join(', '));
+        console.log('Contenu du fichier:', JSON.stringify(file, null, 2));
+        continue; // Passer au fichier suivant
+      }
       
       // Journaliser la tentative de téléchargement avec le service de diagnostic
       conversionDiagnostic.logDownloadAttempt(file, i, downloadUrl);
@@ -125,16 +225,23 @@ const convertPptxToImages = async (filePath, templateId = null) => {
           console.log(`Répertoire de sortie recréé: ${outputDir}`);
         }
         
-        // Télécharger le fichier avec gestion robuste des erreurs
-        const response = await fetch(downloadUrl);
-        if (!response.ok) {
-          throw new Error(`Erreur HTTP: ${response.status} ${response.statusText}`);
+        // Vérifier si l'URL est valide
+        if (!downloadUrl.startsWith('http://') && !downloadUrl.startsWith('https://')) {
+          throw new Error(`URL invalide: ${downloadUrl}`);
         }
         
-        const buffer = await response.arrayBuffer();
+        // Télécharger le fichier avec gestion robuste des erreurs via axios
+        const response = await axios({
+          method: 'get',
+          url: downloadUrl,
+          responseType: 'arraybuffer',
+          timeout: 30000, // 30 secondes
+          maxContentLength: 10 * 1024 * 1024, // 10 MB max
+          validateStatus: status => status >= 200 && status < 300
+        });
         
         // Écrire le fichier avec vérification d'espace disque
-        fs.writeFileSync(outputPath, Buffer.from(buffer));
+        fs.writeFileSync(outputPath, Buffer.from(response.data));
         
         // Vérifier que le fichier a bien été créé
         if (fs.existsSync(outputPath)) {
@@ -155,13 +262,26 @@ const convertPptxToImages = async (filePath, templateId = null) => {
       const height = 600;
       
       // Calculer le chemin relatif pour la base de données
-      const relativeImagePath = `/uploads/templates/${path.basename(outputDir)}/slide_${slideIndex}.jpg`;
+      // Extraire la partie du chemin après /uploads/ pour créer une URL relative correcte
+      let relativeImagePath = outputPath;
+      const uploadsIndex = outputPath.indexOf('/uploads/');
+      
+      if (uploadsIndex !== -1) {
+        // Extraire la partie après /uploads/
+        relativeImagePath = outputPath.substring(uploadsIndex);
+      } else {
+        // Fallback si le chemin ne contient pas /uploads/
+        relativeImagePath = `/uploads/templates/${path.basename(outputDir)}/slide_${slideIndex}.jpg`;
+      }
+      
+      console.log(`Image ${slideIndex}: Chemin absolu=${outputPath}, Chemin relatif=${relativeImagePath}`);
       
       // Ajouter les informations de l'image
       imagePaths.push({
         slideIndex,
-        path: outputPath,           // Chemin physique complet
+        path: outputPath,             // Chemin physique complet
         image_path: relativeImagePath, // Chemin relatif pour la BDD
+        image_url: relativeImagePath,  // Url pour accès frontal
         width,
         height,
         thumbnailPath: relativeImagePath // Même image comme miniature
@@ -192,7 +312,7 @@ const convertPptxToImages = async (filePath, templateId = null) => {
         error.message.includes('Code: 401') ||
         error.message.includes('Code: 4013')
       )) {
-      console.error('ERREUR CRITIQUE: Problème d'authentification avec ConvertAPI');
+      console.error('ERREUR CRITIQUE: Problème d\'authentification avec ConvertAPI');
       console.error('Veuillez vérifier votre clé API dans le fichier .env');
       
       // Notifier l'administrateur en production

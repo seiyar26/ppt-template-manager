@@ -1,0 +1,351 @@
+[2025-04-29T16:53:07.356Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-04-29T16:53:07.355Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '9231 MB', total: '49152 MB' },
+    uptime: '52 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-04-29T17:02:46.678Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-04-29T17:02:46.677Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '5234 MB', total: '49152 MB' },
+    uptime: '62 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-04-29T17:07:12.779Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-04-29T17:07:12.777Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '2995 MB', total: '49152 MB' },
+    uptime: '66 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-04-29T17:15:02.162Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-04-29T17:15:02.161Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '2103 MB', total: '49152 MB' },
+    uptime: '74 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-04-29T17:17:36.912Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-04-29T17:17:36.910Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '1926 MB', total: '49152 MB' },
+    uptime: '77 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-04-29T17:26:29.521Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-04-29T17:26:29.520Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '8932 MB', total: '49152 MB' },
+    uptime: '86 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-04-29T17:39:51.705Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-04-29T17:39:51.703Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '1045 MB', total: '49152 MB' },
+    uptime: '99 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-04-29T18:01:36.362Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-04-29T18:01:36.361Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '105 MB', total: '49152 MB' },
+    uptime: '121 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-04-29T18:09:58.008Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-04-29T18:09:58.007Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '863 MB', total: '49152 MB' },
+    uptime: '129 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------

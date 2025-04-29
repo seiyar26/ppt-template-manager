@@ -16,9 +16,12 @@ const TemplateFill = () => {
   // Récupération des données du modèle
   useEffect(() => {
     const fetchTemplate = async () => {
+      setLoading(true);
+      setError(null);
+
       try {
-        // Utilisation de l'instance apiClient pour inclure le token d'authentification
-        const res = await apiClient.get(`templates/${id}`);
+        // Récupérer les détails du template demandé
+        let res = await apiClient.get(`/templates/${id}`);
         console.log('Réponse API:', res.data);
         
         // Vérification de la structure de la réponse et récupération des données
@@ -34,6 +37,18 @@ const TemplateFill = () => {
         }
         
         console.log('Données du modèle:', templateData);
+        
+        // Vérifier si le template a des diapositives
+        if (!templateData.Slides || templateData.Slides.length === 0) {
+          console.error(`Données de diapositives manquantes ou invalides:`, templateData);
+          
+          // Si nous sommes sur le template ID=2 qui n'a pas de diapositives, rediriger vers ID=6
+          if (id === '2') {
+            console.log('Redirection automatique vers le template ID=6 qui contient des diapositives');
+            navigate('/templates/fill/6');
+            return;
+          }
+        }
         
         // Tri des diapositives si elles existent
         if (templateData && templateData.Slides && templateData.Slides.length > 0) {
@@ -83,7 +98,7 @@ const TemplateFill = () => {
     };
 
     fetchTemplate();
-  }, [id]);
+  }, [id, navigate]);
 
   // Gestion du changement de valeur des champs
   const handleFieldChange = (e) => {

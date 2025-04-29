@@ -78,6 +78,20 @@ class DiagnosticLogger {
     this._writeToFile(this.uploadLogFile, 'SUCCESS', 'Upload réussi', templateData);
   }
   
+  /**
+   * Log pour le succès de conversion PPTX
+   */
+  logConversionSuccess(data) {
+    this._writeToFile(this.uploadLogFile, 'SUCCESS', 'Conversion PPTX réussie', data);
+  }
+  
+  /**
+   * Log général de succès
+   */
+  logSuccess(message, data = {}) {
+    this._writeToFile(this.uploadLogFile, 'SUCCESS', message, data);
+  }
+  
   logUploadError(error, req) {
     const errorDetails = {
       message: error.message,
