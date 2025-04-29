@@ -1,6 +1,6 @@
 const sequelize = require('../config/database');
 const { User, Template, Slide, Field } = require('../models');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const initDb = async () => {
   try {

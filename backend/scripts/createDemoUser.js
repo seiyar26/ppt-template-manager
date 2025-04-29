@@ -1,5 +1,5 @@
 const { User } = require('../models');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 require('dotenv').config({ path: '../.env' });
 
 const createDemoUser = async () => {

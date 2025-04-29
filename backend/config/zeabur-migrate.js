@@ -4,7 +4,7 @@
  */
 const sequelize = require('./database');
 const { User, Template, Slide, Field, Category } = require('../models');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 async function runMigrations() {
   try {

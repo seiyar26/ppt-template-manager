@@ -1,5 +1,5 @@
 const sequelize = require('../config/database');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 require('dotenv').config();
 
 const createWorkingUser = async () => {

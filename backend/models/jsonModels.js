@@ -24,7 +24,7 @@ async function initDb() {
     
     if (!adminUser) {
       console.log('Création de l\'utilisateur admin par défaut...');
-      const bcrypt = require('bcrypt');
+      const bcrypt = require('bcryptjs');
       const passwordHash = await bcrypt.hash('admin123', 10);
       
       await User.create({
