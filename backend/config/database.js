@@ -7,7 +7,8 @@ let sequelize;
 // En environnement Zeabur, POSTGRES_CONNECTION_STRING est fourni au lieu de DATABASE_URL
 if (process.env.POSTGRES_CONNECTION_STRING && !process.env.DATABASE_URL) {
   console.log('Variable POSTGRES_CONNECTION_STRING détectée, conversion en DATABASE_URL');
-  process.env.DATABASE_URL = process.env.POSTGRES_CONNECTION_STRING + '?sslmode=require';
+  // Sans SSL - problème de compatibilité avec certains serveurs PostgreSQL
+  process.env.DATABASE_URL = process.env.POSTGRES_CONNECTION_STRING;
 }
 
 // Vérifier si on a une URL de connexion complète
@@ -17,16 +18,12 @@ if (process.env.DATABASE_URL) {
   const isProd = process.env.NODE_ENV === 'production';
   console.log(`Environnement détecté: ${isProd ? 'production' : 'développement'}`);
   
-  // Options spécifiques pour Zeabur en production
-  const dialectOptions = isProd ? {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false // Nécessaire pour certains providers dont Zeabur
-    }
-  } : {
-    // En développement, SSL désactivé
+  // Désactiver SSL complètement pour éviter les erreurs de connexion
+  const dialectOptions = {
     ssl: false
   };
+  
+  console.log('SSL désactivé pour la connexion PostgreSQL (problème de compatibilité)');
   
   // Log pour debug (en mode dev uniquement)
   if (!isProd) {
