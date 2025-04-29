@@ -8,7 +8,7 @@ echo "Ce script va déployer l'application sur jonathanifrah.fr"
 # Configuration
 VPS_USER="jonathanifrah"
 VPS_HOST="jonathanifrah.fr"
-VPS_PATH="/home/jonathanifrah/public_html/ppt-manager"
+VPS_PATH="/home/jonathanifrah/public_html"
 LOCAL_PATH="/Users/michaeltenenbaum/Downloads/ppt-template-manager"
 
 # Créer un archive locale
@@ -25,7 +25,7 @@ scp /tmp/ppt-manager.tar.gz $VPS_USER@$VPS_HOST:$VPS_PATH/
 echo "=== Configuration sur le serveur ==="
 ssh $VPS_USER@$VPS_HOST << 'ENDSSH'
 # Variables
-VPS_PATH="/home/jonathanifrah/public_html/ppt-manager"
+VPS_PATH="/home/jonathanifrah/public_html"
 cd $VPS_PATH
 
 # Extraction de l'archive
@@ -91,7 +91,7 @@ RewriteRule ^api/(.*) http://localhost:2324/api/$1 [P,L]
 # Pour React frontend
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ppt-manager/(.*)$ /ppt-manager/frontend/build/index.html [L]
+RewriteRule ^(.*)$ /frontend/build/index.html [L]
 EOF
 
 # Démarrage de l'application
@@ -104,7 +104,7 @@ pm2 save
 # Sortie
 echo "=== Déploiement terminé sur le serveur ==="
 echo "L'application devrait être accessible à:"
-echo "- Frontend: https://jonathanifrah.fr/ppt-manager/frontend/build/"
+echo "- Frontend: https://jonathanifrah.fr/"
 echo "- API: https://jonathanifrah.fr/api/health"
 ENDSSH
 
@@ -114,5 +114,5 @@ rm -f /tmp/ppt-manager.tar.gz
 
 echo "=== Déploiement terminé ==="
 echo "Votre application est maintenant déployée sur $VPS_HOST"
-echo "- Frontend: https://$VPS_HOST/ppt-manager/frontend/build/"
+echo "- Frontend: https://$VPS_HOST/"
 echo "- API: https://$VPS_HOST/api/health"

@@ -200,17 +200,68 @@ const TemplateFill = () => {
     );
   }
 
-  const currentSlide = template.Slides[currentSlideIndex];
-  const currentSlideFields = template.Fields.filter(field => field.slide_index === currentSlideIndex);
+  // Traitement défensif des données pour éviter les erreurs d'accès à des propriétés de undefined
+  // Vérifications complètes selon les principes SOLID
+  const hasValidSlides = template.Slides && Array.isArray(template.Slides) && template.Slides.length > 0;
+  const hasValidFields = template.Fields && Array.isArray(template.Fields);
   
-  // Group fields by slide for the form
-  const fieldsBySlide = template.Fields.reduce((acc, field) => {
-    if (!acc[field.slide_index]) {
-      acc[field.slide_index] = [];
+  // Si aucune diapositive valide n'est présente, afficher un message d'erreur
+  if (!hasValidSlides) {
+    console.error('Données de diapositives manquantes ou invalides:', template);
+    return (
+      <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div className="px-4 py-6 sm:px-0">
+          <div className="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded">
+            Le modèle ne contient pas de diapositives valides. Veuillez contacter l'administrateur.
+          </div>
+          <button
+            onClick={() => navigate('/templates')}
+            className="mt-4 px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+          >
+            Retour aux modèles
+          </button>
+        </div>
+      </div>
+    );
+  }
+  
+  // Accès sécurisé aux données
+  const currentSlide = hasValidSlides ? template.Slides[currentSlideIndex] : null;
+  const currentSlideFields = hasValidFields 
+    ? template.Fields.filter(field => field.slide_index === currentSlideIndex)
+    : [];
+  
+  // Vérification supplémentaire de la diapositive courante
+  if (!currentSlide) {
+    console.error(`Diapositive ${currentSlideIndex} introuvable:`, template.Slides);
+    return (
+      <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div className="px-4 py-6 sm:px-0">
+          <div className="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded">
+            Diapositive introuvable. Veuillez réessayer.
+          </div>
+          <button
+            onClick={() => navigate('/templates')}
+            className="mt-4 px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+          >
+            Retour aux modèles
+          </button>
+        </div>
+      </div>
+    );
+  }
+  
+  // Group fields by slide for the form - avec vérification défensive
+  const fieldsBySlide = hasValidFields ? template.Fields.reduce((acc, field) => {
+    // Vérification que le champ a un index de diapositive valide
+    const slideIndex = field.slide_index !== undefined ? field.slide_index : 0;
+    
+    if (!acc[slideIndex]) {
+      acc[slideIndex] = [];
     }
-    acc[field.slide_index].push(field);
+    acc[slideIndex].push(field);
     return acc;
-  }, {});
+  }, {}) : {};
 
   return (
     <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
@@ -270,11 +321,22 @@ const TemplateFill = () => {
             </div>
             
             <div className="relative">
-              <img
-              src={`${IMAGE_BASE_URL}${currentSlide.image_path}`}
-              alt={`Slide ${currentSlideIndex + 1}`}
-              className="w-full h-auto"
-              />
+              {/* Vérification défensive pour l'accès à image_path */}
+              {currentSlide && currentSlide.image_path ? (
+                <img
+                  src={`${IMAGE_BASE_URL}${currentSlide.image_path}`}
+                  alt={`Slide ${currentSlideIndex + 1}`}
+                  className="w-full h-auto"
+                  onError={(e) => {
+                    console.error(`Erreur de chargement de l'image: ${IMAGE_BASE_URL}${currentSlide.image_path}`);
+                    e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2YzZjRmNiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZpbGw9IiM5Y2EzYWYiPkltYWdlIG5vbiBkaXNwb25pYmxlPC90ZXh0Pjwvc3ZnPg==';
+                  }}
+                />
+              ) : (
+                <div className="w-full h-64 bg-gray-200 flex items-center justify-center">
+                  <p className="text-gray-500">Aperçu de diapositive non disponible</p>
+                </div>
+              )}
               
               {/* Field Value Overlays */}
               {currentSlideFields.map(field => (

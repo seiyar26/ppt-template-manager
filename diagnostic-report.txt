@@ -1,0 +1,979 @@
+=================================
+RAPPORT DE DIAGNOSTIC COMPLET
+Date: Mar 29 avr 2025 17:32:22 CEST
+=================================
+
+
+=== INFORMATIONS SYSTÈME ===
+--- Version du système d'exploitation ---
+Darwin Mac.lan 24.4.0 Darwin Kernel Version 24.4.0: Wed Mar 19 21:17:35 PDT 2025; root:xnu-11417.101.15~1/RELEASE_ARM64_T6041 arm64
+Exit code: 0
+
+--- Version de Node.js ---
+v23.11.0
+Exit code: 0
+
+--- Version de NPM ---
+10.9.2
+Exit code: 0
+
+--- Espace disque disponible ---
+/dev/disk3s1s1   460Gi    11Gi   2,9Gi    80%    425k   30M    1%   /
+map auto_home      0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home
+Exit code: 0
+
+--- Mémoire disponible ---
+./diagnose-all.sh: line 40: free: command not found
+Mach Virtual Memory Statistics: (page size of 16384 bytes)
+Pages free:                               33655.
+Pages active:                           1321050.
+Pages inactive:                         1091037.
+Pages speculative:                       233809.
+Pages throttled:                              0.
+Pages wired down:                        253728.
+Pages purgeable:                          98549.
+"Translation faults":                 723247273.
+Pages copy-on-write:                   32183407.
+Pages zero filled:                    420509346.
+Pages reactivated:                     67876648.
+Pages purged:                          23309969.
+File-backed pages:                       879717.
+Anonymous pages:                        1766179.
+Pages stored in compressor:             1150702.
+Pages occupied by compressor:            167469.
+Decompressions:                        56069923.
+Compressions:                          72381606.
+Pageins:                               12020522.
+Pageouts:                                155332.
+Swapins:                                1246952.
+Swapouts:                               2430255.
+Exit code: 0
+
+
+=== VÉRIFICATION DES RÉPERTOIRES ===
+--- Contenu du répertoire principal ---
+total 288
+drwxr-xr-x@   28 michaeltenenbaum  staff     896 29 avr 17:32 .
+drwx------@ 3505 michaeltenenbaum  staff  112160 29 avr 17:29 ..
+-rw-r--r--@    1 michaeltenenbaum  staff    6148 29 avr 17:29 .DS_Store
+drwxr-xr-x@   14 michaeltenenbaum  staff     448 29 avr 16:53 .git
+drwxr-xr-x@    7 michaeltenenbaum  staff     224 28 avr 14:43 ansible
+drwxr-xr-x@   23 michaeltenenbaum  staff     736 29 avr 17:01 backend
+-rw-r--r--@    1 michaeltenenbaum  staff   13054 29 avr 17:01 connection-fix.js
+-rw-r--r--@    1 michaeltenenbaum  staff    2442 29 avr 17:00 create-test-pptx.js
+-rwxr-xr-x@    1 michaeltenenbaum  staff    4218 28 avr 14:48 deploy-ftp.sh
+-rwxr-xr-x@    1 michaeltenenbaum  staff    3609 28 avr 14:46 deploy-manual.sh
+-rwxr-xr-x@    1 michaeltenenbaum  staff    4400 28 avr 14:45 deploy-secure.sh
+-rwxr-xr-x@    1 michaeltenenbaum  staff    3242 28 avr 14:44 deploy.sh
+-rwxr-xr-x@    1 michaeltenenbaum  staff    8984 29 avr 17:31 diagnose-all.sh
+-rw-r--r--@    1 michaeltenenbaum  staff    5472 29 avr 17:01 diagnose-upload.js
+-rw-r--r--@    1 michaeltenenbaum  staff    1972 29 avr 17:32 diagnostic-report.txt
+drwxr-xr-x@    4 michaeltenenbaum  staff     128 28 avr 18:29 diagnostic-reports
+-rwxr-xr-x@    1 michaeltenenbaum  staff    5351 29 avr 16:42 fix-cors.sh
+-rw-r--r--@    1 michaeltenenbaum  staff    8196 29 avr 17:01 fix-upload-fixed.js
+-rw-r--r--@    1 michaeltenenbaum  staff    8433 29 avr 17:01 fix-upload.js
+-rwxr-xr-x@    1 michaeltenenbaum  staff    3614 29 avr 16:17 fix-uploads.sh
+-rwxr-xr-x@    1 michaeltenenbaum  staff    3062 27 avr 17:58 fix-website.sh
+drwxr-xr-x@   20 michaeltenenbaum  staff     640 29 avr 17:01 frontend
+-rw-r--r--@    1 michaeltenenbaum  staff    4823 29 avr 17:19 generate-test-slides.js
+-rwxr-xr-x@    1 michaeltenenbaum  staff    4470 29 avr 16:59 hard-reset.sh
+-rw-r--r--@    1 michaeltenenbaum  staff    2956 25 avr 14:47 README.md
+-rwxr-xr-x@    1 michaeltenenbaum  staff    2591 29 avr 16:10 start-local.sh
+-rwxr-xr-x@    1 michaeltenenbaum  staff    1098 25 avr 14:47 start.sh
+drwxr-xr-x@    6 michaeltenenbaum  staff     192 28 avr 20:10 uploads
+Exit code: 0
+
+--- Contenu du répertoire uploads ---
+total 0
+drwxr-xr-x@  5 michaeltenenbaum  staff  160 29 avr 17:23 .
+drwxr-xr-x@ 23 michaeltenenbaum  staff  736 29 avr 17:01 ..
+drwxr-xr-x@  4 michaeltenenbaum  staff  128 29 avr 17:23 exports
+drwxr-xr-x@  7 michaeltenenbaum  staff  224 29 avr 17:27 temp
+drwxr-xr-x@  7 michaeltenenbaum  staff  224 29 avr 17:27 templates
+Exit code: 0
+
+--- Contenu du répertoire templates ---
+total 0
+drwxr-xr-x@  7 michaeltenenbaum  staff  224 29 avr 17:27 .
+drwxr-xr-x@  5 michaeltenenbaum  staff  160 29 avr 17:23 ..
+drwxr-xr-x@ 16 michaeltenenbaum  staff  512 25 avr 18:06 1
+drwxr-xr-x@ 16 michaeltenenbaum  staff  512 25 avr 18:34 2
+drwxr-xr-x@ 16 michaeltenenbaum  staff  512 27 avr 14:38 3
+drwxr-xr-x@ 16 michaeltenenbaum  staff  512 29 avr 17:18 4
+drwxr-xr-x@  2 michaeltenenbaum  staff   64 29 avr 17:27 5
+Exit code: 0
+
+--- Contenu du répertoire temp ---
+total 59240
+drwxr-xr-x@ 7 michaeltenenbaum  staff      224 29 avr 17:27 .
+drwxr-xr-x@ 5 michaeltenenbaum  staff      160 29 avr 17:23 ..
+-rw-r--r--@ 1 michaeltenenbaum  staff  6066126 28 avr 19:18 1745860681411-345737688.pptx
+-rw-r--r--@ 1 michaeltenenbaum  staff  6066126 28 avr 19:21 1745860874247-577353512.pptx
+-rw-r--r--@ 1 michaeltenenbaum  staff  6066126 29 avr 17:08 1745939339347-762142945.pptx
+-rw-r--r--@ 1 michaeltenenbaum  staff  6066126 29 avr 17:17 1745939872741-826503149.pptx
+-rw-r--r--@ 1 michaeltenenbaum  staff  6066126 29 avr 17:27 1745940438843-122259469.pptx
+Exit code: 0
+
+--- Nombre total de fichiers dans uploads ---
+      77
+Exit code: 0
+
+
+=== VARIABLES D'ENVIRONNEMENT ===
+--- Variables d'environnement backend (valeurs masquées) ---
+PORT=***
+NODE_ENV=***
+JWT_SECRET=***
+
+DATABASE_URL=***
+
+DB_HOST=***
+DB_USER=***
+DB_PASSWORD=***
+DB_NAME=***
+DB_PORT=***
+
+SUPABASE_URL=***
+SUPABASE_ANON_KEY=***
+SUPABASE_SERVICE_KEY=***
+
+CONVERT_API_SECRET=***
+Exit code: 0
+
+--- Variables d'environnement frontend (valeurs masquées) ---
+REACT_APP_API_URL=***
+REACT_APP_IMAGE_BASE_URL=***
+NODE_ENV=***
+Exit code: 0
+
+
+=== ÉTAT DE LA BASE DE DONNÉES ===
+--- Configuration de la base de données ---
+URL de connexion: Configurée (valeur masquée)
+Exit code: 0
+
+
+=== SCRIPTS ET SERVICES ===
+--- Processus Node.js en cours d'exécution ---
+michaeltenenbaum  7762   2,4  0,1 1623601312  75056   ??  S     9:20     3:57.50 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper.app/Contents/MacOS/Windsurf Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=fr --service-sandbox-type=none --user-data-dir=/Users/michaeltenenbaum/Library/Application Support/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,10150627961904796390,1578172248224416857,262144 --enable-features=ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,MacWebContentsOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts --variations-seed-version
+michaeltenenbaum 20166   1,3  0,7 1625315408 334304   ??  S     5:00     0:23.40 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) --type=utility --utility-sub-type=node.mojom.NodeService --lang=fr --service-sandbox-type=none --dns-result-order=ipv4first --inspect-port=0 --user-data-dir=/Users/michaeltenenbaum/Library/Application Support/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,10150627961904796390,1578172248224416857,262144 --enable-features=ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,MacWebContentsOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts --variations-seed-version
+michaeltenenbaum 20167   0,6  1,3 1625324624 674784   ??  S     5:00     0:25.52 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) --type=utility --utility-sub-type=node.mojom.NodeService --lang=fr --service-sandbox-type=none --dns-result-order=ipv4first --inspect-port=0 --user-data-dir=/Users/michaeltenenbaum/Library/Application Support/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,10150627961904796390,1578172248224416857,262144 --enable-features=ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,MacWebContentsOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts --variations-seed-version
+michaeltenenbaum 20156   0,4  0,2 1623658864  79088   ??  S     5:00     0:14.43 /Applications/Windsurf - Next.app/Contents/Frameworks/Windsurf - Next Helper.app/Contents/MacOS/Windsurf - Next Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=fr --service-sandbox-type=none --user-data-dir=/Users/michaeltenenbaum/Library/Application Support/Windsurf - Next --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,1557922737394710492,990114383532656204,262144 --enable-features=ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,MacWebContentsOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts --variations-seed-version
+michaeltenenbaum 20159   0,3  0,5 1625380608 233728   ??  S     5:00     0:14.90 /Applications/Windsurf - Next.app/Contents/Frameworks/Windsurf - Next Helper (Plugin).app/Contents/MacOS/Windsurf - Next Helper (Plugin) --type=utility --utility-sub-type=node.mojom.NodeService --lang=fr --service-sandbox-type=none --dns-result-order=ipv4first --inspect-port=0 --user-data-dir=/Users/michaeltenenbaum/Library/Application Support/Windsurf - Next --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,1557922737394710492,990114383532656204,262144 --enable-features=ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,MacWebContentsOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts --variations-seed-version
+michaeltenenbaum 20162   0,1  0,2 1623661568  95616   ??  S     5:00     0:07.53 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper.app/Contents/MacOS/Windsurf Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=fr --service-sandbox-type=none --user-data-dir=/Users/michaeltenenbaum/Library/Application Support/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,10150627961904796390,1578172248224416857,262144 --enable-features=ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,MacWebContentsOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts --variations-seed-version
+michaeltenenbaum 21470   0,0  0,1 1621864048  60352   ??  S     5:00     0:00.23 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) /Applications/Windsurf.app/Contents/Resources/app/extensions/markdown-language-features/dist/serverWorkerMain --node-ipc --clientProcessId=20166
+michaeltenenbaum 21462   0,0  0,1 1621883504  61936   ??  S     5:00     0:00.23 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) /Users/michaeltenenbaum/.windsurf/extensions/mtxr.sqltools-0.28.4-universal/dist/languageserver.js --node-ipc --clientProcessId=20166
+michaeltenenbaum 21426   0,0  0,7 1621901936 345408   ??  S     5:00     0:48.24 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) --max-old-space-size=3072 /Applications/Windsurf.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /var/folders/gf/tprh3tt91yx0ntgr9skd97540000gn/T/vscode-typescript501/92a2e15c9e3fef30c716/tscancellation-d54103f2c1f6b623ce6a.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc
+michaeltenenbaum 21424   0,0  0,3 1621856880 141776   ??  S     5:00     0:01.35 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) --max-old-space-size=3072 /Applications/Windsurf.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /var/folders/gf/tprh3tt91yx0ntgr9skd97540000gn/T/vscode-typescript501/92a2e15c9e3fef30c716/tscancellation-528bdf1bf69d079cbc16.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc
+michaeltenenbaum 21421   0,0  1,4 1621865072 691824   ??  S     5:00     1:05.61 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) --max-old-space-size=3072 /Applications/Windsurf.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /var/folders/gf/tprh3tt91yx0ntgr9skd97540000gn/T/vscode-typescript501/11f7a4c68517ee35487e/tscancellation-9add5891b88599a3cae0.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc
+michaeltenenbaum 21416   0,0  0,3 1621858928 138320   ??  S     5:00     0:01.55 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) --max-old-space-size=3072 /Applications/Windsurf.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /var/folders/gf/tprh3tt91yx0ntgr9skd97540000gn/T/vscode-typescript501/11f7a4c68517ee35487e/tscancellation-ec76e5b5458d120f59e0.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc
+michaeltenenbaum 20656   0,0  0,5 1623575984 266448   ??  S     5:00     0:06.88 /Applications/Windsurf - Next.app/Contents/Frameworks/Windsurf - Next Helper (Plugin).app/Contents/MacOS/Windsurf - Next Helper (Plugin) --max-old-space-size=3072 /Users/michaeltenenbaum/.windsurf-next/extensions/codeium.windsurfpyright-1.28.0-universal/dist/server.js --cancellationReceive=file:f937204c6a3cfb8a55f0251368f3fdba0f19e182a0 --node-ipc --clientProcessId=20159
+michaeltenenbaum 20496   0,0  0,2 1621884528  82112   ??  S     5:00     0:00.43 /Applications/Windsurf - Next.app/Contents/Frameworks/Windsurf - Next Helper (Plugin).app/Contents/MacOS/Windsurf - Next Helper (Plugin) /Applications/Windsurf - Next.app/Contents/Resources/app/extensions/html-language-features/server/dist/node/htmlServerMain --node-ipc --clientProcessId=20159
+michaeltenenbaum 20489   0,0  0,1 1621885552  58992   ??  S     5:00     0:00.24 /Applications/Windsurf - Next.app/Contents/Frameworks/Windsurf - Next Helper (Plugin).app/Contents/MacOS/Windsurf - Next Helper (Plugin) /Applications/Windsurf - Next.app/Contents/Resources/app/extensions/markdown-language-features/dist/serverWorkerMain --node-ipc --clientProcessId=20159
+michaeltenenbaum 20161   0,0  0,2 1623632896  95648   ??  S     5:00     0:07.45 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper.app/Contents/MacOS/Windsurf Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=fr --service-sandbox-type=none --user-data-dir=/Users/michaeltenenbaum/Library/Application Support/Windsurf --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,10150627961904796390,1578172248224416857,262144 --enable-features=ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,MacWebContentsOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts --variations-seed-version
+michaeltenenbaum 20158   0,0  0,2 1623672832  75792   ??  S     5:00     0:01.07 /Applications/Windsurf - Next.app/Contents/Frameworks/Windsurf - Next Helper.app/Contents/MacOS/Windsurf - Next Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=fr --service-sandbox-type=none --user-data-dir=/Users/michaeltenenbaum/Library/Application Support/Windsurf - Next --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,1557922737394710492,990114383532656204,262144 --enable-features=ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,MacWebContentsOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts --variations-seed-version
+michaeltenenbaum 20157   0,0  0,1 1623680192  62112   ??  S     5:00     0:00.64 /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=fr --service-sandbox-type=none --user-data-dir=/Users/michaeltenenbaum/Library/Application Support/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,14079348680841505100,17600007953231624276,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,MacWebContentsOcclusion,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts --variations-seed-version
+michaeltenenbaum 65190   0,0  0,7 446343888 342224 s075  S+    5:24     0:02.24 /opt/homebrew/Cellar/node/23.11.0/bin/node /Users/michaeltenenbaum/Downloads/ppt-template-manager/frontend/node_modules/react-scripts/scripts/start.js
+michaeltenenbaum 65189   0,0  0,1 410763232  33024 s075  S+    5:24     0:00.02 node /Users/michaeltenenbaum/Downloads/ppt-template-manager/frontend/node_modules/.bin/react-scripts start
+michaeltenenbaum 65168   0,0  0,1 411301088  52208 s075  S+    5:24     0:00.11 npm start  
+michaeltenenbaum 65128   0,0  0,2 419905104  76672 s045  S+    5:24     0:00.20 node /Users/michaeltenenbaum/Desktop/mon-projet-vapi99-6-3/frontend/node_modules/.bin/next dev -p 4000 -p 4004
+michaeltenenbaum 65106   0,0  0,1 411572192  52368 s045  S+    5:24     0:00.10 npm run dev -p 4004      
+michaeltenenbaum 64986   0,0  0,3 421009408 148000 s083  S+    5:23     0:00.84 node server.js
+michaeltenenbaum 64962   0,0  0,1 411293920  51216 s083  S+    5:23     0:00.11 npm start  
+michaeltenenbaum 29195   0,0  0,2 420871040  93376   ??  S     5:00     0:00.42 node /opt/homebrew/bin/mcp-server-puppeteer
+michaeltenenbaum 28541   0,0  0,4 412314016 191984   ??  S     5:00     0:02.85 npm exec @modelcontextprotocol/server-puppeteer   
+michaeltenenbaum 23949   0,0  0,4 1621926704 220160   ??  S     5:00     0:15.29 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) /Users/michaeltenenbaum/.windsurf/extensions/dbaeumer.vscode-eslint-3.0.10-universal/server/out/eslintServer.js --node-ipc --clientProcessId=20166
+michaeltenenbaum 23947   0,0  0,5 1621900080 273472   ??  S     5:00     0:07.08 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) /Users/michaeltenenbaum/.windsurf/extensions/dbaeumer.vscode-eslint-3.0.10-universal/server/out/eslintServer.js --node-ipc --clientProcessId=20167
+michaeltenenbaum 22069   0,0  0,2 1621849712  85552   ??  S     5:00     0:00.34 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) /Applications/Windsurf.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Users/michaeltenenbaum/Library/Caches/typescript/5.8 --enableTelemetry --typesMapLocation /Applications/Windsurf.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation
+michaeltenenbaum 21981   0,0  0,2 1621873264  90352   ??  S     5:00     0:00.47 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) /Applications/Windsurf.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Users/michaeltenenbaum/Library/Caches/typescript/5.8 --enableTelemetry --typesMapLocation /Applications/Windsurf.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation
+michaeltenenbaum 21559   0,0  0,1 1621881648  65920   ??  S     5:00     0:00.57 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) /Applications/Windsurf.app/Contents/Resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=20167
+michaeltenenbaum 21538   0,0  0,1 1621899056  65072   ??  S     5:00     0:00.75 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) /Applications/Windsurf.app/Contents/Resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=20166
+michaeltenenbaum 21508   0,0  0,1 1621896816  65440   ??  S     5:00     0:00.28 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) /Applications/Windsurf.app/Contents/Resources/app/extensions/css-language-features/server/dist/node/cssServerMain --node-ipc --clientProcessId=20167
+michaeltenenbaum 21499   0,0  0,1 1621868144  61392   ??  S     5:00     0:00.22 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) /Users/michaeltenenbaum/.windsurf/extensions/mtxr.sqltools-0.28.4-universal/dist/languageserver.js --node-ipc --clientProcessId=20167
+michaeltenenbaum 21471   0,0  0,2 1621878384  82416   ??  S     5:00     0:00.44 /Applications/Windsurf.app/Contents/Frameworks/Windsurf Helper (Plugin).app/Contents/MacOS/Windsurf Helper (Plugin) /Applications/Windsurf.app/Contents/Resources/app/extensions/html-language-features/server/dist/node/htmlServerMain --node-ipc --clientProcessId=20166
+Exit code: 0
+
+--- Ports ouverts ---
+
+Exit code: 1
+
+
+=== JOURNAUX D'ERREURS ===
+--- Dernières entrées du journal backend ---
+Fichier backend.log non trouvé
+Exit code: 0
+
+--- Dernières entrées du journal de conversion ---
+Fichier conversion.log non trouvé
+Exit code: 0
+
+--- Dernières entrées du journal d'upload ---
+Fichier upload.log non trouvé
+Exit code: 0
+
+
+=== TEST DES OUTILS DE CONVERSION ===
+--- Vérification de la clé API ConvertAPI ---
+CONVERT_API_SECRET configuré: Oui
+Exit code: 0
+
+
+=== DIAGNOSTIC DU TEMPLATE PROBLÉMATIQUE ===
+--- Fichiers associés au template problématique ---
+/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports/1/20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745598987671.pptx
+/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports/1/20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745599680374.pptx
+/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports/1/20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745600083005.pptx
+/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports/1/20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745600609258.pptx
+/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports/1/20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745757751298.pptx
+/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports/1/20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745757771914.pptx
+/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports/1/20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745758403050.pptx
+/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports/1/20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745761630371.pptx
+/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports/5/20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745587795983.pptx
+/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports/5/20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745588557464.pdf
+/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports/5/20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745588574102.pptx
+/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports/5/20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745589601264.pdf
+/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports/5/20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745589615122.pptx
+/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports/5/20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745589790876.pptx
+/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports/5/20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745589838310.pptx
+/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports/5/20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745589890058.pptx
+Exit code: 0
+
+
+=== CRÉATION D'UN FICHIER PPTX DE TEST ===
+--- Installation de pptxgenjs pour le test ---
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: '@es-joy/jsdoccomment@0.36.1',
+npm warn EBADENGINE   required: { node: '^14 || ^16 || ^17 || ^18 || ^19' },
+npm warn EBADENGINE   current: { node: 'v23.11.0', npm: '10.9.2' }
+npm warn EBADENGINE }
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: 'eslint-plugin-jsdoc@39.9.1',
+npm warn EBADENGINE   required: { node: '^14 || ^16 || ^17 || ^18 || ^19' },
+npm warn EBADENGINE   current: { node: 'v23.11.0', npm: '10.9.2' }
+npm warn EBADENGINE }
+
+up to date, audited 865 packages in 687ms
+
+195 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+Exit code: 0
+
+--- Génération du fichier PPTX de test ---
+Fichier de test créé avec succès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/diagnostic-test.pptx
+PPTX généré avec succès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/diagnostic-test.pptx
+Exit code: 0
+
+
+=== TEST DU SERVICE DE CONVERSION ===
+--- Test du service de conversion ---
+AVERTISSEMENT: Variable CONVERT_API_SECRET non définie dans .env
+Test de conversion du fichier: /Users/michaeltenenbaum/Downloads/ppt-template-manager/diagnostic-test.pptx
+🔄 DÉBUT DE CONVERSION PPTX
+Détails: {
+  timestamp: '2025-04-29T15:32:23.341Z',
+  options: {
+    filePath: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/diagnostic-test.pptx',
+    templateId: 'test_diagnostic'
+  },
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    memory: '4157MB libre / 49152MB total'
+  }
+}
+Conversion du fichier /Users/michaeltenenbaum/Downloads/ppt-template-manager/diagnostic-test.pptx avec ConvertAPI...
+Fichier PPTX: diagnostic-test.pptx, taille: 55 KB
+Erreur de conversion PPTX vers images: ClientError: User credentials not set, secret or token must be passed. Code: 4013
+    at Client.handleError (/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/node_modules/convertapi/lib/client.js:141:11)
+    at /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/node_modules/convertapi/lib/client.js:64:96
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  request: <ref *1> ClientRequest {
+    _events: [Object: null prototype] {
+      abort: [Function (anonymous)],
+      aborted: [Function (anonymous)],
+      connect: [Function (anonymous)],
+      error: [Function (anonymous)],
+      socket: [Function (anonymous)],
+      timeout: [Function (anonymous)],
+      finish: [Function: requestOnFinish]
+    },
+    _eventsCount: 7,
+    _maxListeners: undefined,
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    destroyed: true,
+    _last: false,
+    chunkedEncoding: false,
+    shouldKeepAlive: true,
+    maxRequestsOnConnectionReached: false,
+    _defaultKeepAlive: true,
+    useChunkedEncodingByDefault: true,
+    sendDate: false,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    strictContentLength: false,
+    _contentLength: 69,
+    _hasBody: true,
+    _trailer: '',
+    finished: true,
+    _headerSent: true,
+    _closed: true,
+    _header: 'POST /convert/pptx/to/jpg HTTP/1.1\r\n' +
+      'Accept: application/json\r\n' +
+      'Content-Type: application/x-www-form-urlencoded\r\n' +
+      'User-Agent: ConvertAPI-Node/1.15.0\r\n' +
+      'Authorization: Bearer \r\n' +
+      'Content-Length: 69\r\n' +
+      'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+      'Host: v2.convertapi.com\r\n' +
+      'Connection: keep-alive\r\n' +
+      '\r\n',
+    _keepAliveTimeout: 0,
+    _onPendingData: [Function: nop],
+    agent: Agent {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      defaultPort: 443,
+      protocol: 'https:',
+      options: [Object: null prototype],
+      requests: [Object: null prototype] {},
+      sockets: [Object: null prototype] {},
+      freeSockets: [Object: null prototype],
+      keepAliveMsecs: 1000,
+      keepAlive: true,
+      maxSockets: Infinity,
+      maxFreeSockets: 256,
+      scheduling: 'lifo',
+      maxTotalSockets: Infinity,
+      totalSocketCount: 1,
+      maxCachedSessions: 100,
+      _sessionCache: [Object],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false
+    },
+    socketPath: undefined,
+    method: 'POST',
+    maxHeaderSize: undefined,
+    insecureHTTPParser: undefined,
+    joinDuplicateHeaders: undefined,
+    path: '/convert/pptx/to/jpg',
+    _ended: true,
+    res: IncomingMessage {
+      _events: [Object],
+      _readableState: [ReadableState],
+      _maxListeners: undefined,
+      socket: null,
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      joinDuplicateHeaders: undefined,
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 401,
+      statusMessage: 'Unauthorized',
+      client: [TLSSocket],
+      _consuming: false,
+      _dumped: false,
+      req: [Circular *1],
+      _eventsCount: 4,
+      responseUrl: 'https://v2.convertapi.com/convert/pptx/to/jpg',
+      redirects: [],
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 14,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0
+    },
+    aborted: false,
+    timeoutCb: null,
+    upgradeOrConnect: false,
+    parser: null,
+    maxHeadersCount: null,
+    reusedSocket: true,
+    host: 'v2.convertapi.com',
+    protocol: 'https:',
+    _redirectable: Writable {
+      _events: [Object],
+      _writableState: [WritableState],
+      _maxListeners: undefined,
+      _options: [Object],
+      _ended: true,
+      _ending: true,
+      _redirectCount: 0,
+      _redirects: [],
+      _requestBodyLength: 69,
+      _requestBodyBuffers: [],
+      _eventsCount: 3,
+      _onNativeResponse: [Function (anonymous)],
+      _currentRequest: [Circular *1],
+      _currentUrl: 'https://v2.convertapi.com/convert/pptx/to/jpg',
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false
+    },
+    [Symbol(shapeMode)]: false,
+    [Symbol(kCapture)]: false,
+    [Symbol(kBytesWritten)]: 0,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kChunkedBuffer)]: [],
+    [Symbol(kChunkedLength)]: 0,
+    [Symbol(kSocket)]: TLSSocket {
+      _tlsOptions: [Object],
+      _secureEstablished: true,
+      _securePending: false,
+      _newSessionPending: false,
+      _controlReleased: true,
+      secureConnecting: false,
+      _SNICallback: null,
+      servername: 'v2.convertapi.com',
+      alpnProtocol: false,
+      authorized: true,
+      authorizationError: null,
+      encrypted: true,
+      _events: [Object: null prototype],
+      _eventsCount: 9,
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: 'v2.convertapi.com',
+      _closeAfterHandlingError: false,
+      _readableState: [ReadableState],
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _maxListeners: undefined,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: undefined,
+      _server: null,
+      ssl: [TLSWrap],
+      _requestCert: true,
+      _rejectUnauthorized: true,
+      parser: null,
+      _httpMessage: null,
+      timeout: 0,
+      [Symbol(alpncallback)]: null,
+      [Symbol(res)]: [TLSWrap],
+      [Symbol(verified)]: true,
+      [Symbol(pendingSession)]: null,
+      [Symbol(async_id_symbol)]: -1,
+      [Symbol(kHandle)]: [TLSWrap],
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: Timeout {
+        _idleTimeout: -1,
+        _idlePrev: null,
+        _idleNext: null,
+        _idleStart: 153,
+        _onTimeout: null,
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: true,
+        [Symbol(refed)]: false,
+        [Symbol(kHasPrimitive)]: false,
+        [Symbol(asyncId)]: 20,
+        [Symbol(triggerId)]: 13,
+        [Symbol(kAsyncContextFrame)]: undefined
+      },
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kSetNoDelay)]: false,
+      [Symbol(kSetKeepAlive)]: true,
+      [Symbol(kSetKeepAliveInitialDelay)]: 1,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(connect-options)]: [Object]
+    },
+    [Symbol(kOutHeaders)]: [Object: null prototype] {
+      accept: [Array],
+      'content-type': [Array],
+      'user-agent': [Array],
+      authorization: [Array],
+      'content-length': [Array],
+      'accept-encoding': [Array],
+      host: [Array]
+    },
+    [Symbol(errored)]: null,
+    [Symbol(kHighWaterMark)]: 65536,
+    [Symbol(kRejectNonStandardBodyWrites)]: false,
+    [Symbol(kUniqueHeaders)]: null
+  },
+  response: {
+    status: 401,
+    statusText: 'Unauthorized',
+    headers: Object [AxiosHeaders] {
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Tue, 29 Apr 2025 15:32:22 GMT',
+      server: 'kaulas',
+      cara: 'uk-hw2-CARA-VM 1.2.64.20 cara-6bc485ffd8-wmgg8',
+      vary: 'Accept-Encoding',
+      'transfer-encoding': 'chunked'
+    },
+    config: {
+      transitional: [Object],
+      adapter: [Array],
+      transformRequest: [Array],
+      transformResponse: [Array],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: Infinity,
+      maxBodyLength: Infinity,
+      env: [Object],
+      validateStatus: [Function: validateStatus],
+      headers: [Object [AxiosHeaders]],
+      httpsAgent: [Agent],
+      method: 'post',
+      url: 'https://v2.convertapi.com/convert/pptx/to/jpg',
+      data: 'File=z1didgfq438sf99suh983lzqpat5jmh3&ImageQuality=100&StoreFile=true',
+      allowAbsoluteUrls: true
+    },
+    request: <ref *1> ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: true,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: 69,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: true,
+      _header: 'POST /convert/pptx/to/jpg HTTP/1.1\r\n' +
+        'Accept: application/json\r\n' +
+        'Content-Type: application/x-www-form-urlencoded\r\n' +
+        'User-Agent: ConvertAPI-Node/1.15.0\r\n' +
+        'Authorization: Bearer \r\n' +
+        'Content-Length: 69\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: v2.convertapi.com\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/convert/pptx/to/jpg',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: true,
+      host: 'v2.convertapi.com',
+      protocol: 'https:',
+      _redirectable: [Writable],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kChunkedBuffer)]: [],
+      [Symbol(kChunkedLength)]: 0,
+      [Symbol(kSocket)]: [TLSSocket],
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 65536,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    data: {
+      Code: 4013,
+      Message: 'User credentials not set, secret or token must be passed.'
+    }
+  },
+  data: {
+    Code: 4013,
+    Message: 'User credentials not set, secret or token must be passed.'
+  }
+}
+❌ ERREUR DE CONVERSION PPTX
+Détails: {
+  timestamp: '2025-04-29T15:32:23.496Z',
+  error: {
+    message: 'User credentials not set, secret or token must be passed. Code: 4013',
+    stack: 'Error: User credentials not set, secret or token must be passed. Code: 4013\n' +
+      '    at Client.handleError (/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/node_modules/convertapi/lib/client.js:141:11)\n' +
+      '    at /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/node_modules/convertapi/lib/client.js:64:96\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)',
+    name: 'Error'
+  },
+  context: {
+    filePath: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/diagnostic-test.pptx',
+    templateId: 'test_diagnostic'
+  }
+}
+Erreur lors du test de conversion: ClientError: User credentials not set, secret or token must be passed. Code: 4013
+    at Client.handleError (/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/node_modules/convertapi/lib/client.js:141:11)
+    at /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/node_modules/convertapi/lib/client.js:64:96
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  request: <ref *1> ClientRequest {
+    _events: [Object: null prototype] {
+      abort: [Function (anonymous)],
+      aborted: [Function (anonymous)],
+      connect: [Function (anonymous)],
+      error: [Function (anonymous)],
+      socket: [Function (anonymous)],
+      timeout: [Function (anonymous)],
+      finish: [Function: requestOnFinish]
+    },
+    _eventsCount: 7,
+    _maxListeners: undefined,
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    destroyed: true,
+    _last: false,
+    chunkedEncoding: false,
+    shouldKeepAlive: true,
+    maxRequestsOnConnectionReached: false,
+    _defaultKeepAlive: true,
+    useChunkedEncodingByDefault: true,
+    sendDate: false,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    strictContentLength: false,
+    _contentLength: 69,
+    _hasBody: true,
+    _trailer: '',
+    finished: true,
+    _headerSent: true,
+    _closed: true,
+    _header: 'POST /convert/pptx/to/jpg HTTP/1.1\r\n' +
+      'Accept: application/json\r\n' +
+      'Content-Type: application/x-www-form-urlencoded\r\n' +
+      'User-Agent: ConvertAPI-Node/1.15.0\r\n' +
+      'Authorization: Bearer \r\n' +
+      'Content-Length: 69\r\n' +
+      'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+      'Host: v2.convertapi.com\r\n' +
+      'Connection: keep-alive\r\n' +
+      '\r\n',
+    _keepAliveTimeout: 0,
+    _onPendingData: [Function: nop],
+    agent: Agent {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      defaultPort: 443,
+      protocol: 'https:',
+      options: [Object: null prototype],
+      requests: [Object: null prototype] {},
+      sockets: [Object: null prototype] {},
+      freeSockets: [Object: null prototype],
+      keepAliveMsecs: 1000,
+      keepAlive: true,
+      maxSockets: Infinity,
+      maxFreeSockets: 256,
+      scheduling: 'lifo',
+      maxTotalSockets: Infinity,
+      totalSocketCount: 1,
+      maxCachedSessions: 100,
+      _sessionCache: [Object],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false
+    },
+    socketPath: undefined,
+    method: 'POST',
+    maxHeaderSize: undefined,
+    insecureHTTPParser: undefined,
+    joinDuplicateHeaders: undefined,
+    path: '/convert/pptx/to/jpg',
+    _ended: true,
+    res: IncomingMessage {
+      _events: [Object],
+      _readableState: [ReadableState],
+      _maxListeners: undefined,
+      socket: null,
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      joinDuplicateHeaders: undefined,
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 401,
+      statusMessage: 'Unauthorized',
+      client: [TLSSocket],
+      _consuming: false,
+      _dumped: false,
+      req: [Circular *1],
+      _eventsCount: 4,
+      responseUrl: 'https://v2.convertapi.com/convert/pptx/to/jpg',
+      redirects: [],
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 14,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0
+    },
+    aborted: false,
+    timeoutCb: null,
+    upgradeOrConnect: false,
+    parser: null,
+    maxHeadersCount: null,
+    reusedSocket: true,
+    host: 'v2.convertapi.com',
+    protocol: 'https:',
+    _redirectable: Writable {
+      _events: [Object],
+      _writableState: [WritableState],
+      _maxListeners: undefined,
+      _options: [Object],
+      _ended: true,
+      _ending: true,
+      _redirectCount: 0,
+      _redirects: [],
+      _requestBodyLength: 69,
+      _requestBodyBuffers: [],
+      _eventsCount: 3,
+      _onNativeResponse: [Function (anonymous)],
+      _currentRequest: [Circular *1],
+      _currentUrl: 'https://v2.convertapi.com/convert/pptx/to/jpg',
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false
+    },
+    [Symbol(shapeMode)]: false,
+    [Symbol(kCapture)]: false,
+    [Symbol(kBytesWritten)]: 0,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kChunkedBuffer)]: [],
+    [Symbol(kChunkedLength)]: 0,
+    [Symbol(kSocket)]: TLSSocket {
+      _tlsOptions: [Object],
+      _secureEstablished: true,
+      _securePending: false,
+      _newSessionPending: false,
+      _controlReleased: true,
+      secureConnecting: false,
+      _SNICallback: null,
+      servername: 'v2.convertapi.com',
+      alpnProtocol: false,
+      authorized: true,
+      authorizationError: null,
+      encrypted: true,
+      _events: [Object: null prototype],
+      _eventsCount: 9,
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: 'v2.convertapi.com',
+      _closeAfterHandlingError: false,
+      _readableState: [ReadableState],
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _maxListeners: undefined,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: undefined,
+      _server: null,
+      ssl: [TLSWrap],
+      _requestCert: true,
+      _rejectUnauthorized: true,
+      parser: null,
+      _httpMessage: null,
+      timeout: 0,
+      [Symbol(alpncallback)]: null,
+      [Symbol(res)]: [TLSWrap],
+      [Symbol(verified)]: true,
+      [Symbol(pendingSession)]: null,
+      [Symbol(async_id_symbol)]: -1,
+      [Symbol(kHandle)]: [TLSWrap],
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: Timeout {
+        _idleTimeout: -1,
+        _idlePrev: null,
+        _idleNext: null,
+        _idleStart: 153,
+        _onTimeout: null,
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: true,
+        [Symbol(refed)]: false,
+        [Symbol(kHasPrimitive)]: false,
+        [Symbol(asyncId)]: 20,
+        [Symbol(triggerId)]: 13,
+        [Symbol(kAsyncContextFrame)]: undefined
+      },
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kSetNoDelay)]: false,
+      [Symbol(kSetKeepAlive)]: true,
+      [Symbol(kSetKeepAliveInitialDelay)]: 1,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(connect-options)]: [Object]
+    },
+    [Symbol(kOutHeaders)]: [Object: null prototype] {
+      accept: [Array],
+      'content-type': [Array],
+      'user-agent': [Array],
+      authorization: [Array],
+      'content-length': [Array],
+      'accept-encoding': [Array],
+      host: [Array]
+    },
+    [Symbol(errored)]: null,
+    [Symbol(kHighWaterMark)]: 65536,
+    [Symbol(kRejectNonStandardBodyWrites)]: false,
+    [Symbol(kUniqueHeaders)]: null
+  },
+  response: {
+    status: 401,
+    statusText: 'Unauthorized',
+    headers: Object [AxiosHeaders] {
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Tue, 29 Apr 2025 15:32:22 GMT',
+      server: 'kaulas',
+      cara: 'uk-hw2-CARA-VM 1.2.64.20 cara-6bc485ffd8-wmgg8',
+      vary: 'Accept-Encoding',
+      'transfer-encoding': 'chunked'
+    },
+    config: {
+      transitional: [Object],
+      adapter: [Array],
+      transformRequest: [Array],
+      transformResponse: [Array],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: Infinity,
+      maxBodyLength: Infinity,
+      env: [Object],
+      validateStatus: [Function: validateStatus],
+      headers: [Object [AxiosHeaders]],
+      httpsAgent: [Agent],
+      method: 'post',
+      url: 'https://v2.convertapi.com/convert/pptx/to/jpg',
+      data: 'File=z1didgfq438sf99suh983lzqpat5jmh3&ImageQuality=100&StoreFile=true',
+      allowAbsoluteUrls: true
+    },
+    request: <ref *1> ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: true,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: 69,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: true,
+      _header: 'POST /convert/pptx/to/jpg HTTP/1.1\r\n' +
+        'Accept: application/json\r\n' +
+        'Content-Type: application/x-www-form-urlencoded\r\n' +
+        'User-Agent: ConvertAPI-Node/1.15.0\r\n' +
+        'Authorization: Bearer \r\n' +
+        'Content-Length: 69\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: v2.convertapi.com\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/convert/pptx/to/jpg',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: true,
+      host: 'v2.convertapi.com',
+      protocol: 'https:',
+      _redirectable: [Writable],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kChunkedBuffer)]: [],
+      [Symbol(kChunkedLength)]: 0,
+      [Symbol(kSocket)]: [TLSSocket],
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 65536,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    data: {
+      Code: 4013,
+      Message: 'User credentials not set, secret or token must be passed.'
+    }
+  },
+  data: {
+    Code: 4013,
+    Message: 'User credentials not set, secret or token must be passed.'
+  }
+}
+Test de conversion échoué
+Exit code: 1
+
+
+=== CONCLUSION ===
+Rapport complet enregistré dans: /Users/michaeltenenbaum/Downloads/ppt-template-manager/diagnostic-report.txt

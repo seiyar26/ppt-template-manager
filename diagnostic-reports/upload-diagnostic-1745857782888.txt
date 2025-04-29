@@ -1,0 +1,82 @@
+[2025-04-28T16:29:42.888Z] === DIAGNOSTIC DES PROBLÈMES D'UPLOAD DE FICHIERS PPTX ===
+[2025-04-28T16:29:42.914Z] Date: 28/04/2025 18:29:42
+[2025-04-28T16:29:42.914Z] Système: Darwin 24.4.0 arm64
+[2025-04-28T16:29:42.916Z] Utilisateur: michaeltenenbaum
+[2025-04-28T16:29:42.916Z] Répertoire projet: /Users/michaeltenenbaum/Downloads/ppt-template-manager
+[2025-04-28T16:29:42.916Z] 
+=== VÉRIFICATION DES DÉPENDANCES ===
+[2025-04-28T16:29:42.917Z] Démarrage du diagnostic...
+[2025-04-28T16:29:43.409Z] Packages installés:
+[2025-04-28T16:29:43.409Z] backend@1.0.0 /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend
+├─┬ convertapi@1.15.0
+│ └── axios@1.9.0
+├── express@5.1.0
+└── multer@1.4.5-lts.2
+
+
+[2025-04-28T16:29:43.409Z] 
+=== VÉRIFICATION DES RÉPERTOIRES ===
+[2025-04-28T16:29:43.409Z] Répertoire: /Users/michaeltenenbaum/Downloads/ppt-template-manager/uploads
+[2025-04-28T16:29:43.409Z]   Existe: NON
+[2025-04-28T16:29:43.409Z]   Permissions: N/A
+[2025-04-28T16:29:43.409Z]   Accessible en écriture: NON
+[2025-04-28T16:29:43.409Z]   Contenu: 0 fichiers/dossiers
+[2025-04-28T16:29:43.409Z] Répertoire: /Users/michaeltenenbaum/Downloads/ppt-template-manager/uploads/temp
+[2025-04-28T16:29:43.409Z]   Existe: NON
+[2025-04-28T16:29:43.409Z]   Permissions: N/A
+[2025-04-28T16:29:43.409Z]   Accessible en écriture: NON
+[2025-04-28T16:29:43.409Z]   Contenu: 0 fichiers/dossiers
+[2025-04-28T16:29:43.409Z] Répertoire: /Users/michaeltenenbaum/Downloads/ppt-template-manager/uploads/templates
+[2025-04-28T16:29:43.409Z]   Existe: NON
+[2025-04-28T16:29:43.409Z]   Permissions: N/A
+[2025-04-28T16:29:43.409Z]   Accessible en écriture: NON
+[2025-04-28T16:29:43.409Z]   Contenu: 0 fichiers/dossiers
+[2025-04-28T16:29:43.409Z] Répertoire: /Users/michaeltenenbaum/Downloads/ppt-template-manager/uploads/exports
+[2025-04-28T16:29:43.409Z]   Existe: NON
+[2025-04-28T16:29:43.409Z]   Permissions: N/A
+[2025-04-28T16:29:43.409Z]   Accessible en écriture: NON
+[2025-04-28T16:29:43.409Z]   Contenu: 0 fichiers/dossiers
+[2025-04-28T16:29:43.409Z] Répertoire: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads
+[2025-04-28T16:29:43.409Z]   Existe: OUI
+[2025-04-28T16:29:43.410Z]   Permissions: 755
+[2025-04-28T16:29:43.410Z]   Accessible en écriture: OUI
+[2025-04-28T16:29:43.410Z]   Contenu: 3 fichiers/dossiers
+[2025-04-28T16:29:43.410Z] Répertoire: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp
+[2025-04-28T16:29:43.410Z]   Existe: OUI
+[2025-04-28T16:29:43.410Z]   Permissions: 755
+[2025-04-28T16:29:43.410Z]   Accessible en écriture: OUI
+[2025-04-28T16:29:43.410Z]   Contenu: 0 fichiers/dossiers
+[2025-04-28T16:29:43.410Z] Répertoire: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates
+[2025-04-28T16:29:43.410Z]   Existe: OUI
+[2025-04-28T16:29:43.410Z]   Permissions: 755
+[2025-04-28T16:29:43.410Z]   Accessible en écriture: OUI
+[2025-04-28T16:29:43.410Z]   Contenu: 3 fichiers/dossiers
+[2025-04-28T16:29:43.410Z] Répertoire: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports
+[2025-04-28T16:29:43.410Z]   Existe: OUI
+[2025-04-28T16:29:43.410Z]   Permissions: 755
+[2025-04-28T16:29:43.410Z]   Accessible en écriture: OUI
+[2025-04-28T16:29:43.410Z]   Contenu: 2 fichiers/dossiers
+[2025-04-28T16:29:43.410Z] Répertoire créé: /Users/michaeltenenbaum/Downloads/ppt-template-manager/uploads
+[2025-04-28T16:29:43.410Z] Répertoire créé: /Users/michaeltenenbaum/Downloads/ppt-template-manager/uploads/temp
+[2025-04-28T16:29:43.410Z] Répertoire créé: /Users/michaeltenenbaum/Downloads/ppt-template-manager/uploads/templates
+[2025-04-28T16:29:43.410Z] Répertoire créé: /Users/michaeltenenbaum/Downloads/ppt-template-manager/uploads/exports
+[2025-04-28T16:29:43.410Z] 
+=== VÉRIFICATION DES ROUTES API ===
+[2025-04-28T16:29:43.411Z] Route de téléchargement: TROUVÉE
+[2025-04-28T16:29:43.411Z] Middleware auth: CONFIGURÉ
+[2025-04-28T16:29:43.411Z] 
+=== VÉRIFICATION DE LA CONFIGURATION FRONTEND ===
+[2025-04-28T16:29:43.411Z] URL API configurée: OUI
+[2025-04-28T16:29:43.411Z] Content-Type pour FormData: CONFIGURÉ
+[2025-04-28T16:29:43.411Z] Intercepteur tokens: CONFIGURÉ
+[2025-04-28T16:29:43.411Z] 
+=== GÉNÉRATION D'UN FICHIER PPTX DE TEST ===
+[2025-04-28T16:29:43.411Z] Fichier de test créé: /Users/michaeltenenbaum/Downloads/ppt-template-manager/diagnostic-reports/test.txt
+[2025-04-28T16:29:43.411Z] Taille: 27 octets
+[2025-04-28T16:29:43.411Z] 
+=== DIAGNOSTIC TERMINÉ ===
+[2025-04-28T16:29:43.411Z] Recommandations:
+[2025-04-28T16:29:43.411Z] 1. Assurez-vous que tous les répertoires d'upload existent et sont accessibles en écriture
+[2025-04-28T16:29:43.411Z] 2. Vérifiez que le Content-Type est bien supprimé pour les requêtes FormData
+[2025-04-28T16:29:43.411Z] 3. Vérifiez que tous les middlewares sont correctement appliqués
+[2025-04-28T16:29:43.411Z] 4. Testez avec un fichier PPTX de petite taille

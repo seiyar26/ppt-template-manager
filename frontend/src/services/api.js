@@ -1,26 +1,90 @@
 import axios from 'axios';
 
-// Configuration de l'URL de base de l'API
+// Configuration de l'URL de base de l'API - FIXATION EXPLICITE DU PORT 12000
 // En production, on utilise l'URL du backend sur votre VPS
-// En développement, on utilise localhost
-export const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:2324/api';
-const IMAGE_BASE_URL = process.env.REACT_APP_IMAGE_BASE_URL || 'http://localhost:2324'; 
+// En développement, on utilise localhost avec le port 12000
+// ⚠️ IMPORTANT: Force l'utilisation du port 12000 explicitement pour éviter tout problème de cache
+export const API_URL = 'http://localhost:12000/api';
+const IMAGE_BASE_URL = 'http://localhost:12000';
 
-console.log('API URL configurée:', API_URL);
+// Vérification des variables d'environnement (pour debug seulement)
+if (process.env.REACT_APP_API_URL) {
+  console.log('Variable env REACT_APP_API_URL présente mais non utilisée:', process.env.REACT_APP_API_URL);
+}
+
+console.log('API URL configurée fixe:', API_URL);
 
 // Création d'une instance axios avec la configuration de base
+// Verrouillé explicitement sur l'URL http://localhost:12000/api pour éviter tout problème de cache
 const apiClient = axios.create({
   baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json'
   },
-  withCredentials: true // Permet l'envoi de cookies cross-origin
+  withCredentials: true, // Permet l'envoi de cookies cross-origin
+  // Empêche ce client de traiter les URL relatives comme absolues
+  allowAbsoluteUrls: false
 });
+
+// Forcer à nouveau l'URL de base à chaque requête
+apiClient.interceptors.request.use(
+  config => {
+    // Cette ligne force l'URL de base à chaque requête, ignorant tout cache
+    config.baseURL = 'http://localhost:12000/api';
+    return config;
+  },
+  error => {
+    return Promise.reject(error);
+  }
+);
 
 // Intercepteur pour ajouter le token d'authentification à toutes les requêtes
 apiClient.interceptors.request.use(
   config => {
+    // S'assurer que config.headers existe toujours
+    config.headers = config.headers || {};
+    
+    // Gestion spéciale pour les FormData - ne pas définir Content-Type
+    if (config.data instanceof FormData) {
+      console.log('FormData détecté - suppression du Content-Type pour permettre la définition correcte de la boundary');
+      
+      // Supprimer Content-Type pour permettre à axios de définir la boundary correctement
+      delete config.headers['Content-Type'];
+      
+      // S'assurer que headers.common existe avant d'essayer d'accéder à ses propriétés
+      if (config.headers.common) {
+        delete config.headers.common['Content-Type'];
+      }
+    }
+    
+    // Débug des uploads de fichiers
+    if (config.data instanceof FormData) {
+      console.log('Requête FormData détectée:', config.url);
+      console.log('Contenu FormData:');
+      let fileFound = false;
+      let fileSize = 0;
+      let fileName = '';
+      
+      for (let pair of config.data.entries()) {
+        if (pair[0] === 'file') {
+          fileFound = true;
+          fileName = pair[1] ? pair[1].name : 'undefined';
+          fileSize = pair[1] ? pair[1].size : 0;
+          console.log(pair[0] + ':', fileName, fileSize ? 'taille: ' + fileSize + ' octets' : '');
+        } else {
+          console.log(pair[0] + ':', pair[1]);
+        }
+      }
+      
+      // Vérification supplémentaire pour s'assurer que le fichier est bien présent
+      if (!fileFound || !fileSize) {
+        console.error('ATTENTION: Fichier manquant ou de taille nulle dans FormData !');
+      } else {
+        console.log(`Fichier "${fileName}" de ${fileSize} octets prêt à être envoyé`); 
+      }
+    }
+    
     const token = localStorage.getItem('token');
     if (token) {
       console.log('Token trouvé, ajout aux en-têtes:', token.substring(0, 15) + '...');
@@ -150,7 +214,12 @@ const templateService = {
   },
   
   createTemplate(templateData) {
-    return apiClient.post('/templates', templateData).then(response => {
+    // Pour les uploads de fichiers, on doit utiliser multipart/form-data et non application/json
+    return apiClient.post('/templates', templateData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }).then(response => {
       return response.data;
     }).catch(error => {
       console.error('Erreur lors de la création du modèle:', error);

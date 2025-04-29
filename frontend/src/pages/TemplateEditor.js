@@ -105,14 +105,33 @@ const TemplateEditor = () => {
     const fetchTemplate = async () => {
       try {
         console.log('Récupération du modèle:', id);
+        setLoading(true);
         
         const data = await templateService.getTemplateById(id);
         console.log('Réponse du modèle:', data);
+        
+        if (!data || !data.template) {
+          console.error('Données de template invalides:', data);
+          setError('Données du modèle invalides ou incomplètes');
+          return;
+        }
+        
+        // Debug des diapositives reçues
+        console.log('Diapositives reçues:', data.template.Slides);
         
         // Sort slides by index
         const sortedSlides = [...(data.template.Slides || [])].sort(
           (a, b) => a.slide_index - b.slide_index
         );
+        
+        console.log('Diapositives triées:', sortedSlides);
+        
+        if (sortedSlides.length === 0) {
+          console.warn('Aucune diapositive trouvée dans le modèle');
+        } else {
+          console.log('Première diapositive:', sortedSlides[0]);
+          console.log('Image path:', sortedSlides[0].image_path);
+        }
         
         // Update template with sorted slides
         setTemplate({
@@ -130,11 +149,23 @@ const TemplateEditor = () => {
         setError('Impossible de charger le modèle');
       } finally {
         setLoading(false);
+        console.log('Chargement terminé');
       }
     };
 
     fetchTemplate();
   }, [id]);
+  
+  // Debug des variables d'état après chargement
+  useEffect(() => {
+    if (!loading) {
+      console.log('État après chargement:');
+      console.log('- template:', template);
+      console.log('- currentSlideIndex:', currentSlideIndex);
+      console.log('- Slides disponibles:', template?.Slides?.length || 0);
+      console.log('- currentSlide:', template?.Slides?.[currentSlideIndex]);
+    }
+  }, [loading, template, currentSlideIndex]);
 
   // Handle keyboard events for precise positioning
   useEffect(() => {
@@ -471,7 +502,20 @@ const TemplateEditor = () => {
     );
   }
 
-  const currentSlide = template.Slides[currentSlideIndex];
+  // Vérification complète des données pour le rendu avec log détaillé
+  let currentSlide = null;
+  if (template && template.Slides && template.Slides.length > 0) {
+    currentSlide = template.Slides[currentSlideIndex];
+    if (!currentSlide) {
+      console.warn(`Diapositive non trouvée pour l'index ${currentSlideIndex}, utilisation de la première diapositive à la place`);
+      currentSlide = template.Slides[0]; // Fallback sur la première diapositive si l'index actuel n'existe pas
+      setCurrentSlideIndex(0); // Reset de l'index
+    }
+    console.log('currentSlide sélectionné pour le rendu:', currentSlide);
+  } else {
+    console.warn('Aucune diapositive disponible');
+  }
+  
   const currentSlideFields = fields.filter(field => field.slide_index === currentSlideIndex);
 
   return (
@@ -542,13 +586,38 @@ const TemplateEditor = () => {
                 </div>
               )}
               
-              <img
-                id="slide-image"
-                src={getImageUrl(currentSlide.image_path)}
-                alt={`${t.slide} ${currentSlideIndex + 1}`}
-                className="w-full h-auto relative z-10"
-                ref={slideRef}
-              />
+              {/* Affichage de l'image avec vérification complète */}
+              {currentSlide && currentSlide.image_path ? (
+                <img
+                  id="slide-image"
+                  src={getImageUrl(currentSlide.image_path)}
+                  alt={`${t.slide} ${currentSlideIndex + 1}`}
+                  className="w-full h-auto relative z-10"
+                  ref={slideRef}
+                  onLoad={() => console.log('Image chargée avec succès:', getImageUrl(currentSlide.image_path))}
+                  onError={(e) => {
+                    console.error('Erreur de chargement de l\'image:', e);
+                    console.error('URL de l\'image:', getImageUrl(currentSlide.image_path));
+                  }}
+                />
+              ) : (
+                <div className="w-full h-64 flex flex-col items-center justify-center bg-gray-100 rounded border-2 border-dashed border-gray-300 text-gray-400 p-4">
+                  <div className="text-xl mb-2">{!currentSlide ? 'Aucune diapositive disponible' : 'Image non disponible'}</div>
+                  <div className="text-sm text-red-500">
+                    {!template ? 'Modèle non chargé' :
+                     !template.Slides || template.Slides.length === 0 ? 'Aucune diapositive dans le modèle' :
+                     !currentSlide ? `Problème avec la diapositive ${currentSlideIndex + 1}` :
+                     !currentSlide.image_path ? 'Chemin d\'image non défini pour cette diapositive' :
+                     'Problème de chargement de l\'image'}
+                  </div>
+                  <button
+                    onClick={() => window.location.reload()}
+                    className="mt-3 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm"
+                  >
+                    Actualiser la page
+                  </button>
+                </div>
+              )}
               
               {/* Overlays des champs */}
               {currentSlideFields.map(field => (

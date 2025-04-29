@@ -5,6 +5,17 @@ const { convertPptxToImages } = require('../utils/pptxConverter');
 const { generateDocument } = require('../utils/pptxGenerator');
 const { Op } = require('sequelize');
 const storageService = require('../utils/storageService');
+const diagnosticLogger = require('../utils/diagnosticLogger');
+const { uploadDiagnostic, runSystemDiagnostic } = require('../utils/diagnosticService');
+
+// Exécuter le diagnostic du système au démarrage
+runSystemDiagnostic().then(result => {
+  console.log('Diagnostic système terminé:', 
+    Object.keys(result.directories)
+      .map(dir => `${dir}: ${result.directories[dir].exists ? 'existe' : 'n\'existe pas'}, ${result.directories[dir].writable ? 'accessible en écriture' : 'NON accessible en écriture'}`)
+      .join('\n')
+  );
+});
 
 /**
  * Get all templates for the current user
@@ -105,12 +116,62 @@ const getTemplateById = async (req, res) => {
  */
 const createTemplate = async (req, res) => {
   try {
+    // DEBUG INFO - UPLOAD
+    console.log('\n====== DEBUG UPLOAD FICHIER PPTX ======');
+    console.log('Headers:', req.headers);
+    console.log('Body:', req.body);
+    console.log('Fichier:', req.file);
+    console.log('Session User:', req.user);
+    
+    // Vérification des répertoires
+    const uploadTemp = path.join(__dirname, '../uploads/temp');
+    const uploadTemplates = path.join(__dirname, '../uploads/templates');
+    console.log('Répertoire temp existe:', fs.existsSync(uploadTemp));
+    console.log('Répertoire templates existe:', fs.existsSync(uploadTemplates));
+    if (req.file) {
+      console.log('Chemin du fichier:', req.file.path);
+      console.log('Fichier existe:', fs.existsSync(req.file.path));
+      console.log('Permissions:', fs.statSync(req.file.path).mode.toString(8).slice(-3));
+    }
+    console.log('==============================\n');
+    console.log('============== DÉBUT CRÉATION TEMPLATE ==============');
+    console.log('Requête reçue pour création de template:', {
+      body: req.body,
+      file: req.file ? {
+        originalname: req.file.originalname,
+        mimetype: req.file.mimetype,
+        size: req.file.size,
+        path: req.file.path
+      } : 'Aucun fichier',
+      headers: req.headers
+    });
+    
+    // Journalisation du diagnostic détaillé
+    diagnosticLogger.logUploadStart(req);
+    
     const { name, description } = req.body;
     const userId = req.user.id;
     const file = req.file;
     
+    console.log('Vérification du fichier:', file ? 'Fichier présent' : 'Fichier manquant');
+    
     if (!file) {
-      return res.status(400).json({ message: 'Aucun fichier PPTX fourni' });
+      const erreur = 'Aucun fichier PPTX fourni';
+      console.error(erreur);
+      diagnosticLogger.logUploadError(new Error(erreur), req);
+      return res.status(400).json({ message: erreur });
+    }
+    
+    console.log('Fichier reçu:', file.originalname, file.mimetype, file.size, 'octets');
+    
+    // Vérification que le fichier existe physiquement
+    const fileExists = fs.existsSync(file.path);
+    console.log('Le fichier existe sur le disque:', fileExists ? 'Oui' : 'Non');
+    if (!fileExists) {
+      const erreur = 'Le fichier a été reçu mais n\'existe pas physiquement: ' + file.path;
+      console.error(erreur);
+      diagnosticLogger.logUploadError(new Error(erreur), req);
+      return res.status(500).json({ message: 'Erreur lors du traitement du fichier' });
     }
     
     // Créer le template dans la base de données
@@ -138,41 +199,70 @@ const createTemplate = async (req, res) => {
       });
     }
     
-    // Convertir le PPTX en images
-    console.log(`Conversion du PPTX en images...`);
+    // Convertir le PPTX en images - passage de l'ID du template
+    console.log(`Conversion du PPTX en images pour le template ${template.id}...`);
     try {
-      const images = await convertPptxToImages(file.path);
+      // Utilisation de l'ID du template pour organiser les fichiers
+      const images = await convertPptxToImages(file.path, template.id.toString());
       console.log(`${images.length} diapositives converties en images`);
+      diagnosticLogger.logConversionSuccess(template.id, images.length);
       
       // Créer les entrées de diapositives
       for (let i = 0; i < images.length; i++) {
         const image = images[i];
         
+        // Vérification défensive de la structure de l'image
+        if (!image || typeof image !== 'object') {
+          console.error(`Image invalide à l'index ${i}:`, image);
+          continue;
+        }
+        
         // Télécharger l'image de la diapositive vers Supabase
         const imageDestPath = `templates/${userId}/${template.id}/slides/slide_${i}.png`;
-        const slideUploadResult = await storageService.uploadFile(image.path, imageDestPath);
         
-        let imagePath = image.path;
+        // Vérifier que le chemin de l'image existe
+        const imagePath = image.path || '';
+        if (!imagePath || !fs.existsSync(imagePath)) {
+          console.error(`Chemin d'image invalide à l'index ${i}:`, imagePath);
+          continue;
+        }
+        
+        const slideUploadResult = await storageService.uploadFile(imagePath, imageDestPath);
+        
+        // Utiliser les chemins définis par la fonction de conversion
+        let finalImagePath = image.image_path; // Utiliser la propriété image_path fournie
         let imageUrl = '';
         
         if (slideUploadResult.success) {
-          imagePath = imageDestPath;
+          // Conserver image_path local et ajouter l'URL Supabase
           imageUrl = slideUploadResult.url;
+          console.log(`Image ${i} téléchargée avec succès:`, imageUrl);
         } else {
           console.error("Erreur lors du téléchargement de l'image vers Supabase:", slideUploadResult.error);
         }
         
+        // Obtenir les dimensions à partir des métadonnées de l'image
+        const width = image.width || 800; // Valeur par défaut si non disponible
+        const height = image.height || 600; // Valeur par défaut si non disponible
+        
         // Créer la diapositive dans la base de données
-        await Slide.create({
-          template_id: template.id,
-          slide_index: i,
-          image_path: imagePath,
-          image_url: imageUrl,
-          width: image.width,
-          height: image.height,
-          thumbnail_path: image.thumbnailPath
-        });
+        try {
+          await Slide.create({
+            template_id: template.id,
+            slide_index: i,
+            image_path: finalImagePath,
+            image_url: imageUrl,
+            width: width,
+            height: height,
+            thumbnail_path: image.thumbnailPath || finalImagePath
+          });
+          console.log(`Diapositive ${i} enregistrée en base de données`);
+        } catch (dbError) {
+          console.error(`Erreur lors de l'enregistrement de la diapositive ${i}:`, dbError);
+        }
       }
+      
+      console.log(`Traitement des images terminé pour le template ${template.id}`);
     } catch (conversionError) {
       console.error('Erreur lors de la conversion du PPTX en images:', conversionError);
       // On continue même en cas d'erreur de conversion pour ne pas bloquer la création du template

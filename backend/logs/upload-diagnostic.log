@@ -1,0 +1,2301 @@
+{
+  "timestamp": "2025-04-28T16:56:12.373Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-28T16:56:12.374Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-28T16:56:12.374Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-28T16:56:12.375Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-28T16:56:12.375Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-28T16:56:12.372Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 104890368,
+      "heapTotal": 45039616,
+      "heapUsed": 35248608,
+      "external": 4063299,
+      "arrayBuffers": 795441
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-28T17:14:29.944Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-28T17:14:29.944Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-28T17:14:29.945Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-28T17:14:29.945Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-28T17:14:29.945Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-28T17:14:29.943Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 106905600,
+      "heapTotal": 64176128,
+      "heapUsed": 33441024,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-28T17:16:32.253Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-28T17:16:32.253Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-28T17:16:32.254Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-28T17:16:32.254Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-28T17:16:32.254Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-28T17:16:32.252Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 106496000,
+      "heapTotal": 64438272,
+      "heapUsed": 32952488,
+      "external": 4063299,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-28T17:18:01.419Z",
+  "level": "INFO",
+  "message": "Début de l'upload",
+  "data": {
+    "method": "POST",
+    "url": "/api/templates",
+    "headers": {
+      "host": "localhost:2324",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:137.0) Gecko/20100101 Firefox/137.0",
+      "accept": "application/json",
+      "accept-language": "fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "referer": "http://localhost:4323/",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0NTg2MDY2OSwiZXhwIjoxNzQ2NDY1NDY5fQ.ddkF2Wxb6F87-tJgjmbfN1Ph81Gx-1xAz4fnWIVxrLk",
+      "content-type": "multipart/form-data; boundary=----geckoformboundary79ffac962ee038f3ea0f4dcdaedc5e49",
+      "content-length": "6066737",
+      "origin": "http://localhost:4323",
+      "connection": "keep-alive",
+      "cookie": "wp-settings-time-1=1744041436; admin-bypass-token=forced-admin-access-1743983699486; wp-settings-1=posts_list_mode%3Dlist%26mfold%3Do; admin-token=forced-admin-access-1743983699486; selectedProvider=HuggingFace; selectedModel=codellama/CodeLlama-34b-Instruct-hf; PrestaShop-4f778b461d5fb3cc259c799da4661788=def502001adce2864d07f094bd293ee8362e0006be65e4d4c1c3aa7484b3cb7dd473fa50a68facc9365ed76e0e6ff74062d3f0fee9f4d441324045cef009eaddbf1b460ba84e23790d52787c12fa46d41ce98bfb104a46fed3b0c3fcb652ee315c97bb844495afef150b83a36b730afbf18d856228c0a85c3f45eb666feff4cb019d77d836ca90f2d3e4647855000a003fd3e2b759e177c8e7b8ef027481c77085de100c3a1e34fc4a840869a2ed45f3fd86f0809f50427d31deade80b7a4b4316366fb77c2f4386ed9fba5d7fa7aa25c4306c4549b29df2b7cd70876647a045f77aed73f1e90ecf4958517dfc663080c71a11d8990daaf1089263a0d6be80814d9a7fd70d2922930cb2ead679ffcaba4454f3c5e7b2bde215dbf37d7618779fd3ec6ab1a341fbb03d9c5c38790f18290f3bfa25dc7e7b08157d89027dedaab237e4b8233ccbc054a4163bdc8dd60b9e8f12c3286fff9aac3f974cc5339139824301b682604f970999258ce6a06825b7a9a1274f1864032a100e771d28c7754d151ccdb3196d2333cc5ecca9af489a7591c2a4715ce7f23dcc77d536c3e0516838f69eb908383dc49790542a64c077747fc6e3bb366a05bdb38f373316418e24dda7b6e54295cdb0a5d2244af01aa8e86b8704e3684ea0d4e6fa3db3; PrestaShop-8c5dbc3e14de534910a26de1bd7d3bcd=def50200722cd1e693e958f25779c8da9fbc181dc39ddc5afb3c713921307520bc91b10358d6a501d6e233faf5543b054a95fa63d8ed4cef66b07bd69a01307e50b9712f87aecb1db58b5ada129e33fc49b5c0d19dc84f0b3c0034345394c90ec1181b9f8bf4d03e0f94d1fa8874b4ecd22ab5b1dcffb3651ad26ce4b89edbad9ca96b11422b0a5557b18cd6ec79149025dd79dfc0b9f9f204622fa075db5b55066d941dab4c77fbb17185a6075b1231e3211225bf2a425e111c4fc2b3c21ea7e184ba26edb6cbf1f8446a03acf271794f43049008186f5e1890d18daf205553dea13e82a410375e1e6894f523fbf19f6b3c2c; next-auth.session-token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..6wwkah8briHOv_Rw.APRyhxRrcfvU8ViN2Lkxzg8xJKbTEbDO0zre-ICKynNlDxXQ4V0caZPGUFhG9oR0_zQcqRMgVnqX75GwKm6lsCEbSGXz0A-UXFbV5fAr6mUQWv1Qyr_0-Ku6MNvOD1ganqCfmsFkYK8wdVo2cRTNmvGSqVq6EEPnmOntejrJZS3hw0hmu91oNoSbkE6Wa67LEUdO6m8pUhhz75aTcXNJNlsciow9u9Y.1Rltib-r5gs32R7JyXVvIQ; ajs_anonymous_id=99941ed5-4bd8-43d7-9b55-eaabb9726aa1; _ga_6ETJFB3PT3=GS1.1.1745823588.6.0.1745823588.0.0.0; _ga=GA1.1.711403560.1745715573; sb-nubsgapkabugjqkvmyor-auth-token=base64-eyJhY2Nlc3NfdG9rZW4iOiJleUpoYkdjaU9pSklVekkxTmlJc0ltdHBaQ0k2SWtFclRqRm9hMVI0Y0RCbGVHcHpWV2dpTENKMGVYQWlPaUpLVjFRaWZRLmV5SnBjM01pT2lKb2RIUndjem92TDI1MVluTm5ZWEJyWVdKMVoycHhhM1p0ZVc5eUxuTjFjR0ZpWVhObExtTnZMMkYxZEdndmRqRWlMQ0p6ZFdJaU9pSTBaR0ZpWW1FeE15MWlPVGhtTFRRek5XRXRPRGhsTUMxak9HWXlOamd3TldFek9HTWlMQ0poZFdRaU9pSmhkWFJvWlc1MGFXTmhkR1ZrSWl3aVpYaHdJam94TnpRMU56VXdPVFU0TENKcFlYUWlPakUzTkRVM05EY3pOVGdzSW1WdFlXbHNJam9pYldsamFHRmxiQzUwWlc1bGJtSmhkVzFBZVdGb2IyOHVabklpTENKd2FHOXVaU0k2SWlJc0ltRndjRjl0WlhSaFpHRjBZU0k2ZXlKd2NtOTJhV1JsY2lJNkltVnRZV2xzSWl3aWNISnZkbWxrWlhKeklqcGJJbVZ0WVdsc0lsMTlMQ0oxYzJWeVgyMWxkR0ZrWVhSaElqcDdJbVZ0WVdsc0lqb2liV2xqYUdGbGJDNTBaVzVsYm1KaGRXMUFlV0ZvYjI4dVpuSWlMQ0psYldGcGJGOTJaWEpwWm1sbFpDSTZkSEoxWlN3aWNHaHZibVZmZG1WeWFXWnBaV1FpT21aaGJITmxMQ0p6ZFdJaU9pSTBaR0ZpWW1FeE15MWlPVGhtTFRRek5XRXRPRGhsTUMxak9HWXlOamd3TldFek9HTWlmU3dpY205c1pTSTZJbUYxZEdobGJuUnBZMkYwWldRaUxDSmhZV3dpT2lKaFlXd3hJaXdpWVcxeUlqcGJleUp0WlhSb2IyUWlPaUpsYldGcGJDOXphV2R1ZFhBaUxDSjBhVzFsYzNSaGJYQWlPakUzTkRVM05EY3pOVGg5WFN3aWMyVnpjMmx2Ymw5cFpDSTZJalE0TXpneFpqSmpMV0l4TXprdE5EVTRNaTFpWm1SaExUazRZMkl3WVdOa01qazVZeUlzSW1selgyRnViMjU1Ylc5MWN5STZabUZzYzJWOS5HcXVqdkdGS2FuSjNnWDN2bXFBV3k5ZnFDVG0wMXBsbGVyN3U4aHVkX3lnIiwidG9rZW5fdHlwZSI6ImJlYXJlciIsImV4cGlyZXNfaW4iOjM2MDAsImV4cGlyZXNfYXQiOjE3NDU3NTA5NTgsInJlZnJlc2hfdG9rZW4iOiJtNHFsdHJjN2h6dDIiLCJ1c2VyIjp7ImlkIjoiNGRhYmJhMTMtYjk4Zi00MzVhLTg4ZTAtYzhmMjY4MDVhMzhjIiwiYXVkIjoiYXV0aGVudGljYXRlZCIsInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiZW1haWwiOiJtaWNoYWVsLnRlbmVuYmF1bUB5YWhvby5mciIsImVtYWlsX2NvbmZpcm1lZF9hdCI6IjIwMjUtMDQtMjdUMDk6NDk6MTguODQ0Mjk0WiIsInBob25lIjoiIiwiY29uZmlybWF0aW9uX3NlbnRfYXQiOiIyMDI1LTA0LTI3VDA5OjQ5OjAxLjE0NzY2N1oiLCJjb25maXJtZWRfYXQiOiIyMDI1LTA0LTI3VDA5OjQ5OjE4Ljg0NDI5NFoiLCJsYXN0X3NpZ25faW5fYXQiOiIyMDI1LTA0LTI3VDA5OjQ5OjE4Ljk0NjUxNTcyMloiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6Im1pY2hhZWwudGVuZW5iYXVtQHlhaG9vLmZyIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBob25lX3ZlcmlmaWVkIjpmYWxzZSwic3ViIjoiNGRhYmJhMTMtYjk4Zi00MzVhLTg4ZTAtYzhmMjY4MDVhMzhjIn0sImlkZW50aXRpZXMiOlt7ImlkZW50aXR5X2lkIjoiNDY5MzVkZWYtNWE4Yi00MGE1LTliNzYtZWYwYjEwNjFkOTA0IiwiaWQiOiI0ZGFiYmExMy1iOThmLTQzNWEtODhlMC1jOGYyNjgwNWEzOGMiLCJ1c2VyX2lkIjoiNGRhYmJhMTMtYjk4Zi00MzVhLTg4ZTAtYzhmMjY4MDVhMzhjIiwiaWRlbnRpdHlfZGF0YSI6eyJlbWFpbCI6Im1pY2hhZWwudGVuZW5iYXVtQHlhaG9vLmZyIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBob25lX3ZlcmlmaWVkIjpmYWxzZSwic3ViIjoiNGRhYmJhMTMtYjk4Zi00MzVhLTg4ZTAtYzhmMjY4MDVhMzhjIn0sInByb3ZpZGVyIjoiZW1haWwiLCJsYXN0X3NpZ25faW5fYXQiOiIyMDI1LTA0LTI3VDA5OjQ5OjAxLjEzNTM1NloiLCJjcmVhdGVkX2F0IjoiMjAyNS0wNC0yN1QwOTo0OTowMS4xMzU0NDNaIiwidXBkYXRlZF9hdCI6IjIwMjUtMDQtMjdUMDk6NDk6MDEuMTM1NDQzWiIsImVtYWlsIjoibWljaGFlbC50ZW5lbmJhdW1AeWFob28uZnIifV0sImNyZWF0ZWRfYXQiOiIyMDI1LTA0LTI3VDA5OjQ5OjAxLjA5ODI1N1oiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wNC0yN1QwOTo0OToxOC45NTc5NloiLCJpc19hbm9ueW1vdXMiOmZhbHNlfX0; sb-ewkyfkkowslrovsdrwja-auth-token-code-verifier=base64-ImJlZGQxYWM1NTBlZmJhZmI0NDY1MThlNWYwNGRlMmEyYTQxODkzMzQwNjVmNjA2ODFkOGZiYTM1NzkwMGFjZGE2Zjk3MTFmY2MzMGU0MzE3ODY3MTU1YzEzZTI0OWZjNzdhNGE2NjE2NDY5ZjZiNzAi; sb-ewkyfkkowslrovsdrwja-auth-token=base64-eyJhY2Nlc3NfdG9rZW4iOiJleUpoYkdjaU9pSklVekkxTmlJc0ltdHBaQ0k2SWpGM2JVWjJVWGs0TTAxNVZHdFhjaXNpTENKMGVYQWlPaUpLVjFRaWZRLmV5SnBjM01pT2lKb2RIUndjem92TDJWM2EzbG1hMnR2ZDNOc2NtOTJjMlJ5ZDJwaExuTjFjR0ZpWVhObExtTnZMMkYxZEdndmRqRWlMQ0p6ZFdJaU9pSXdNelJtWkRJNFppMDRNemhpTFRRM09ERXRZbU14TkMwMFpETmxOREUxTUdWa01HRWlMQ0poZFdRaU9pSmhkWFJvWlc1MGFXTmhkR1ZrSWl3aVpYaHdJam94TnpRMU56azRNekUzTENKcFlYUWlPakUzTkRVM09UUTNNVGNzSW1WdFlXbHNJam9pYldsamFHRmxiQzUwWlc1bGJtSmhkVzFBZVdGb2IyOHVabklpTENKd2FHOXVaU0k2SWlJc0ltRndjRjl0WlhSaFpHRjBZU0k2ZXlKd2NtOTJhV1JsY2lJNkltVnRZV2xzSWl3aWNISnZkbWxrWlhKeklqcGJJbVZ0WVdsc0lsMTlMQ0oxYzJWeVgyMWxkR0ZrWVhSaElqcDdJbVZ0WVdsc0lqb2liV2xqYUdGbGJDNTBaVzVsYm1KaGRXMUFlV0ZvYjI4dVpuSWlMQ0psYldGcGJGOTJaWEpwWm1sbFpDSTZkSEoxWlN3aWNHaHZibVZmZG1WeWFXWnBaV1FpT21aaGJITmxMQ0p6ZFdJaU9pSXdNelJtWkRJNFppMDRNemhpTFRRM09ERXRZbU14TkMwMFpETmxOREUxTUdWa01HRWlmU3dpY205c1pTSTZJbUYxZEdobGJuUnBZMkYwWldRaUxDSmhZV3dpT2lKaFlXd3hJaXdpWVcxeUlqcGJleUp0WlhSb2IyUWlPaUp3WVhOemQyOXlaQ0lzSW5ScGJXVnpkR0Z0Y0NJNk1UYzBOVGM0T0RZNE5IMWRMQ0p6WlhOemFXOXVYMmxrSWpvaU5UWXpZakZtWWpZdFlqUTFOeTAwTnpFNUxUaG1aak10T1dZMU5UTmpZalExWkdKaklpd2lhWE5mWVc1dmJubHRiM1Z6SWpwbVlXeHpaWDAuaGF5UWlaNjR5ZXVtMmFodm5GYWZ3NDdiVUY1WHhKb0ZtRkNmRUVzNG1WTSIsInRva2VuX3R5cGUiOiJiZWFyZXIiLCJleHBpcmVzX2luIjozNjAwLCJleHBpcmVzX2F0IjoxNzQ1Nzk4MzE3LCJyZWZyZXNoX3Rva2VuIjoiYmZmczVkZGNheXU3IiwidXNlciI6eyJpZCI6IjAzNGZkMjhmLTgzOGItNDc4MS1iYzE0LTRkM2U0MTUwZWQwYSIsImF1ZCI6ImF1dGhlbnRpY2F0ZWQiLCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImVtYWlsIjoibWljaGFlbC50ZW5lbmJhdW1AeWFob28uZnIiLCJlbWFpbF9jb25maXJtZWRfYXQiOiIyMDI1LTA0LTI3VDIxOjE4OjAzLjk4NzgwNVoiLCJwaG9uZSI6IiIsImNvbmZpcm1lZF9hdCI6IjIwMjUtMDQtMjdUMjE6MTg6MDMuOTg3ODA1WiIsImxhc3Rfc2lnbl9pbl9hdCI6IjIwMjUtMDQtMjdUMjE6MjA6MzkuMjE5MzZaIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWwiOiJtaWNoYWVsLnRlbmVuYmF1bUB5YWhvby5mciIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6IjAzNGZkMjhmLTgzOGItNDc4MS1iYzE0LTRkM2U0MTUwZWQwYSJ9LCJpZGVudGl0aWVzIjpbeyJpZGVudGl0eV9pZCI6ImVmYzIzNDllLWE5NjgtNDEwNi1hMGZkLWY4YzAwNjUxYTQ4OCIsImlkIjoiMDM0ZmQyOGYtODM4Yi00NzgxLWJjMTQtNGQzZTQxNTBlZDBhIiwidXNlcl9pZCI6IjAzNGZkMjhmLTgzOGItNDc4MS1iYzE0LTRkM2U0MTUwZWQwYSIsImlkZW50aXR5X2RhdGEiOnsiZW1haWwiOiJtaWNoYWVsLnRlbmVuYmF1bUB5YWhvby5mciIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiIwMzRmZDI4Zi04MzhiLTQ3ODEtYmMxNC00ZDNlNDE1MGVkMGEifSwicHJvdmlkZXIiOiJlbWFpbCIsImxhc3Rfc2lnbl9pbl9hdCI6IjIwMjUtMDQtMjdUMjE6MTg6MDMuOTg0MTJaIiwiY3JlYXRlZF9hdCI6IjIwMjUtMDQtMjdUMjE6MTg6MDMuOTg0MTcyWiIsInVwZGF0ZWRfYXQiOiIyMDI1LTA0LTI3VDIxOjE4OjAzLjk4NDE3MloiLCJlbWFpbCI6Im1pY2hhZWwudGVuZW5iYXVtQHlhaG9vLmZyIn1dLCJjcmVhdGVkX2F0IjoiMjAyNS0wNC0yN1QyMToxODowMy45NzU2MDhaIiwidXBkYXRlZF9hdCI6IjIwMjUtMDQtMjdUMjI6NTg6MzcuNjc5NDA4WiIsImlzX2Fub255bW91cyI6ZmFsc2V9fQ; sidebar_state=false; sb-kxinkhvwkgjuguwoarwb-auth-token=base64-eyJhY2Nlc3NfdG9rZW4iOiJleUpoYkdjaU9pSklVekkxTmlJc0ltdHBaQ0k2SWxreFRHUlBiak5DVDBWTlFVSmxNVU1pTENKMGVYQWlPaUpLVjFRaWZRLmV5SnBjM01pT2lKb2RIUndjem92TDJ0NGFXNXJhSFozYTJkcWRXZDFkMjloY25kaUxuTjFjR0ZpWVhObExtTnZMMkYxZEdndmRqRWlMQ0p6ZFdJaU9pSTNZVEF5TURVMlppMDBZek0yTFRRd1pEWXRZakEyTlMwNE1XVmtOamMxWVdVMFlXRWlMQ0poZFdRaU9pSmhkWFJvWlc1MGFXTmhkR1ZrSWl3aVpYaHdJam94TnpRMU9ERXlNall5TENKcFlYUWlPakUzTkRVNE1EZzJOaklzSW1WdFlXbHNJam9pYldsamFHRmxiQzUwWlc1bGJtSmhkVzFBZVdGb2IyOHVabklpTENKd2FHOXVaU0k2SWlJc0ltRndjRjl0WlhSaFpHRjBZU0k2ZXlKd2NtOTJhV1JsY2lJNkltVnRZV2xzSWl3aWNISnZkbWxrWlhKeklqcGJJbVZ0WVdsc0lsMTlMQ0oxYzJWeVgyMWxkR0ZrWVhSaElqcDdJbVZ0WVdsc0lqb2liV2xqYUdGbGJDNTBaVzVsYm1KaGRXMUFlV0ZvYjI4dVpuSWlMQ0psYldGcGJGOTJaWEpwWm1sbFpDSTZkSEoxWlN3aWNHaHZibVZmZG1WeWFXWnBaV1FpT21aaGJITmxMQ0p6ZFdJaU9pSTNZVEF5TURVMlppMDBZek0yTFRRd1pEWXRZakEyTlMwNE1XVmtOamMxWVdVMFlXRWlmU3dpY205c1pTSTZJbUYxZEdobGJuUnBZMkYwWldRaUxDSmhZV3dpT2lKaFlXd3hJaXdpWVcxeUlqcGJleUp0WlhSb2IyUWlPaUpsYldGcGJDOXphV2R1ZFhBaUxDSjBhVzFsYzNSaGJYQWlPakUzTkRVNE1ERTNNRFI5WFN3aWMyVnpjMmx2Ymw5cFpDSTZJalJqTlRrNVlqRmhMVGswWmpjdE5EVmpNQzFpTURWaUxUbGtaamt6WkdRMU9EQTVZaUlzSW1selgyRnViMjU1Ylc5MWN5STZabUZzYzJWOS5sakZxLWlvTFI4UV96Um10RzI1V3BjamcyeGJMbjBWOFJ0VVltU1dZT0FRIiwidG9rZW5fdHlwZSI6ImJlYXJlciIsImV4cGlyZXNfaW4iOjM2MDAsImV4cGlyZXNfYXQiOjE3NDU4MTIyNjIsInJlZnJlc2hfdG9rZW4iOiJrcmxjcjRjZGJiZDMiLCJ1c2VyIjp7ImlkIjoiN2EwMjA1NmYtNGMzNi00MGQ2LWIwNjUtODFlZDY3NWFlNGFhIiwiYXVkIjoiYXV0aGVudGljYXRlZCIsInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiZW1haWwiOiJtaWNoYWVsLnRlbmVuYmF1bUB5YWhvby5mciIsImVtYWlsX2NvbmZpcm1lZF9hdCI6IjIwMjUtMDQtMjhUMDA6NTU6MDMuNjY3MjA2WiIsInBob25lIjoiIiwiY29uZmlybWF0aW9uX3NlbnRfYXQiOiIyMDI1LTA0LTI4VDAwOjU0OjQ0Ljk5NTkzOVoiLCJjb25maXJtZWRfYXQiOiIyMDI1LTA0LTI4VDAwOjU1OjAzLjY2NzIwNloiLCJsYXN0X3NpZ25faW5fYXQiOiIyMDI1LTA0LTI4VDAwOjU1OjA0LjI4NTQzN1oiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbCI6Im1pY2hhZWwudGVuZW5iYXVtQHlhaG9vLmZyIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBob25lX3ZlcmlmaWVkIjpmYWxzZSwic3ViIjoiN2EwMjA1NmYtNGMzNi00MGQ2LWIwNjUtODFlZDY3NWFlNGFhIn0sImlkZW50aXRpZXMiOlt7ImlkZW50aXR5X2lkIjoiZTFhZGM4N2EtZGFlOC00MDZmLWFkMzQtNWZmZmYyNjc1OGRhIiwiaWQiOiI3YTAyMDU2Zi00YzM2LTQwZDYtYjA2NS04MWVkNjc1YWU0YWEiLCJ1c2VyX2lkIjoiN2EwMjA1NmYtNGMzNi00MGQ2LWIwNjUtODFlZDY3NWFlNGFhIiwiaWRlbnRpdHlfZGF0YSI6eyJlbWFpbCI6Im1pY2hhZWwudGVuZW5iYXVtQHlhaG9vLmZyIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBob25lX3ZlcmlmaWVkIjpmYWxzZSwic3ViIjoiN2EwMjA1NmYtNGMzNi00MGQ2LWIwNjUtODFlZDY3NWFlNGFhIn0sInByb3ZpZGVyIjoiZW1haWwiLCJsYXN0X3NpZ25faW5fYXQiOiIyMDI1LTA0LTI4VDAwOjU0OjQ0Ljk5Mjk3OFoiLCJjcmVhdGVkX2F0IjoiMjAyNS0wNC0yOFQwMDo1NDo0NC45OTMwMjdaIiwidXBkYXRlZF9hdCI6IjIwMjUtMDQtMjhUMDA6NTQ6NDQuOTkzMDI3WiIsImVtYWlsIjoibWljaGFlbC50ZW5lbmJhdW1AeWFob28uZnIifV0sImNyZWF0ZWRfYXQiOiIyMDI1LTA0LTI4VDAwOjU0OjQ0Ljk5MDEzMloiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wNC0yOFQwMjo1MTowMi4yNjYwMTJaIiwiaXNfYW5vbnltb3VzIjpmYWxzZX19; dev_mode=enabled; next-auth.csrf-token=5a9de119622ac828c3ff03f2081716505ebf64c44246768bd63da0d2bfa6856c%7Cd77ec2af59ad33f11bad9f03947a668af651fad510ab80624a28bf80bd57e16e; next-auth.callback-url=http%3A%2F%2Flocalhost%3A3000",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-site",
+      "priority": "u=0"
+    },
+    "body": {
+      "name": "20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire",
+      "description": ""
+    },
+    "file": {
+      "originalname": "20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire.pptx",
+      "mimetype": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "size": 6066126,
+      "path": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp/1745860681411-345737688.pptx"
+    },
+    "user": {
+      "id": 1,
+      "email": "admin@example.com"
+    }
+  }
+},
+{
+  "timestamp": "2025-04-28T17:19:00.563Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-28T17:19:00.564Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-28T17:19:00.564Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-28T17:19:00.565Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-28T17:19:00.565Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-28T17:19:00.559Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 107479040,
+      "heapTotal": 64438272,
+      "heapUsed": 33150744,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-28T17:20:00.828Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-28T17:20:00.829Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-28T17:20:00.829Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-28T17:20:00.830Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-28T17:20:00.830Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-28T17:20:00.827Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 108986368,
+      "heapTotal": 64962560,
+      "heapUsed": 32848952,
+      "external": 4063299,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-28T17:21:14.260Z",
+  "level": "INFO",
+  "message": "Début de l'upload",
+  "data": {
+    "method": "POST",
+    "url": "/api/templates",
+    "headers": {
+      "host": "localhost:2324",
+      "connection": "keep-alive",
+      "content-length": "6066677",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0NTg1NTk2OCwiZXhwIjoxNzQ2NDYwNzY4fQ.e5PGpV6VhLj3_J9VOiP4UzGezTXGRD0ea6UnAHz8Yxk",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+      "accept": "application/json",
+      "sec-ch-ua": "\"Google Chrome\";v=\"135\", \"Not-A.Brand\";v=\"8\", \"Chromium\";v=\"135\"",
+      "content-type": "multipart/form-data; boundary=----WebKitFormBoundaryva51kuHATuUgLm73",
+      "sec-ch-ua-mobile": "?0",
+      "origin": "http://localhost:4322",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:4322/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
+      "cookie": "_ga=GA1.1.1617415439.1745794538; sb-ewkyfkkowslrovsdrwja-auth-token-code-verifier=base64-ImU5MjgwY2I3NGZlZTU4MjRhMTJmOGQ0N2U0ZjhhZGM4YWMxNmYwZjQ3NTc4YzQyMzYzOWFkZmU2MWQ4NjMyNjc1OWJlY2NhMjJjNTA0ZWM0MTA1N2ZjZjBmYThiMTBlYWIyNzA3ODcyNmRhNzAwNmQi; _ga_6ETJFB3PT3=GS1.1.1745800956.3.0.1745800956.0.0.0; dev_mode=enabled; next-auth.csrf-token=4e633fbc47ae1d174683ff8e50e14ae7a33f11889ab625f75d495c5606751d07%7C6556f1932e6560781b9d2957afab39c4274d2ffffe6f6d382497e047008c629b; next-auth.callback-url=http%3A%2F%2Flocalhost%3A3000"
+    },
+    "body": {
+      "name": "20241028_145206_output_PRICING_HP.HC_avec_bouclier_tarifaire",
+      "description": ""
+    },
+    "file": {
+      "originalname": "20241028_145206_output_PRICING_HP.HC_avec_bouclier_tarifaire.pptx",
+      "mimetype": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "size": 6066126,
+      "path": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp/1745860874247-577353512.pptx"
+    },
+    "user": {
+      "id": 1,
+      "email": "admin@example.com"
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T13:24:50.030Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T13:24:50.031Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T13:24:50.031Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T13:24:50.031Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T13:24:50.031Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T13:24:50.029Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 101072896,
+      "heapTotal": 64176128,
+      "heapUsed": 33150936,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T13:24:54.724Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T13:24:54.724Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T13:24:54.724Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T13:24:54.724Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T13:24:54.725Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T13:24:54.723Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 106594304,
+      "heapTotal": 63913984,
+      "heapUsed": 33658688,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T13:49:50.098Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T13:49:50.099Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T13:49:50.099Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T13:49:50.099Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T13:49:50.100Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T13:49:50.098Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 104857600,
+      "heapTotal": 64700416,
+      "heapUsed": 33041800,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T13:49:54.922Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T13:49:54.923Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T13:49:54.923Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T13:49:54.923Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T13:49:54.923Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T13:49:54.921Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 102449152,
+      "heapTotal": 64700416,
+      "heapUsed": 33082424,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T14:03:56.624Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:03:56.624Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:03:56.625Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:03:56.625Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:03:56.625Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T14:03:56.623Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 108593152,
+      "heapTotal": 64438272,
+      "heapUsed": 32907168,
+      "external": 4063299,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T14:04:01.500Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:04:01.500Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:04:01.500Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:04:01.500Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:04:01.501Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T14:04:01.499Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 106872832,
+      "heapTotal": 64176128,
+      "heapUsed": 33665368,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T14:11:03.245Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:11:03.246Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:11:03.246Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:11:03.246Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:11:03.246Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T14:11:03.244Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 104529920,
+      "heapTotal": 64962560,
+      "heapUsed": 33233952,
+      "external": 4063299,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T14:11:08.259Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:11:08.260Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:11:08.260Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:11:08.260Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:11:08.261Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T14:11:08.258Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 105267200,
+      "heapTotal": 64962560,
+      "heapUsed": 33194832,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T14:19:34.516Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:19:34.517Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:19:34.517Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:19:34.517Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:19:34.518Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T14:19:34.515Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 104759296,
+      "heapTotal": 64700416,
+      "heapUsed": 33133984,
+      "external": 4063299,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T14:19:39.550Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:19:39.550Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:19:39.551Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:19:39.551Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:19:39.551Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T14:19:39.549Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 103038976,
+      "heapTotal": 64700416,
+      "heapUsed": 33323528,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T14:27:23.682Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:27:23.683Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:27:23.683Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:27:23.683Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:27:23.683Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T14:27:23.681Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 103055360,
+      "heapTotal": 64438272,
+      "heapUsed": 33054696,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T14:27:28.540Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:27:28.540Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:27:28.541Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:27:28.541Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:27:28.541Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T14:27:28.539Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 110166016,
+      "heapTotal": 64176128,
+      "heapUsed": 33643240,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T14:33:12.999Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:33:12.999Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:33:12.999Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:33:13.000Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:33:13.000Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T14:33:12.998Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 109297664,
+      "heapTotal": 64438272,
+      "heapUsed": 33441024,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T14:33:18.010Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:33:18.011Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:33:18.011Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:33:18.011Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:33:18.011Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T14:33:18.009Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 103268352,
+      "heapTotal": 64962560,
+      "heapUsed": 33181064,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T14:51:00.086Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:51:00.086Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:51:00.087Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:51:00.087Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:51:00.087Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T14:51:00.085Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 106332160,
+      "heapTotal": 64438272,
+      "heapUsed": 32927456,
+      "external": 4063299,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T14:51:04.638Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:51:04.638Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:51:04.638Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:51:04.639Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:51:04.639Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T14:51:04.637Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 104792064,
+      "heapTotal": 64700416,
+      "heapUsed": 33210592,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T14:55:43.609Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:55:43.609Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:55:43.609Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:55:43.609Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:55:43.610Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T14:55:43.608Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 105676800,
+      "heapTotal": 64962560,
+      "heapUsed": 32846992,
+      "external": 4063299,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T14:55:48.502Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:55:48.502Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:55:48.502Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:55:48.502Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T14:55:48.503Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T14:55:48.500Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 100433920,
+      "heapTotal": 64700416,
+      "heapUsed": 33192472,
+      "external": 4063299,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T15:01:40.841Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:01:40.841Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:01:40.841Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:01:40.842Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:01:40.842Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T15:01:40.840Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 107544576,
+      "heapTotal": 64700416,
+      "heapUsed": 33074352,
+      "external": 4063299,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T15:01:45.835Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:01:45.835Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:01:45.835Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:01:45.836Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:01:45.836Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T15:01:45.834Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 110247936,
+      "heapTotal": 64176128,
+      "heapUsed": 33451688,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T15:08:59.358Z",
+  "level": "INFO",
+  "message": "Début de l'upload",
+  "data": {
+    "method": "POST",
+    "url": "/api/templates",
+    "headers": {
+      "host": "localhost:12000",
+      "connection": "keep-alive",
+      "content-length": "6066677",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0NTkzODkxNSwiZXhwIjoxNzQ2NTQzNzE1fQ.V4qklt5YFJdLTYSmqhCJmLIXGFk9ozMw70uy27SNpL0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+      "accept": "application/json",
+      "sec-ch-ua": "\"Google Chrome\";v=\"135\", \"Not-A.Brand\";v=\"8\", \"Chromium\";v=\"135\"",
+      "content-type": "multipart/form-data; boundary=----WebKitFormBoundaryegECsBStmHdLjHlj",
+      "sec-ch-ua-mobile": "?0",
+      "origin": "http://localhost:4322",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:4322/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
+      "cookie": "_ga=GA1.1.1617415439.1745794538; sb-ewkyfkkowslrovsdrwja-auth-token-code-verifier=base64-ImU5MjgwY2I3NGZlZTU4MjRhMTJmOGQ0N2U0ZjhhZGM4YWMxNmYwZjQ3NTc4YzQyMzYzOWFkZmU2MWQ4NjMyNjc1OWJlY2NhMjJjNTA0ZWM0MTA1N2ZjZjBmYThiMTBlYWIyNzA3ODcyNmRhNzAwNmQi; _ga_6ETJFB3PT3=GS1.1.1745800956.3.0.1745800956.0.0.0; wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_da68d6deae6e5a33810678c3c9615abf=michael%7C1746111663%7C0CN4zm8bRlLZ0FS8QRD4aao7oT0hWy0qE2fOsJVIW0R%7C74f4e2692a329bed4b2a2e69726f6ed339eaab36f29eabd0d9d90ea49d67438a; wp-settings-time-1=1745938883"
+    },
+    "body": {
+      "name": "20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire",
+      "description": ""
+    },
+    "file": {
+      "originalname": "20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire.pptx",
+      "mimetype": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "size": 6066126,
+      "path": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp/1745939339347-762142945.pptx"
+    },
+    "user": {
+      "id": 1,
+      "email": "admin@example.com"
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T15:17:03.419Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:17:03.419Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:17:03.419Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:17:03.420Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:17:03.420Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T15:17:03.418Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 105037824,
+      "heapTotal": 64700416,
+      "heapUsed": 33170856,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T15:17:08.417Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:17:08.417Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:17:08.417Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:17:08.417Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:17:08.418Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T15:17:08.416Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 103235584,
+      "heapTotal": 64700416,
+      "heapUsed": 33238096,
+      "external": 4063301,
+      "arrayBuffers": 471650
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T15:17:52.752Z",
+  "level": "INFO",
+  "message": "Début de l'upload",
+  "data": {
+    "method": "POST",
+    "url": "/api/templates",
+    "headers": {
+      "host": "localhost:12000",
+      "connection": "keep-alive",
+      "content-length": "6066677",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0NTkzODkxNSwiZXhwIjoxNzQ2NTQzNzE1fQ.V4qklt5YFJdLTYSmqhCJmLIXGFk9ozMw70uy27SNpL0",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+      "accept": "application/json",
+      "sec-ch-ua": "\"Google Chrome\";v=\"135\", \"Not-A.Brand\";v=\"8\", \"Chromium\";v=\"135\"",
+      "content-type": "multipart/form-data; boundary=----WebKitFormBoundary8A2wgHq3aTVlJN6P",
+      "sec-ch-ua-mobile": "?0",
+      "origin": "http://localhost:4322",
+      "sec-fetch-site": "same-site",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-dest": "empty",
+      "referer": "http://localhost:4322/",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
+      "cookie": "_ga=GA1.1.1617415439.1745794538; sb-ewkyfkkowslrovsdrwja-auth-token-code-verifier=base64-ImU5MjgwY2I3NGZlZTU4MjRhMTJmOGQ0N2U0ZjhhZGM4YWMxNmYwZjQ3NTc4YzQyMzYzOWFkZmU2MWQ4NjMyNjc1OWJlY2NhMjJjNTA0ZWM0MTA1N2ZjZjBmYThiMTBlYWIyNzA3ODcyNmRhNzAwNmQi; _ga_6ETJFB3PT3=GS1.1.1745800956.3.0.1745800956.0.0.0; wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_da68d6deae6e5a33810678c3c9615abf=michael%7C1746112342%7CyxNMPtp4KO6NM9JGAFtMaHrd1dViDcStpEqnJutGweq%7Cf276a65a0b4fc8b473dcf85d19c33b01d51485a5260290791402e6a8af926cc8; wp-settings-time-1=1745939573"
+    },
+    "body": {
+      "name": "20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire",
+      "description": ""
+    },
+    "file": {
+      "originalname": "20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire.pptx",
+      "mimetype": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "size": 6066126,
+      "path": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp/1745939872741-826503149.pptx"
+    },
+    "user": {
+      "id": 1,
+      "email": "admin@example.com"
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T15:23:47.685Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:23:47.686Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:23:47.686Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:23:47.686Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:23:47.686Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T15:23:47.684Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 108593152,
+      "heapTotal": 64962560,
+      "heapUsed": 34679232,
+      "external": 4249863,
+      "arrayBuffers": 479842
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T15:23:52.713Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:23:52.713Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:23:52.713Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:23:52.714Z",
+  "level": "INFO",
+  "message": "Vérification d'accès: /Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports",
+  "data": {
+    "hasAccess": true,
+    "directory": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports"
+  }
+},
+{
+  "timestamp": "2025-04-29T15:23:52.714Z",
+  "level": "DIAGNOSTIC",
+  "message": "Diagnostic système",
+  "data": {
+    "timestamp": "2025-04-29T15:23:52.712Z",
+    "platform": "darwin",
+    "nodeVersion": "v23.11.0",
+    "memoryUsage": {
+      "rss": 106053632,
+      "heapTotal": 64962560,
+      "heapUsed": 34768552,
+      "external": 4249863,
+      "arrayBuffers": 479842
+    },
+    "env": "development",
+    "directories": {
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates": {
+        "exists": true,
+        "writable": true
+      },
+      "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/exports": {
+        "exists": true,
+        "writable": true
+      }
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T15:27:18.856Z",
+  "level": "INFO",
+  "message": "Début de l'upload",
+  "data": {
+    "method": "POST",
+    "url": "/api/templates",
+    "headers": {
+      "host": "localhost:12000",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0",
+      "accept": "application/json",
+      "accept-language": "fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "referer": "http://192.168.1.8:4322/",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0NTk0MDQyOCwiZXhwIjoxNzQ2NTQ1MjI4fQ.jcA2iPvkzCheCNObEKeISH41wMu-9_jnKoE9NTBWXCM",
+      "content-type": "multipart/form-data; boundary=----geckoformboundary2449ef835334178fb6ddaebb9c3a2b89",
+      "content-length": "6066737",
+      "origin": "http://192.168.1.8:4322",
+      "connection": "keep-alive",
+      "cookie": "wp-settings-time-1=1744041436; admin-bypass-token=forced-admin-access-1743983699486; wp-settings-1=posts_list_mode%3Dlist%26mfold%3Do; admin-token=forced-admin-access-1743983699486; selectedProvider=HuggingFace; selectedModel=codellama/CodeLlama-34b-Instruct-hf; ajs_anonymous_id=99941ed5-4bd8-43d7-9b55-eaabb9726aa1; _ga_6ETJFB3PT3=GS1.1.1745823588.6.0.1745823588.0.0.0; _ga=GA1.1.711403560.1745715573; sidebar_state=false; local_adminer_session=202417; adminer_sid=95b41704b2dcdd28c71f3af03c316a17; adminer_version=0",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "cross-site",
+      "dnt": "1",
+      "sec-gpc": "1",
+      "priority": "u=0"
+    },
+    "body": {
+      "name": "20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire",
+      "description": ""
+    },
+    "file": {
+      "originalname": "20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire.pptx",
+      "mimetype": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "size": 6066126,
+      "path": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp/1745940438843-122259469.pptx"
+    },
+    "user": {
+      "id": 1,
+      "email": "admin@example.com"
+    }
+  }
+},

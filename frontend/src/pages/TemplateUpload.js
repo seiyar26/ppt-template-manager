@@ -38,30 +38,93 @@ const TemplateUpload = () => {
     e.preventDefault();
     
     if (!file) {
-      setError('Please select a file');
+      setError('Veuillez sélectionner un fichier');
       return;
     }
     
     setUploading(true);
     setProgress(0);
+    setError(null); // Effacer les erreurs précédentes
     
     const formData = new FormData();
     formData.append('file', file);
     formData.append('name', name);
     formData.append('description', description);
     
+    // Vérifier que le fichier est bien ajouté au FormData
+    let fileFound = false;
+    try {
+      for (let pair of formData.entries()) {
+        if (pair && pair[0] === 'file' && pair[1] instanceof File && pair[1].size > 0) {
+          fileFound = true;
+          console.log(`FormData contient bien le fichier: ${pair[1].name} (${pair[1].size} octets)`);
+          break;
+        }
+      }
+    } catch (err) {
+      console.error('Erreur lors de la vérification du FormData:', err);
+      setError('Erreur lors de la préparation du fichier: ' + err.message);
+      setUploading(false);
+      return;
+    }
+    
+    if (!fileFound) {
+      console.error('Erreur critique: Le fichier n\'a pas été correctement ajouté au FormData');
+      setError('Erreur lors de la préparation du fichier. Veuillez réessayer.');
+      setUploading(false);
+      return;
+    }
+    
     try {
       console.log('Envoi du modèle...');
       
-      // Utilisons notre service, mais nous devons gérer le onUploadProgress différemment
-      // car il n'est pas directement exposé dans notre API service
-      const response = await templateService.createTemplate(formData);
+      // Simulation de progression pour l'interface utilisateur
+      const progressInterval = setInterval(() => {
+        setProgress(prev => {
+          if (prev >= 90) {
+            clearInterval(progressInterval);
+            return 90; // On reste à 90% jusqu'à confirmation du serveur
+          }
+          return prev + 5;
+        });
+      }, 500);
       
-      // Redirect to template editor
-      navigate(`/templates/${response.template.id}/edit`);
+      // Utiliser directement axios pour avoir plus de contrôle sur l'upload
+      try {
+        // Créer le template avec le FormData
+        const response = await templateService.createTemplate(formData);
+        
+        // Terminé avec succès
+        clearInterval(progressInterval);
+        setProgress(100);
+        
+        // Attendre un peu pour montrer 100% avant de rediriger
+        setTimeout(() => {
+          navigate(`/templates/${response.template.id}/edit`);
+        }, 1000);
+      } catch (apiError) {
+        clearInterval(progressInterval);
+        throw apiError; // Remonter l'erreur pour la gestion ci-dessous
+      }
     } catch (err) {
       console.error('Erreur lors de l\'upload du modèle:', err);
-      setError(err.response?.data?.message || 'Impossible d\'uploader le modèle');
+      
+      // Messages d'erreur détaillés en fonction du type d'erreur
+      let errorMessage = 'Impossible d\'uploader le modèle';
+      
+      if (err.response) {
+        // Erreur de réponse du serveur
+        errorMessage = err.response.data?.message || `Erreur serveur: ${err.response.status}`;
+        console.error('Détails de l\'erreur serveur:', err.response.data);
+      } else if (err.request) {
+        // Erreur de réseau (pas de réponse)
+        errorMessage = 'Erreur réseau: impossible de joindre le serveur. Vérifiez votre connexion.';
+      } else {
+        // Autre erreur
+        errorMessage = `Erreur: ${err.message}`;
+      }
+      
+      setError(errorMessage);
       setUploading(false);
     }
   };

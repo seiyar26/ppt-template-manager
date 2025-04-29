@@ -1,0 +1,32 @@
+server {
+    listen 80;
+    server_name jonathanifrah.fr www.jonathanifrah.fr;
+
+    root {{ deploy_path }}/frontend/build;
+    index index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /api {
+        proxy_pass http://localhost:2324;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    location /health {
+        proxy_pass http://localhost:2324/health;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    location /uploads {
+        alias {{ deploy_path }}/backend/uploads;
+        try_files $uri =404;
+    }
+}

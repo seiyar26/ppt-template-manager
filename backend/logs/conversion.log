@@ -1,0 +1,14 @@
+[2025-04-29T15:32:23.342Z] 🔄 DÉBUT DE CONVERSION PPTX
+DATA: {
+  timestamp: '2025-04-29T15:32:23.341Z',
+  options: {
+    filePath: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/diagnostic-test.pptx',
+    templateId: 'test_diagnostic'
+  },
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    memory: '4157MB libre / 49152MB total'
+  }
+}
+--------------------------------------------

@@ -14,14 +14,54 @@ const app = express();
 const PORT = process.env.PORT || 5000; // Changement de port pour éviter les conflits potentiels
 
 // Middleware
-app.use(cors({
-  origin: [
-    'http://localhost:4322', 
-    'https://cousbo-hoshah1jy-seiyar26s-projects.vercel.app',
-    'https://cousbo.vercel.app'
-  ],
-  credentials: true
-}));
+// Configuration CORS plus permissive en mode développement
+const corsOptions = {
+  origin: function (origin, callback) {
+    // En développement, accepter toutes les origines
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+      // Accepter toutes les origines en mode développement
+      console.log('Mode développement: CORS accepté pour toutes les origines');
+      callback(null, true);
+    } else {
+      // En production, vérifier les origines
+      const allowedOrigins = [
+        'http://localhost:4322',
+        'http://127.0.0.1:4322',
+        'http://localhost:4323',
+        'http://127.0.0.1:4323',
+        'http://localhost:4324', 
+        'http://127.0.0.1:4324',
+        'http://localhost:4325',
+        'http://127.0.0.1:4325',
+        'https://cousbo-hoshah1jy-seiyar26s-projects.vercel.app',
+        'https://cousbo.vercel.app'
+      ];
+      
+      if (!origin) {
+        // Autorise les requêtes sans en-tête d'origine (comme les appels API d'outils)
+        callback(null, true);
+      } else if (allowedOrigins.some(allowed => origin.startsWith(allowed))) {
+        // Autorise les origines qui commencent par une origine autorisée
+        callback(null, true);
+      } else {
+        console.log(`CORS refusé pour l'origine: ${origin}`);
+        callback(new Error('Non autorisé par CORS'));
+      }
+    }
+  },
+  credentials: true,
+  exposedHeaders: ['Content-Disposition', 'Authorization'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+};
+
+app.use(cors(corsOptions));
+
+// Ajouter des en-têtes personnalisés pour le debugging
+app.use((req, res, next) => {
+  res.header('X-Debug-Mode', 'true');
+  next();
+});
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -42,6 +82,18 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads'), {
     res.setHeader('Expires', '0');
   }
 }));
+
+// Routes de santé pour vérifier la connexion (supportant les deux chemins pour compatibilité)
+const healthResponse = {
+  status: 'OK',
+  timestamp: new Date().toISOString(),
+  database: 'PostgreSQL',
+  version: require('./package.json').version || '1.0.0'
+};
+
+// Support pour les deux endpoints de santé (avec et sans underscore)
+app.get('/_health', (req, res) => res.json(healthResponse));
+app.get('/health', (req, res) => res.json(healthResponse));
 
 // API routes
 app.use('/api/auth', authRoutes);

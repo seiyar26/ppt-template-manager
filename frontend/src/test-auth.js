@@ -4,7 +4,11 @@ const testAuth = async () => {
     console.log('🔍 Test des problèmes d\'authentification');
     console.log('Tentative de connexion directe via fetch...');
     
-    const response = await fetch('http://localhost:2324/api/auth/login', {
+    // Utilisez le port 12000 qui correspond au port configuré dans start-local.sh
+    const API_URL = 'http://localhost:12000/api';
+    console.log('Utilisation de l\'URL API:', API_URL);
+    
+    const response = await fetch(`${API_URL}/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -12,7 +16,8 @@ const testAuth = async () => {
       body: JSON.stringify({
         email: 'admin@example.com',
         password: 'admin123'
-      })
+      }),
+      credentials: 'include'
     });
     
     console.log('Statut de la réponse:', response.status);
@@ -44,10 +49,15 @@ const testAuth = async () => {
   }
 };
 
-// Exécuter le test d'authentification quand le script est chargé
-window.onload = () => {
+// Fonction séparée pour créer le bouton (exécutée une seule fois)
+let buttonAdded = false;
+const addAdminButton = () => {
+  // Vérifier si le bouton a déjà été ajouté pour éviter la duplication
+  if (buttonAdded) return;
+  
   // Créer un bouton de test dans l'interface
   const button = document.createElement('button');
+  button.id = 'admin-direct-login'; // Ajouter un ID pour pouvoir le référencer facilement
   button.textContent = 'Connexion directe (Admin)';
   button.style.position = 'fixed';
   button.style.bottom = '20px';
@@ -63,6 +73,11 @@ window.onload = () => {
   button.onclick = testAuth;
   
   document.body.appendChild(button);
+  buttonAdded = true;
+  console.log('Bouton de connexion admin ajouté à l\'interface');
 };
+
+// Exécuter seulement l'ajout du bouton au chargement de la page
+window.addEventListener('DOMContentLoaded', addAdminButton);
 
 export default testAuth;
