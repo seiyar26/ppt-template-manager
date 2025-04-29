@@ -2798,3 +2798,56 @@
   "message": "Template 17 créé avec succès, 14 diapositives",
   "data": {}
 },
+{
+  "timestamp": "2025-04-29T18:15:17.039Z",
+  "level": "INFO",
+  "message": "Début de l'upload",
+  "data": {
+    "method": "POST",
+    "url": "/api/templates",
+    "headers": {
+      "host": "localhost:12000",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0",
+      "accept": "application/json",
+      "accept-language": "fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "referer": "http://127.0.0.1:58599/",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0NTk1MDM2MiwiZXhwIjoxNzQ2NTU1MTYyfQ.Q8yHYwQ9Gc9BZk6hGFWN9S98k67v_wRZlu8vrio6YVs",
+      "content-type": "multipart/form-data; boundary=----geckoformboundary3367403168eeaeaf9d43d4a7d7509987",
+      "content-length": "6066737",
+      "origin": "http://127.0.0.1:58599",
+      "connection": "keep-alive",
+      "cookie": "wp-settings-time-1=1744041436; admin-bypass-token=forced-admin-access-1743983699486; wp-settings-1=posts_list_mode%3Dlist%26mfold%3Do; admin-token=forced-admin-access-1743983699486; selectedProvider=HuggingFace; selectedModel=codellama/CodeLlama-34b-Instruct-hf; ajs_anonymous_id=99941ed5-4bd8-43d7-9b55-eaabb9726aa1; _ga_6ETJFB3PT3=GS1.1.1745823588.6.0.1745823588.0.0.0; _ga=GA1.1.711403560.1745715573; sidebar_state=false; adminer_version=0",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "cross-site",
+      "priority": "u=0"
+    },
+    "body": {
+      "name": "20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire",
+      "description": ""
+    },
+    "file": {
+      "originalname": "20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire.pptx",
+      "mimetype": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "size": 6066126,
+      "path": "/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp/1745950517023-888462602.pptx"
+    },
+    "user": {
+      "id": 1,
+      "email": "admin@example.com"
+    }
+  }
+},
+{
+  "timestamp": "2025-04-29T18:15:33.508Z",
+  "level": "SUCCESS",
+  "message": "Conversion PPTX réussie",
+  "data": 18
+},
+{
+  "timestamp": "2025-04-29T18:15:43.554Z",
+  "level": "SUCCESS",
+  "message": "Template 18 créé avec succès, 14 diapositives",
+  "data": {}
+},

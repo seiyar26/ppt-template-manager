@@ -4047,3 +4047,643 @@ DATA: {
   permissions: '755'
 }
 --------------------------------------------
+[2025-04-29T18:13:51.655Z] 📥 TÉLÉCHARGEMENT IMAGE 1
+DATA: {
+  url: 'https://v2.convertapi.com/d/vxhf24eofj0w4sebxtvw39qc36nvuhg9/1745950248440-488848437.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:13:51.864Z] ✅ IMAGE 1 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_0.jpg',
+  exists: true,
+  size: '1110 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:13:51.864Z] 📥 TÉLÉCHARGEMENT IMAGE 2
+DATA: {
+  url: 'https://v2.convertapi.com/d/36dn6idlsk1gtndccl0z8l34lm9j337s/1745950248440-488848437-2.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:13:51.908Z] ✅ IMAGE 2 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_1.jpg',
+  exists: true,
+  size: '973 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:13:51.908Z] 📥 TÉLÉCHARGEMENT IMAGE 3
+DATA: {
+  url: 'https://v2.convertapi.com/d/cdajk9o3ua8oz99tvy96dy0yx1q7n9a4/1745950248440-488848437-3.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:13:51.943Z] ✅ IMAGE 3 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_2.jpg',
+  exists: true,
+  size: '816 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:13:51.943Z] 📥 TÉLÉCHARGEMENT IMAGE 4
+DATA: {
+  url: 'https://v2.convertapi.com/d/jo2a9bk2f5we59wjwhunt4zctv0r4scy/1745950248440-488848437-4.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:13:51.980Z] ✅ IMAGE 4 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_3.jpg',
+  exists: true,
+  size: '868 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:13:51.980Z] 📥 TÉLÉCHARGEMENT IMAGE 5
+DATA: {
+  url: 'https://v2.convertapi.com/d/etykjjof36dh28fhkpsr2gmfwn2ptrrz/1745950248440-488848437-5.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:13:52.009Z] ✅ IMAGE 5 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_4.jpg',
+  exists: true,
+  size: '546 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:13:52.009Z] 📥 TÉLÉCHARGEMENT IMAGE 6
+DATA: {
+  url: 'https://v2.convertapi.com/d/ilcpsa6p686nqsb8tox7s8f4j5tk7j29/1745950248440-488848437-6.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:13:52.041Z] 📥 TÉLÉCHARGEMENT IMAGE 7
+DATA: {
+  url: 'https://v2.convertapi.com/d/f8gsc12fxnc0aqnmf7hnwv29lefhbr1u/1745950248440-488848437-7.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:13:52.041Z] ✅ IMAGE 6 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_5.jpg',
+  exists: true,
+  size: '483 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:13:52.069Z] ✅ IMAGE 7 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_6.jpg',
+  exists: true,
+  size: '494 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:13:52.069Z] 📥 TÉLÉCHARGEMENT IMAGE 8
+DATA: {
+  url: 'https://v2.convertapi.com/d/ejmmsfj2xe246iuwrt3vfzerp7p95dn1/1745950248440-488848437-8.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:13:52.109Z] ✅ IMAGE 8 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_7.jpg',
+  exists: true,
+  size: '650 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:13:52.109Z] 📥 TÉLÉCHARGEMENT IMAGE 9
+DATA: {
+  url: 'https://v2.convertapi.com/d/5yrt7rnql66jq1yw3jo6z9veon9zgijg/1745950248440-488848437-9.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:13:52.140Z] ✅ IMAGE 9 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_8.jpg',
+  exists: true,
+  size: '531 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:13:52.140Z] 📥 TÉLÉCHARGEMENT IMAGE 10
+DATA: {
+  url: 'https://v2.convertapi.com/d/jeqavhtw3rlw38784i487trw7otv4aka/1745950248440-488848437-10.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:13:52.216Z] ✅ IMAGE 10 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_9.jpg',
+  exists: true,
+  size: '484 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:13:52.217Z] 📥 TÉLÉCHARGEMENT IMAGE 11
+DATA: {
+  url: 'https://v2.convertapi.com/d/0zywoqeqiwtfx59wdau0qx7zvlne4250/1745950248440-488848437-11.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:13:52.255Z] ✅ IMAGE 11 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_10.jpg',
+  exists: true,
+  size: '513 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:13:52.255Z] 📥 TÉLÉCHARGEMENT IMAGE 12
+DATA: {
+  url: 'https://v2.convertapi.com/d/gbg37klkepnp8sga8mx9z1m381v92iik/1745950248440-488848437-12.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:13:52.288Z] ✅ IMAGE 12 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_11.jpg',
+  exists: true,
+  size: '522 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:13:52.288Z] 📥 TÉLÉCHARGEMENT IMAGE 13
+DATA: {
+  url: 'https://v2.convertapi.com/d/1qfx194vep3t6jbrapk9zob3dl9kp4a9/1745950248440-488848437-13.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:13:52.324Z] 📥 TÉLÉCHARGEMENT IMAGE 14
+DATA: {
+  url: 'https://v2.convertapi.com/d/4y2atz4qjblw75up90icqmwy0qhx4n1h/1745950248440-488848437-14.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:13:52.323Z] ✅ IMAGE 13 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_12.jpg',
+  exists: true,
+  size: '695 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:13:52.360Z] ✅ IMAGE 14 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_13.jpg',
+  exists: true,
+  size: '881 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:13:52.360Z] ✅ CONVERSION PPTX RÉUSSIE
+DATA: {
+  timestamp: '2025-04-29T18:13:52.360Z',
+  resultSummary: { filesCount: 0, conversionCost: 0 },
+  filesSaved: 14,
+  firstSavedPath: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_0.jpg'
+}
+--------------------------------------------
+[2025-04-29T18:13:52.360Z] 📊 ANALYSE DU DOSSIER DU TEMPLATE 16
+DATA: {
+  templateId: '16',
+  directoryExists: true,
+  slides: [
+    {
+      index: 0,
+      fileName: 'slide_0.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_0.jpg',
+      size: 1136224,
+      lastModified: 2025-04-29T18:13:51.864Z
+    },
+    {
+      index: 1,
+      fileName: 'slide_1.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_1.jpg',
+      size: 995951,
+      lastModified: 2025-04-29T18:13:51.908Z
+    },
+    {
+      index: 2,
+      fileName: 'slide_2.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_2.jpg',
+      size: 835581,
+      lastModified: 2025-04-29T18:13:51.944Z
+    },
+    {
+      index: 3,
+      fileName: 'slide_3.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_3.jpg',
+      size: 888932,
+      lastModified: 2025-04-29T18:13:51.980Z
+    },
+    {
+      index: 4,
+      fileName: 'slide_4.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_4.jpg',
+      size: 558721,
+      lastModified: 2025-04-29T18:13:52.009Z
+    },
+    {
+      index: 5,
+      fileName: 'slide_5.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_5.jpg',
+      size: 494523,
+      lastModified: 2025-04-29T18:13:52.041Z
+    },
+    {
+      index: 6,
+      fileName: 'slide_6.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_6.jpg',
+      size: 505824,
+      lastModified: 2025-04-29T18:13:52.070Z
+    },
+    {
+      index: 7,
+      fileName: 'slide_7.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_7.jpg',
+      size: 665264,
+      lastModified: 2025-04-29T18:13:52.110Z
+    },
+    {
+      index: 8,
+      fileName: 'slide_8.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_8.jpg',
+      size: 544201,
+      lastModified: 2025-04-29T18:13:52.140Z
+    },
+    {
+      index: 9,
+      fileName: 'slide_9.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_9.jpg',
+      size: 495326,
+      lastModified: 2025-04-29T18:13:52.217Z
+    },
+    {
+      index: 10,
+      fileName: 'slide_10.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_10.jpg',
+      size: 525687,
+      lastModified: 2025-04-29T18:13:52.255Z
+    },
+    {
+      index: 11,
+      fileName: 'slide_11.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_11.jpg',
+      size: 534047,
+      lastModified: 2025-04-29T18:13:52.289Z
+    },
+    {
+      index: 12,
+      fileName: 'slide_12.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_12.jpg',
+      size: 711205,
+      lastModified: 2025-04-29T18:13:52.324Z
+    },
+    {
+      index: 13,
+      fileName: 'slide_13.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/16/slide_13.jpg',
+      size: 902133,
+      lastModified: 2025-04-29T18:13:52.360Z
+    }
+  ],
+  totalFiles: 14,
+  totalSize: 9793619,
+  permissions: '755'
+}
+--------------------------------------------
+[2025-04-29T18:15:22.044Z] 🔄 DÉBUT DE CONVERSION PPTX
+DATA: {
+  timestamp: '2025-04-29T18:15:22.044Z',
+  options: {
+    filePath: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/temp/1745950517023-888462602.pptx',
+    templateId: '18'
+  },
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    memory: '1003MB libre / 49152MB total'
+  }
+}
+--------------------------------------------
+[2025-04-29T18:15:32.663Z] 📥 TÉLÉCHARGEMENT IMAGE 1
+DATA: {
+  url: 'https://v2.convertapi.com/d/9wo4pouh2tf1hc6rr45an2rv8ilgcwws/1745950517023-888462602.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:15:32.985Z] ✅ IMAGE 1 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_0.jpg',
+  exists: true,
+  size: '1110 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:15:32.986Z] 📥 TÉLÉCHARGEMENT IMAGE 2
+DATA: {
+  url: 'https://v2.convertapi.com/d/zbi7duwgim55u7mgslhkf6a8kg562kyy/1745950517023-888462602-2.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:15:33.036Z] ✅ IMAGE 2 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_1.jpg',
+  exists: true,
+  size: '973 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:15:33.036Z] 📥 TÉLÉCHARGEMENT IMAGE 3
+DATA: {
+  url: 'https://v2.convertapi.com/d/hzjjk0a5ju5d6cquldma7c2ld1fet8sd/1745950517023-888462602-3.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:15:33.096Z] ✅ IMAGE 3 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_2.jpg',
+  exists: true,
+  size: '816 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:15:33.096Z] 📥 TÉLÉCHARGEMENT IMAGE 4
+DATA: {
+  url: 'https://v2.convertapi.com/d/xywqhrshrh7gnxqot1iduhmj6nvffdo0/1745950517023-888462602-4.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:15:33.133Z] ✅ IMAGE 4 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_3.jpg',
+  exists: true,
+  size: '868 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:15:33.133Z] 📥 TÉLÉCHARGEMENT IMAGE 5
+DATA: {
+  url: 'https://v2.convertapi.com/d/jj5spk2why67pyzshc92jhaw3v1yyxlc/1745950517023-888462602-5.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:15:33.171Z] 📥 TÉLÉCHARGEMENT IMAGE 6
+DATA: {
+  url: 'https://v2.convertapi.com/d/1iokz70rcel808n8wyjblxab2ypcfwe5/1745950517023-888462602-6.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:15:33.171Z] ✅ IMAGE 5 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_4.jpg',
+  exists: true,
+  size: '546 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:15:33.209Z] ✅ IMAGE 6 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_5.jpg',
+  exists: true,
+  size: '483 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:15:33.209Z] 📥 TÉLÉCHARGEMENT IMAGE 7
+DATA: {
+  url: 'https://v2.convertapi.com/d/vicmo39wpdm1gbcoev2awhabzbc5rrnd/1745950517023-888462602-7.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:15:33.256Z] 📥 TÉLÉCHARGEMENT IMAGE 8
+DATA: {
+  url: 'https://v2.convertapi.com/d/sheb7ctgloscwtetx1tlwzhylb6enugd/1745950517023-888462602-8.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:15:33.256Z] ✅ IMAGE 7 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_6.jpg',
+  exists: true,
+  size: '494 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:15:33.290Z] ✅ IMAGE 8 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_7.jpg',
+  exists: true,
+  size: '650 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:15:33.290Z] 📥 TÉLÉCHARGEMENT IMAGE 9
+DATA: {
+  url: 'https://v2.convertapi.com/d/tvrf7ltdlfit0rq6vm8h077ncri0iswt/1745950517023-888462602-9.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:15:33.323Z] ✅ IMAGE 9 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_8.jpg',
+  exists: true,
+  size: '531 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:15:33.323Z] 📥 TÉLÉCHARGEMENT IMAGE 10
+DATA: {
+  url: 'https://v2.convertapi.com/d/cd9w6k10wcaxbly0apkrom8s1kzqq73v/1745950517023-888462602-10.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:15:33.354Z] ✅ IMAGE 10 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_9.jpg',
+  exists: true,
+  size: '484 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:15:33.354Z] 📥 TÉLÉCHARGEMENT IMAGE 11
+DATA: {
+  url: 'https://v2.convertapi.com/d/bj2vk94opbet5ibenat6pcg2m5aycc2c/1745950517023-888462602-11.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:15:33.389Z] ✅ IMAGE 11 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_10.jpg',
+  exists: true,
+  size: '513 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:15:33.389Z] 📥 TÉLÉCHARGEMENT IMAGE 12
+DATA: {
+  url: 'https://v2.convertapi.com/d/wesp3grzrox0bb5ql80mi3tszd2n45u7/1745950517023-888462602-12.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:15:33.423Z] ✅ IMAGE 12 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_11.jpg',
+  exists: true,
+  size: '521 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:15:33.423Z] 📥 TÉLÉCHARGEMENT IMAGE 13
+DATA: {
+  url: 'https://v2.convertapi.com/d/e1rgtnw01ikvcoyknr4aom348gyvk81f/1745950517023-888462602-13.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:15:33.463Z] ✅ IMAGE 13 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_12.jpg',
+  exists: true,
+  size: '695 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:15:33.463Z] 📥 TÉLÉCHARGEMENT IMAGE 14
+DATA: {
+  url: 'https://v2.convertapi.com/d/n7fn8ix6jomk6xa4upcedgw3ldkduv3e/1745950517023-888462602-14.jpg',
+  fileInfo: { fileName: 'inconnu', fileSize: 'inconnu', fileId: 'inconnu' }
+}
+--------------------------------------------
+[2025-04-29T18:15:33.505Z] ✅ IMAGE 14 TÉLÉCHARGÉE
+DATA: {
+  path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_13.jpg',
+  exists: true,
+  size: '881 KB',
+  permissions: '644'
+}
+--------------------------------------------
+[2025-04-29T18:15:33.506Z] ✅ CONVERSION PPTX RÉUSSIE
+DATA: {
+  timestamp: '2025-04-29T18:15:33.506Z',
+  resultSummary: { filesCount: 0, conversionCost: 0 },
+  filesSaved: 14,
+  firstSavedPath: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_0.jpg'
+}
+--------------------------------------------
+[2025-04-29T18:15:33.507Z] 📊 ANALYSE DU DOSSIER DU TEMPLATE 18
+DATA: {
+  templateId: '18',
+  directoryExists: true,
+  slides: [
+    {
+      index: 0,
+      fileName: 'slide_0.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_0.jpg',
+      size: 1136224,
+      lastModified: 2025-04-29T18:15:32.985Z
+    },
+    {
+      index: 1,
+      fileName: 'slide_1.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_1.jpg',
+      size: 995899,
+      lastModified: 2025-04-29T18:15:33.036Z
+    },
+    {
+      index: 2,
+      fileName: 'slide_2.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_2.jpg',
+      size: 835676,
+      lastModified: 2025-04-29T18:15:33.096Z
+    },
+    {
+      index: 3,
+      fileName: 'slide_3.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_3.jpg',
+      size: 888883,
+      lastModified: 2025-04-29T18:15:33.133Z
+    },
+    {
+      index: 4,
+      fileName: 'slide_4.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_4.jpg',
+      size: 558721,
+      lastModified: 2025-04-29T18:15:33.171Z
+    },
+    {
+      index: 5,
+      fileName: 'slide_5.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_5.jpg',
+      size: 494523,
+      lastModified: 2025-04-29T18:15:33.210Z
+    },
+    {
+      index: 6,
+      fileName: 'slide_6.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_6.jpg',
+      size: 505814,
+      lastModified: 2025-04-29T18:15:33.256Z
+    },
+    {
+      index: 7,
+      fileName: 'slide_7.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_7.jpg',
+      size: 665305,
+      lastModified: 2025-04-29T18:15:33.290Z
+    },
+    {
+      index: 8,
+      fileName: 'slide_8.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_8.jpg',
+      size: 544201,
+      lastModified: 2025-04-29T18:15:33.323Z
+    },
+    {
+      index: 9,
+      fileName: 'slide_9.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_9.jpg',
+      size: 495451,
+      lastModified: 2025-04-29T18:15:33.354Z
+    },
+    {
+      index: 10,
+      fileName: 'slide_10.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_10.jpg',
+      size: 525681,
+      lastModified: 2025-04-29T18:15:33.389Z
+    },
+    {
+      index: 11,
+      fileName: 'slide_11.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_11.jpg',
+      size: 533848,
+      lastModified: 2025-04-29T18:15:33.423Z
+    },
+    {
+      index: 12,
+      fileName: 'slide_12.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_12.jpg',
+      size: 711619,
+      lastModified: 2025-04-29T18:15:33.463Z
+    },
+    {
+      index: 13,
+      fileName: 'slide_13.jpg',
+      path: '/Users/michaeltenenbaum/Downloads/ppt-template-manager/backend/uploads/templates/18/slide_13.jpg',
+      size: 902133,
+      lastModified: 2025-04-29T18:15:33.505Z
+    }
+  ],
+  totalFiles: 14,
+  totalSize: 9793978,
+  permissions: '755'
+}
+--------------------------------------------
