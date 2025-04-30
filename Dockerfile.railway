@@ -1,0 +1,53 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copier d'abord package.json et package-lock.json pour exploiter le cache Docker
+COPY package*.json ./
+COPY backend/package*.json ./backend/
+COPY frontend/package*.json ./frontend/
+
+# Installer les dépendances du projet principal
+RUN npm install
+
+# Installer les dépendances du backend
+WORKDIR /app/backend
+RUN npm install
+
+# Installer les dépendances du frontend et le construire
+WORKDIR /app/frontend
+RUN npm install
+RUN npm run build
+
+# Copier tous les fichiers source
+WORKDIR /app
+COPY . .
+
+# Créer les répertoires nécessaires pour les uploads et les fichiers temporaires
+RUN mkdir -p templates temp exports backend/uploads/templates backend/uploads/temp backend/uploads/exports backend/logs
+RUN chmod -R 777 templates temp exports backend/uploads backend/logs
+
+# Configuration de l'environnement
+# Note: La plupart des variables d'environnement seront définies par Railway
+# Nous définissons uniquement les valeurs par défaut ici
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV DB_DIALECT=sqlite
+ENV DB_STORAGE=/app/backend/database.sqlite
+
+# Désactiver explicitement PostgreSQL
+ENV DATABASE_URL=""
+
+# Créer un fichier .env dans le répertoire backend
+RUN echo "DB_DIALECT=sqlite" > /app/backend/.env \
+    && echo "DB_STORAGE=/app/backend/database.sqlite" >> /app/backend/.env \
+    && echo "NODE_ENV=production" >> /app/backend/.env \
+    && echo "PORT=3000" >> /app/backend/.env \
+    && echo "JWT_SECRET=ppt_template_manager_secret_key_railway" >> /app/backend/.env
+
+# Exposer le port (Railway injectera automatiquement la variable PORT)
+EXPOSE 3000
+
+# Commande de démarrage
+# Nous utilisons simple-server.js qui est configuré pour servir l'application React
+CMD ["node", "simple-server.js"]
