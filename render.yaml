@@ -28,6 +28,7 @@ services:
         value: ppt_template_manager_secret_key_prod
       - key: CONVERT_API_SECRET
         value: secret_q4Pjq2F9FCU9ypDJ
+      # La variable DATABASE_URL sera ajoutée manuellement après création de la base PostgreSQL
 
   # Service frontend pour l'application React
   - type: web
@@ -46,10 +47,3 @@ services:
         value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1id3VydG12ZGdtbnJpenhmb3VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3MDU4MDAsImV4cCI6MjA2MzI4MTgwMH0.tNF11pL0MQQKhb3ejQiHjLhTCIGqabIhKu-WIdZvMDs
       - key: NODE_ENV
         value: production
-
-  # Base de donnu00e9es PostgreSQL pour l'application
-  - type: db
-    name: ppt-template-manager-db
-    plan: free
-    databaseType: postgresql
-    ipAllowList: []  # Autoriser toutes les adresses IP
