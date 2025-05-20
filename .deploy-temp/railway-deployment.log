@@ -1,0 +1,92 @@
+2025-05-20T03:07:49.985Z - INFO: Vérification et installation de Railway CLI...
+2025-05-20T03:07:50.366Z - INFO: Installation de Railway CLI...
+2025-05-20T03:07:50.366Z - INFO: Exécution de: npm install -g @railway/cli
+2025-05-20T03:07:53.847Z - SUCCESS: Commande exécutée avec succès: npm install -g @railway/cli
+2025-05-20T03:07:53.847Z - INFO: Préparation du backend pour Railway...
+2025-05-20T03:07:53.848Z - INFO: Exécution de: node prepare-for-railway.js
+2025-05-20T03:07:53.878Z - SUCCESS: Commande exécutée avec succès: node prepare-for-railway.js
+2025-05-20T03:07:53.878Z - INFO: Initialisation du projet Railway pour le backend...
+2025-05-20T03:07:53.878Z - INFO: Exécution de: railway init --name ppt-template-manager-backend
+2025-05-20T03:07:58.779Z - SUCCESS: Commande exécutée avec succès: railway init --name ppt-template-manager-backend
+2025-05-20T03:07:58.784Z - INFO: Configuration des variables d'environnement pour le backend...
+2025-05-20T03:07:58.784Z - INFO: Exécution de: railway variables set PORT=8080
+2025-05-20T03:07:58.819Z - ERROR: Erreur lors de l'exécution de: railway variables set PORT=8080
+Command failed: railway variables set PORT=8080
+error: unexpected argument 'set' found
+
+Usage: railway variables [OPTIONS]
+
+For more information, try '--help'.
+
+
+2025-05-20T03:07:58.819Z - INFO: Exécution de: railway variables set NODE_ENV=production
+2025-05-20T03:07:58.854Z - ERROR: Erreur lors de l'exécution de: railway variables set NODE_ENV=production
+Command failed: railway variables set NODE_ENV=production
+error: unexpected argument 'set' found
+
+Usage: railway variables [OPTIONS]
+
+For more information, try '--help'.
+
+
+2025-05-20T03:07:58.854Z - INFO: Exécution de: railway variables set SUPABASE_URL=https://mbwurtmvdgmnrizxfouf.supabase.co
+2025-05-20T03:07:58.889Z - ERROR: Erreur lors de l'exécution de: railway variables set SUPABASE_URL=https://mbwurtmvdgmnrizxfouf.supabase.co
+Command failed: railway variables set SUPABASE_URL=https://mbwurtmvdgmnrizxfouf.supabase.co
+error: unexpected argument 'set' found
+
+Usage: railway variables [OPTIONS]
+
+For more information, try '--help'.
+
+
+2025-05-20T03:07:58.889Z - INFO: Exécution de: railway variables set SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1id3VydG12ZGdtbnJpenhmb3VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3MDU4MDAsImV4cCI6MjA2MzI4MTgwMH0.tNF11pL0MQQKhb3ejQiHjLhTCIGqabIhKu-WIdZvMDs
+2025-05-20T03:07:58.935Z - ERROR: Erreur lors de l'exécution de: railway variables set SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1id3VydG12ZGdtbnJpenhmb3VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3MDU4MDAsImV4cCI6MjA2MzI4MTgwMH0.tNF11pL0MQQKhb3ejQiHjLhTCIGqabIhKu-WIdZvMDs
+Command failed: railway variables set SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1id3VydG12ZGdtbnJpenhmb3VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3MDU4MDAsImV4cCI6MjA2MzI4MTgwMH0.tNF11pL0MQQKhb3ejQiHjLhTCIGqabIhKu-WIdZvMDs
+error: unexpected argument 'set' found
+
+Usage: railway variables [OPTIONS]
+
+For more information, try '--help'.
+
+
+2025-05-20T03:07:58.935Z - INFO: Exécution de: railway variables set SUPABASE_SERVICE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1id3VydG12ZGdtbnJpenhmb3VmIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NzcwNTgwMCwiZXhwIjoyMDYzMjgxODAwfQ.Ojvhv2gXUNiv5NmdMniJyZKgY9d-MqjN3_3p9KIJFsY
+2025-05-20T03:07:58.972Z - ERROR: Erreur lors de l'exécution de: railway variables set SUPABASE_SERVICE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1id3VydG12ZGdtbnJpenhmb3VmIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NzcwNTgwMCwiZXhwIjoyMDYzMjgxODAwfQ.Ojvhv2gXUNiv5NmdMniJyZKgY9d-MqjN3_3p9KIJFsY
+Command failed: railway variables set SUPABASE_SERVICE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1id3VydG12ZGdtbnJpenhmb3VmIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NzcwNTgwMCwiZXhwIjoyMDYzMjgxODAwfQ.Ojvhv2gXUNiv5NmdMniJyZKgY9d-MqjN3_3p9KIJFsY
+error: unexpected argument 'set' found
+
+Usage: railway variables [OPTIONS]
+
+For more information, try '--help'.
+
+
+2025-05-20T03:07:58.972Z - INFO: Exécution de: railway variables set JWT_SECRET=ppt_template_manager_secret_key_prod
+2025-05-20T03:07:59.009Z - ERROR: Erreur lors de l'exécution de: railway variables set JWT_SECRET=ppt_template_manager_secret_key_prod
+Command failed: railway variables set JWT_SECRET=ppt_template_manager_secret_key_prod
+error: unexpected argument 'set' found
+
+Usage: railway variables [OPTIONS]
+
+For more information, try '--help'.
+
+
+2025-05-20T03:07:59.009Z - INFO: Exécution de: railway variables set CONVERT_API_SECRET=secret_q4Pjq2F9FCU9ypDJ
+2025-05-20T03:07:59.044Z - ERROR: Erreur lors de l'exécution de: railway variables set CONVERT_API_SECRET=secret_q4Pjq2F9FCU9ypDJ
+Command failed: railway variables set CONVERT_API_SECRET=secret_q4Pjq2F9FCU9ypDJ
+error: unexpected argument 'set' found
+
+Usage: railway variables [OPTIONS]
+
+For more information, try '--help'.
+
+
+2025-05-20T03:07:59.045Z - INFO: Déploiement du backend sur Railway...
+2025-05-20T03:07:59.045Z - INFO: Exécution de: railway up
+2025-05-20T03:08:14.811Z - ERROR: Erreur lors de l'exécution de: railway up
+Command failed: railway up
+error sending request for url (https://backboard.railway.com/project/703b0e5f-b6c9-446a-b222-10f149bd51c4/environment/adcc22bb-2cb7-45c3-b2b1-ef29c095eb19/up?serviceId=)
+
+Caused by:
+    operation timed out
+
+2025-05-20T03:08:14.812Z - ERROR: Échec du déploiement du backend
+2025-05-20T03:08:14.812Z - ERROR: Erreur lors du déploiement: Échec du déploiement du backend

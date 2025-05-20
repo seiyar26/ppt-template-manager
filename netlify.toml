@@ -1,0 +1,45 @@
+# Configuration Netlify pour un du00e9ploiement complet (frontend + backend)
+
+[build]
+  # Le dossier de base du projet
+  base = "/"
+  # Commande pour construire le projet (construit le frontend et le backend)
+  command = "cd frontend && npm install && npm run build && cd ../backend && npm install"
+  # Dossier contenant les fichiers du frontend construits
+  publish = "frontend/build"
+  # Fonctions serverless Netlify pour le backend
+  functions = "backend/netlify/functions"
+
+# Configuration des redirections et du proxy pour le routage
+[[redirects]]
+  # API Backend
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  # Health check
+  from = "/health"
+  to = "/.netlify/functions/api/health"
+  status = 200
+
+[[redirects]]
+  # Pour toutes les autres routes, servir l'app SPA (Single Page Application)
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers personnalisu00e9s pour CORS, su00e9curitu00e9, etc.
+[[headers]]
+  # Valable pour tous les endpoints API
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS, PATCH"
+    Access-Control-Allow-Headers = "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    Access-Control-Allow-Credentials = "true"
+
+# Configurations des variables d'environnement
+[build.environment]
+  NODE_ENV = "production"

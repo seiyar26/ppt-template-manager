@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "buildCommand": "npm install",
+  "outputDirectory": ".",
+  "devCommand": "npm run dev",
+  "framework": null,
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS, PATCH" },
+        { "key": "Access-Control-Allow-Headers", "value": "Origin, X-Requested-With, Content-Type, Accept, Authorization" },
+        { "key": "Access-Control-Allow-Credentials", "value": "true" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/health", "destination": "/api/health" },
+    { "source": "/diagnostic", "destination": "/api/diagnostic" },
+    { "source": "/api/auth/login", "destination": "/api/auth/login" },
+    { "source": "/api/auth/register", "destination": "/api/auth/register" },
+    { "source": "/api/auth/me", "destination": "/api/auth/me" }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "CORS_ORIGIN": "https://frontend-p95j09tuw-seiyar26s-projects.vercel.app"
+  }
+}

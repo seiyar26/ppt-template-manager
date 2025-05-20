@@ -1,0 +1,50 @@
+# Configuration Zeabur pour l'application complète PPT Template Manager
+
+services:
+  # Configuration du backend
+  backend:
+    name: ppt-template-manager-api
+    path: ./backend
+    type: node
+    plan: hobby
+    domains:
+      - api.ppt-template-manager.app
+    env:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: JWT_SECRET
+        secret: true
+      - key: CORS_ORIGIN
+        value: "https://ppt-template-manager.app"
+      - key: POSTGRES_URL
+        fromService:
+          name: database
+          type: postgres
+          property: url
+
+  # Configuration du frontend
+  frontend:
+    name: ppt-template-manager-web
+    path: ./frontend
+    type: react
+    plan: hobby
+    domains:
+      - ppt-template-manager.app
+    env:
+      - key: REACT_APP_API_URL
+        value: "https://api.ppt-template-manager.app"
+      - key: NODE_ENV
+        value: production
+
+  # Base de données PostgreSQL
+  database:
+    name: ppt-template-manager-db
+    type: postgres
+    plan: hobby
+    version: "15"
+
+# Variables globales pour l'ensemble des services
+globals:
+  region: "us-east-1"  # Région AWS de déploiement, à ajuster selon les besoins

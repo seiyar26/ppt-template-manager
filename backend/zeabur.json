@@ -1,0 +1,15 @@
+{
+  "services": [
+    {
+      "name": "ppt-template-manager-api",
+      "type": "nodejs",
+      "buildCommand": "npm install",
+      "startCommand": "npm start",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": "3000"
+      },
+      "healthCheck": "/health"
+    }
+  ]
+}

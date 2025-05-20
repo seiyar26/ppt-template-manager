@@ -1,0 +1,13 @@
+{
+  "name": "ppt-template-manager-backend",
+  "env": {
+    "PORT": "8080",
+    "NODE_ENV": "production",
+    "SUPABASE_URL": "https://mbwurtmvdgmnrizxfouf.supabase.co",
+    "SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1id3VydG12ZGdtbnJpenhmb3VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3MDU4MDAsImV4cCI6MjA2MzI4MTgwMH0.tNF11pL0MQQKhb3ejQiHjLhTCIGqabIhKu-WIdZvMDs",
+    "SUPABASE_SERVICE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1id3VydG12ZGdtbnJpenhmb3VmIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NzcwNTgwMCwiZXhwIjoyMDYzMjgxODAwfQ.Ojvhv2gXUNiv5NmdMniJyZKgY9d-MqjN3_3p9KIJFsY",
+    "JWT_SECRET": "ppt_template_manager_secret_key_prod",
+    "CORS_ORIGIN": "*",
+    "CONVERT_API_SECRET": "secret_q4Pjq2F9FCU9ypDJ"
+  }
+}

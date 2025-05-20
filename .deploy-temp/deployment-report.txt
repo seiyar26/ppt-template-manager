@@ -1,0 +1,32 @@
+
+=========================================
+    RAPPORT DE DÉPLOIEMENT AUTOMATIQUE
+=========================================
+
+Date: 2025-05-20T02:53:42.727Z
+Application: PPT Template Manager
+
+BACKEND:
+  URL: https://ppt-template-manager-backend-xzpi89w2qkc.railway.app
+  État: Déployé
+  Platform: Railway
+  
+FRONTEND:
+  URL: https://ppt-template-manager-frontend-hivpa9qtjo8.vercel.app
+  État: Déployé
+  Platform: Vercel
+
+CONFIGURATION:
+  Base de données: Supabase
+  CORS: Configuré pour accepter les requêtes de https://ppt-template-manager-frontend-hivpa9qtjo8.vercel.app
+  Variables d'environnement: Configurées correctement
+
+PROCHAINES ÉTAPES:
+  1. Accéder à l'application via: https://ppt-template-manager-frontend-hivpa9qtjo8.vercel.app
+  2. Vérifier l'état du backend: https://ppt-template-manager-backend-xzpi89w2qkc.railway.app/health
+  3. Se connecter avec les identifiants par défaut
+
+Pour surveiller vos déploiements:
+  node monitor-deployments.js
+
+=========================================

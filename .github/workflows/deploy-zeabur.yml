@@ -1,0 +1,45 @@
+name: Deploy to Zeabur
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'backend/**'
+      - '.github/workflows/deploy-zeabur.yml'
+
+jobs:
+  deploy-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: backend/package-lock.json
+          
+      - name: Install dependencies
+        run: cd backend && npm install
+        
+      - name: Install Zeabur CLI
+        run: npm install -g @zeabur/cli
+        
+      - name: Configure Zeabur credentials
+        run: echo "${{ secrets.ZEABUR_TOKEN }}" | zeabur login
+        
+      - name: Deploy to Zeabur
+        run: |
+          cd backend
+          zeabur deploy --project "${{ secrets.ZEABUR_PROJECT_ID }}"
+        env:
+          NODE_ENV: production
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          CORS_ORIGIN: ${{ secrets.FRONTEND_URL }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}

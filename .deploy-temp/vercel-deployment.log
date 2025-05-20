@@ -1,0 +1,24 @@
+2025-05-20T03:10:43.586Z - INFO: Vérification et installation de Vercel CLI...
+2025-05-20T03:10:43.728Z - SUCCESS: Vercel CLI est déjà installé
+2025-05-20T03:10:43.728Z - INFO: Préparation du backend pour Vercel...
+2025-05-20T03:10:43.728Z - SUCCESS: Configuration Vercel du backend créée avec succès
+2025-05-20T03:10:43.729Z - INFO: Déploiement du backend sur Vercel...
+2025-05-20T03:10:43.729Z - INFO: Déploiement du backend sur Vercel...
+2025-05-20T03:10:43.729Z - INFO: Exécution de: vercel --prod -y --name ppt-template-manager-api
+2025-05-20T03:11:40.427Z - SUCCESS: Commande exécutée avec succès: vercel --prod -y --name ppt-template-manager-api
+2025-05-20T03:11:40.427Z - SUCCESS: Backend déployé avec succès: https://ppt-template-manager-snv6fg9ly-seiyar26s-projects.vercel.app
+2025-05-20T03:11:40.428Z - INFO: Préparation du frontend pour Vercel...
+2025-05-20T03:11:40.429Z - SUCCESS: Frontend préparé avec succès pour le déploiement
+2025-05-20T03:11:40.429Z - INFO: Déploiement du frontend sur Vercel...
+2025-05-20T03:11:40.429Z - INFO: Exécution de: vercel --prod -y --name ppt-template-manager-app
+2025-05-20T03:12:05.035Z - SUCCESS: Commande exécutée avec succès: vercel --prod -y --name ppt-template-manager-app
+2025-05-20T03:12:05.036Z - SUCCESS: Frontend déployé avec succès: https://frontend-p95j09tuw-seiyar26s-projects.vercel.app
+2025-05-20T03:12:05.036Z - INFO: Configuration de CORS sur le backend déployé...
+2025-05-20T03:12:05.036Z - INFO: Exécution de: vercel env add CORS_ORIGIN production https://frontend-p95j09tuw-seiyar26s-projects.vercel.app -y
+2025-05-20T03:12:05.197Z - ERROR: Erreur lors de l'exécution de: vercel env add CORS_ORIGIN production https://frontend-p95j09tuw-seiyar26s-projects.vercel.app -y
+Command failed: vercel env add CORS_ORIGIN production https://frontend-p95j09tuw-seiyar26s-projects.vercel.app -y
+Vercel CLI 41.7.8
+Error: unknown or unexpected option: -y
+
+2025-05-20T03:12:05.197Z - WARNING: Échec de la configuration CORS
+2025-05-20T03:12:05.197Z - SUCCESS: Rapport de déploiement généré: /Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/.deploy-temp/vercel-deployment-report.txt

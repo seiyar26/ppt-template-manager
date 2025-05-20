@@ -20,14 +20,18 @@ app.use((req, res, next) => {
 });
 
 // ====== Configuration globale de CORS pour tout le serveur ======
-// Configuration CORS simplifiée pour éviter les conflits
+// Configuration CORS pour environnements de prod et dev
 
-// Configuration CORS standard avec Access-Control-Allow-Origin: *
-// Puisque withCredentials est désactivé côté client, cette configuration est maintenant valide
+// Déterminer l'origine autorisée en fonction de l'environnement
+const corsOrigin = process.env.CORS_ORIGIN || '*';
+console.log(`Configuration CORS avec origine: ${corsOrigin}`);
+
+// Configuration CORS optimisée pour le déploiement
 app.use(cors({
-  origin: '*', // Autoriser toutes les origines
+  origin: corsOrigin, // Utiliser l'origine configurée dans les variables d'environnement
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
+  credentials: true // Nécessaire pour les cookies/auth entre domaines
 }));
 
 // Les requêtes OPTIONS sont déjà gérées par le middleware CORS
@@ -369,4 +373,19 @@ const startServer = async () => {
   }
 };
 
-startServer();
+// En mode production avec plateformes cloud, nous exportons l'application
+if (process.env.NODE_ENV === 'production' && (process.env.VERCEL || process.env.ZEABUR)) {
+  console.log('Mode plateforme cloud détecté, exportation de l\'application');
+  
+  // Pour Zeabur, nous n'exécutons pas directement startServer() car cela sera géré par zeabur-start.js
+  if (!process.env.ZEABUR) {
+    // Préparation asynchrone uniquement pour Vercel
+    startServer();
+  }
+  
+  // Exporter l'application pour les plateformes cloud
+  module.exports = app;
+} else {
+  // En mode développement, démarrer normalement
+  startServer();
+}
