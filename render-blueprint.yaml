@@ -1,0 +1,51 @@
+# Blueprint Render optimisé
+services:
+  # Service backend Express Node.js
+  - type: web
+    name: ppt-template-manager-api
+    env: node
+    plan: free
+    branch: main
+    repo: https://github.com/seiyar26/ppt-template-manager.git
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: CORS_ORIGIN
+        value: https://ppt-template-manager-frontend.onrender.com
+      - key: SUPABASE_URL
+        value: https://mbwurtmvdgmnrizxfouf.supabase.co
+      - key: SUPABASE_ANON_KEY
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1id3VydG12ZGdtbnJpenhmb3VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3MDU4MDAsImV4cCI6MjA2MzI4MTgwMH0.tNF11pL0MQQKhb3ejQiHjLhTCIGqabIhKu-WIdZvMDs
+      - key: SUPABASE_SERVICE_KEY
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1id3VydG12ZGdtbnJpenhmb3VmIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NzcwNTgwMCwiZXhwIjoyMDYzMjgxODAwfQ.Ojvhv2gXUNiv5NmdMniJyZKgY9d-MqjN3_3p9KIJFsY
+      - key: JWT_SECRET
+        value: ppt_template_manager_secret_key_prod
+      - key: CONVERT_API_SECRET
+        value: secret_q4Pjq2F9FCU9ypDJ
+
+  # Service frontend React
+  - type: web
+    name: ppt-template-manager-frontend
+    env: static
+    branch: main
+    repo: https://github.com/seiyar26/ppt-template-manager.git
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    publishPath: build
+    autoDeploy: true
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://ppt-template-manager-api.onrender.com/api
+      - key: REACT_APP_SUPABASE_URL
+        value: https://mbwurtmvdgmnrizxfouf.supabase.co
+      - key: REACT_APP_SUPABASE_ANON_KEY
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1id3VydG12ZGdtbnJpenhmb3VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3MDU4MDAsImV4cCI6MjA2MzI4MTgwMH0.tNF11pL0MQQKhb3ejQiHjLhTCIGqabIhKu-WIdZvMDs
+      - key: NODE_ENV
+        value: production
