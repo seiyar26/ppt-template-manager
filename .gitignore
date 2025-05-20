@@ -39,6 +39,20 @@ Thumbs.db
 
 # Deployment specific
 .vercel
+.vercel_build_output
+.vercel_build_output/
+.vercel_output/
+.vercel_project
+.vercel_build_utils/
+.vercel_build_utils
+.vercel_deployment_complete.json
+.vercel_deployment_complete
+.vercel_deployment_output/
+.vercel_deployment_output
+.vercel_deployment_metadata.json
+.vercel_deployment_metadata
+.vercel_deployment
+.vercel_deployment/
 .netlify
 .render
 
