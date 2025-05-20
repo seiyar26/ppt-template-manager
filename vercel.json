@@ -3,10 +3,14 @@
   "builds": [
     {
       "src": "backend/server.js",
-      "use": "@vercel/node",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
       "config": {
-        "maxLambdaSize": "15mb",
-        "includeFiles": ["backend/**", "node_modules/**"]
+        "distDir": "build",
+        "buildCommand": "cd frontend && npm install && npm run build"
       }
     }
   ],
@@ -16,8 +20,23 @@
       "dest": "/backend/server.js"
     },
     {
+      "src": "/static/(.*)",
+      "dest": "/frontend/build/static/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
       "src": "/(.*)",
       "dest": "/frontend/build/index.html"
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "SUPABASE_URL": "https://mbwurtmvdgmnrizxfouf.supabase.co",
+    "SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1id3VydG12ZGdtbnJpenhmb3VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3MDU4MDAsImV4cCI6MjA2MzI4MTgwMH0.tNF11pL0MQQKhb3ejQiHjLhTCIGqabIhKu-WIdZvMDs",
+    "JWT_SECRET": "nvC+hGSPctG1LoQNoDfObSjR16DUkpwIN/D7ct4vS3A=",
+    "JWT_EXPIRES_IN": "7d",
+    "CORS_ORIGIN": "*"
+  }
 }

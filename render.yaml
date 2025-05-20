@@ -1,49 +1,29 @@
-# Configuration Render pour du00e9ploiement fullstack
 services:
-  # Service principal pour le backend Express
   - type: web
-    name: ppt-template-manager-api
+    name: ppt-template-manager-backend
     env: node
-    plan: free
-    rootDir: backend
-    buildCommand: npm install
-    startCommand: node server.js
-    healthCheckPath: /health
-    autoDeploy: true
-    # Variables d'environnement
+    region: frankfurt  # ou choisissez une région plus proche de vous
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 10000
-      - key: CORS_ORIGIN
-        value: https://ppt-template-manager-frontend.onrender.com
       - key: SUPABASE_URL
         value: https://mbwurtmvdgmnrizxfouf.supabase.co
       - key: SUPABASE_ANON_KEY
         value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1id3VydG12ZGdtbnJpenhmb3VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3MDU4MDAsImV4cCI6MjA2MzI4MTgwMH0.tNF11pL0MQQKhb3ejQiHjLhTCIGqabIhKu-WIdZvMDs
-      - key: SUPABASE_SERVICE_KEY
-        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1id3VydG12ZGdtbnJpenhmb3VmIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NzcwNTgwMCwiZXhwIjoyMDYzMjgxODAwfQ.Ojvhv2gXUNiv5NmdMniJyZKgY9d-MqjN3_3p9KIJFsY
       - key: JWT_SECRET
-        value: ppt_template_manager_secret_key_prod
-      - key: CONVERT_API_SECRET
-        value: secret_q4Pjq2F9FCU9ypDJ
-      # La variable DATABASE_URL sera ajoutée manuellement après création de la base PostgreSQL
-
-  # Service frontend pour l'application React
+        value: nvC+hGSPctG1LoQNoDfObSjR16DUkpwIN/D7ct4vS3A=
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: CORS_ORIGIN
+        value: "*"
+  
   - type: web
     name: ppt-template-manager-frontend
     env: static
     buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: frontend/build
-    autoDeploy: true
-    # Variables d'environnement pour le build
+    staticPublishPath: ./frontend/build
     envVars:
       - key: REACT_APP_API_URL
-        value: https://ppt-template-manager-api.onrender.com/api
-      - key: REACT_APP_SUPABASE_URL
-        value: https://mbwurtmvdgmnrizxfouf.supabase.co
-      - key: REACT_APP_SUPABASE_ANON_KEY
-        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1id3VydG12ZGdtbnJpenhmb3VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3MDU4MDAsImV4cCI6MjA2MzI4MTgwMH0.tNF11pL0MQQKhb3ejQiHjLhTCIGqabIhKu-WIdZvMDs
-      - key: NODE_ENV
-        value: production
+        value: https://ppt-template-manager-backend.onrender.com

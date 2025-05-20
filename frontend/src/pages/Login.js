@@ -35,7 +35,12 @@ const Login = () => {
     } catch (err) {
       console.error('Erreur capturée dans Login.js:', err);
       if (err.message === 'Network Error' || err.message === 'Failed to fetch') {
-        setFormError(`Erreur de connexion: Le serveur backend n'est pas disponible. Vérifiez que le serveur est bien démarré sur le port ${config.apiPort}.`);
+        // Message d'erreur différent selon l'environnement
+        if (config.isProd()) {
+          setFormError(`Erreur de connexion: Le serveur backend n'est pas disponible. Vérifiez la connexion à ${config.baseApiUrl()}.`);
+        } else {
+          setFormError(`Erreur de connexion: Le serveur backend n'est pas disponible. Vérifiez que le serveur est bien démarré sur le port ${config.apiPort}.`);
+        }
       } else {
         setFormError(err.message || 'Identifiants invalides');
       }
@@ -62,7 +67,12 @@ const Login = () => {
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
               <p className="font-medium">Erreur de connexion :</p>
               <p>{formError || error}</p>
-              <p className="text-xs mt-1">Vérifiez que le serveur backend est bien démarré sur le port {config.apiPort}</p>
+              <p className="text-xs mt-1">
+                {config.isProd() 
+                  ? `Vérifiez la connexion à ${config.baseApiUrl()}`
+                  : `Vérifiez que le serveur backend est bien démarré sur le port ${config.apiPort}`
+                }
+              </p>
             </div>
           )}
           
