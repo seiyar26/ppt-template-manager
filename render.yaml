@@ -48,7 +48,8 @@ services:
         value: production
 
   # Base de donnu00e9es PostgreSQL pour l'application
-  - type: postgres
+  - type: db
     name: ppt-template-manager-db
     plan: free
+    databaseType: postgresql
     ipAllowList: []  # Autoriser toutes les adresses IP
