@@ -40,7 +40,7 @@ services:
     # Variables d'environnement pour le build
     envVars:
       - key: REACT_APP_API_URL
-        value: https://ppt-template-manager-api.onrender.com
+        value: https://ppt-template-manager-api.onrender.com/api
       - key: REACT_APP_SUPABASE_URL
         value: https://mbwurtmvdgmnrizxfouf.supabase.co
       - key: REACT_APP_SUPABASE_ANON_KEY
