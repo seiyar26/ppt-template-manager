@@ -48,8 +48,7 @@ services:
         value: production
 
   # Base de donnu00e9es PostgreSQL pour l'application
-  - type: pserv
+  - type: postgres
     name: ppt-template-manager-db
     plan: free
-    env: postgres
-    autoDeploy: true
+    ipAllowList: []  # Autoriser toutes les adresses IP
