@@ -1,39 +1,43 @@
 import axios from 'axios';
+import config from '../config/env';
 
-// Configuration de l'URL de base de l'API - FIXATION EXPLICITE DU PORT 12000
-// En production, on utilise l'URL du backend sur votre VPS
-// En développement, on utilise localhost avec le port 12000
-// ⚠️ IMPORTANT: Force l'utilisation du port 12000 explicitement pour éviter tout problème de cache
-export const API_URL = 'http://localhost:12000/api';
-// Base URL pour les images - forcer http explicitement pour éviter les problèmes de protocole
-const IMAGE_BASE_URL = 'http://localhost:12000';
-console.log('URL de base des images:', IMAGE_BASE_URL);
+// Utilisation de la configuration centralisée pour les URLs
+// Ce système permet d'utiliser les variables d'environnement de manière cohérente
+// et d'éviter les références codifiées en dur dans le code
 
-// Vérification des variables d'environnement (pour debug seulement)
-if (process.env.REACT_APP_API_URL) {
-  console.log('Variable env REACT_APP_API_URL présente mais non utilisée:', process.env.REACT_APP_API_URL);
-}
+// Obtenir l'URL de base de l'API depuis la configuration
+export const API_URL = config.baseApiUrl();
 
-console.log('API URL configurée fixe:', API_URL);
+// Obtenir l'URL de base pour les images depuis la configuration
+const IMAGE_BASE_URL = config.imageBaseUrl();
+
+console.log('URL de base de l\'API (via config):', API_URL);
+console.log('URL de base des images (via config):', IMAGE_BASE_URL);
 
 // Création d'une instance axios avec la configuration de base
-// Verrouillé explicitement sur l'URL http://localhost:12000/api pour éviter tout problème de cache
 const apiClient = axios.create({
   baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json'
   },
-  withCredentials: true, // Permet l'envoi de cookies cross-origin
+  // IMPORTANT: Désactiver withCredentials pour éviter les conflits CORS
+  // Nous utilisons des tokens JWT dans les en-têtes pour l'authentification
+  withCredentials: false,
+  // Empêcher le timeout des requêtes (important pour les uploads de fichiers volumineux)
+  timeout: 60000,
   // Empêche ce client de traiter les URL relatives comme absolues
   allowAbsoluteUrls: false
 });
 
-// Forcer à nouveau l'URL de base à chaque requête
+// Intercepteur pour vérifier que l'URL de base est correcte à chaque requête
 apiClient.interceptors.request.use(
   config => {
-    // Cette ligne force l'URL de base à chaque requête, ignorant tout cache
-    config.baseURL = 'http://localhost:12000/api';
+    // Vérifier que l'URL est toujours celle de la configuration
+    if (config.baseURL !== API_URL) {
+      console.log(`Correction de l'URL de base: ${config.baseURL} -> ${API_URL}`);
+      config.baseURL = API_URL;
+    }
     return config;
   },
   error => {
@@ -510,17 +514,13 @@ const emailService = {
 const getImageUrl = (imagePath) => {
   if (!imagePath) return null;
   
-  // Déboguer le format du chemin d'image
-  console.log('Construction URL d\'image à partir de:', imagePath);
-  
   // Si le chemin est un chemin absolu complet (à partir de /Users/...)
   if (imagePath.includes('/Users/')) {
     // Extraire seulement la partie après /uploads/
     const uploadsIndex = imagePath.indexOf('/uploads/');
     if (uploadsIndex !== -1) {
       const relativePath = imagePath.substring(uploadsIndex);
-      console.log('Chemin relatif extrait:', relativePath);
-      return `${IMAGE_BASE_URL}${relativePath}`;
+      return config.getImageUrl(relativePath);
     }
   }
   
@@ -532,9 +532,7 @@ const getImageUrl = (imagePath) => {
   // Vérifier si le chemin commence par / pour éviter les doubles slashes
   const path = imagePath.startsWith('/') ? imagePath : `/${imagePath}`;
   
-  const finalUrl = `${IMAGE_BASE_URL}${path}`;
-  console.log('URL d\'image finalisée:', finalUrl);
-  return finalUrl;
+  return config.getImageUrl(path);
 };
 
 export {

@@ -16,7 +16,7 @@ if [ ! -f "$ENV_FILE" ]; then
   echo -e "\033[0;31mERREUR: Fichier .env non trouvé dans $BACKEND_DIR\033[0m"
   echo "Création d'un fichier .env avec une structure de base..."
   cat > "$ENV_FILE" << EOL
-PORT=12000
+PORT=${process.env.REACT_APP_API_PORT || 8080}
 NODE_ENV=development
 JWT_SECRET=your_jwt_secret_here
 

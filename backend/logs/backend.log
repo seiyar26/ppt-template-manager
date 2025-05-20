@@ -388,3 +388,744 @@ DATA: {
   }
 }
 --------------------------------------------
+[2025-05-19T12:02:11.394Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-19T12:02:11.393Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '959 MB', total: '49152 MB' },
+    uptime: '47 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-19T12:02:16.415Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-19T12:02:16.414Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '530 MB', total: '49152 MB' },
+    uptime: '47 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-19T12:07:44.246Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-19T12:07:44.244Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '976 MB', total: '49152 MB' },
+    uptime: '52 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-19T12:11:34.406Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-19T12:11:34.405Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '454 MB', total: '49152 MB' },
+    uptime: '56 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-19T12:12:09.866Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-19T12:12:09.864Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '600 MB', total: '49152 MB' },
+    uptime: '57 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-19T12:12:54.869Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-19T12:12:54.813Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '2791 MB', total: '49152 MB' },
+    uptime: '57 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-19T12:20:56.068Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-19T12:20:56.067Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '755 MB', total: '49152 MB' },
+    uptime: '65 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-19T12:25:30.134Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-19T12:25:30.077Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '892 MB', total: '49152 MB' },
+    uptime: '70 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-19T12:46:00.397Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-19T12:46:00.396Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '477 MB', total: '49152 MB' },
+    uptime: '90 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-19T12:48:14.484Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-19T12:48:14.483Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '583 MB', total: '49152 MB' },
+    uptime: '93 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-19T12:51:06.303Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-19T12:51:06.302Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '505 MB', total: '49152 MB' },
+    uptime: '96 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-20T01:25:45.075Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-20T01:25:45.074Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '2315 MB', total: '49152 MB' },
+    uptime: '552 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-20T01:25:49.940Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-20T01:25:49.939Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '2006 MB', total: '49152 MB' },
+    uptime: '552 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-20T01:28:17.191Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-20T01:28:17.190Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '1901 MB', total: '49152 MB' },
+    uptime: '554 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-20T01:28:22.253Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-20T01:28:22.252Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '1722 MB', total: '49152 MB' },
+    uptime: '555 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-20T01:29:51.134Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-20T01:29:51.133Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '351 MB', total: '49152 MB' },
+    uptime: '556 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-20T01:33:10.732Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-20T01:33:10.731Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '1872 MB', total: '49152 MB' },
+    uptime: '559 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-20T01:35:58.991Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-20T01:35:58.990Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '1166 MB', total: '49152 MB' },
+    uptime: '562 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------
+[2025-05-20T01:47:30.555Z] 🔍 DIAGNOSTIC SYSTÈME
+DATA: {
+  timestamp: '2025-05-20T01:47:30.554Z',
+  environment: {
+    nodeVersion: 'v23.11.0',
+    platform: 'darwin',
+    arch: 'arm64',
+    memory: { free: '803 MB', total: '49152 MB' },
+    uptime: '574 minutes'
+  },
+  directories: {
+    logs: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/logs',
+      exists: true,
+      writable: true
+    },
+    uploads: {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads',
+      exists: true,
+      writable: true
+    },
+    'uploads/temp': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp',
+      exists: true,
+      writable: true
+    },
+    'uploads/templates': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/templates',
+      exists: true,
+      writable: true
+    },
+    'uploads/exports': {
+      path: '/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/exports',
+      exists: true,
+      writable: true
+    }
+  }
+}
+--------------------------------------------

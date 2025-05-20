@@ -26,7 +26,7 @@ echo -e "\033[0;32m✓ Cache et build React nettoyés\033[0m"
 # 3. Vérifier les références à l'ancien port (2324) dans les fichiers
 echo -e "\n\033[1;33m3. Recherche et correction des références à l'ancien port\033[0m"
 OLD_PORT="2324"
-NEW_PORT="12000"
+NEW_PORT=process.env.REACT_APP_API_PORT || 8080
 
 # Recherche de références à l'ancien port
 OLD_PORT_REFS=$(grep -r "$OLD_PORT" --include="*.js" --include="*.json" --include="*.jsx" --include="*.env*" "$PROJECT_DIR" 2>/dev/null || echo "")
@@ -49,8 +49,8 @@ fi
 # 4. Forcer un fichier .env.development correct
 echo -e "\n\033[1;33m4. Création d'un fichier .env.development correct\033[0m"
 cat > "$FRONTEND_DIR/.env.development" << EOL
-REACT_APP_API_URL=http://localhost:12000/api
-REACT_APP_IMAGE_BASE_URL=http://localhost:12000
+REACT_APP_API_URL=http://localhost:${process.env.PORT || 8080}/api
+REACT_APP_IMAGE_BASE_URL=http://localhost:${process.env.PORT || 8080}
 NODE_ENV=development
 EOL
 echo -e "\033[0;32m✓ Fichier .env.development créé avec les bonnes valeurs\033[0m"
@@ -58,8 +58,8 @@ echo -e "\033[0;32m✓ Fichier .env.development créé avec les bonnes valeurs\0
 # 5. Forcer un fichier .env.production correct
 echo -e "\n\033[1;33m5. Création d'un fichier .env.production correct\033[0m"
 cat > "$FRONTEND_DIR/.env.production" << EOL
-REACT_APP_API_URL=http://localhost:12000/api
-REACT_APP_IMAGE_BASE_URL=http://localhost:12000
+REACT_APP_API_URL=http://localhost:${process.env.PORT || 8080}/api
+REACT_APP_IMAGE_BASE_URL=http://localhost:${process.env.PORT || 8080}
 NODE_ENV=production
 EOL
 echo -e "\033[0;32m✓ Fichier .env.production créé avec les bonnes valeurs\033[0m"
@@ -101,6 +101,6 @@ echo -e "Démarrage du frontend sur le port 4325..."
 
 echo -e "\n\033[1;32mApplication redémarrée. Accédez à:\033[0m"
 echo -e "  - Frontend: \033[1;36mhttp://localhost:4325\033[0m"
-echo -e "  - Backend: \033[1;36mhttp://localhost:12000/health\033[0m"
+echo -e "  - Backend: \033[1;36mhttp://localhost:${process.env.PORT || 8080}/health\033[0m"
 
 exit 0

@@ -92,7 +92,7 @@ async function checkSlides() {
         }
         
         // Vérifier l'accès via URL
-        const urlPath = `http://localhost:12000${imagePath}`;
+        const urlPath = `http://localhost:${process.env.PORT || 8080}${imagePath}`;
         console.log(`      ${colors.yellow}URL d'accès: ${urlPath}${colors.reset}`);
       }
       

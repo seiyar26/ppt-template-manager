@@ -4,9 +4,10 @@ const testAuth = async () => {
     console.log('🔍 Test des problèmes d\'authentification');
     console.log('Tentative de connexion directe via fetch...');
     
-    // Utilisez le port 12000 qui correspond au port configuré dans start-local.sh
-    const API_URL = 'http://localhost:12000/api';
-    console.log('Utilisation de l\'URL API:', API_URL);
+    // Utiliser la configuration centralisée
+    const config = require('./config/env').default;
+    const API_URL = config.baseApiUrl();
+    console.log('Utilisation de l\'URL API (via config):', API_URL);
     
     const response = await fetch(`${API_URL}/auth/login`, {
       method: 'POST',

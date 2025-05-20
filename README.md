@@ -60,7 +60,7 @@ npm install
 
 Create a `.env` file in the backend directory:
 ```
-PORT=12000
+PORT=${process.env.REACT_APP_API_PORT || 8080}
 JWT_SECRET=your_jwt_secret_key_here
 DATABASE_URL=postgres://postgres:postgres@localhost:5432/ppt_template_manager
 CONVERT_API_SECRET=your_convert_api_secret
@@ -68,7 +68,7 @@ CONVERT_API_SECRET=your_convert_api_secret
 
 Create a `.env` file in the frontend directory:
 ```
-REACT_APP_API_URL=http://localhost:12000/api
+REACT_APP_API_URL=http://localhost:${process.env.PORT || 8080}/api
 ```
 
 4. Initialize the database:

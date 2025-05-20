@@ -16,7 +16,7 @@ echo -e "\033[0;36mRépertoire frontend: $FRONTEND_DIR\033[0m"
 
 # 1. Vérification des ports utilisés
 echo -e "\n\033[1;33m1. Vérification des ports utilisés\033[0m"
-BACKEND_PORT=12000
+BACKEND_PORT=${process.env.REACT_APP_API_PORT || 8080}
 FRONTEND_PORT=4322
 
 # Trouver le port réel du frontend
@@ -95,7 +95,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'http://localhost:12000',
+      target: 'http://localhost:${process.env.PORT || 8080}',
       changeOrigin: true,
       secure: false,
       logLevel: 'debug',
@@ -105,7 +105,7 @@ module.exports = function(app) {
   app.use(
     '/health',
     createProxyMiddleware({
-      target: 'http://localhost:12000',
+      target: 'http://localhost:${process.env.PORT || 8080}',
       changeOrigin: true,
     })
   );

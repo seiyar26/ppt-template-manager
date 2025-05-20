@@ -1,18 +1,28 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
+const path = require('path');
 
 /**
  * Configuration du proxy pour React
  * Ce fichier est automatiquement utilisé par Create React App
  * pour configurer un proxy en développement, évitant ainsi les problèmes CORS
+ * 
+ * La configuration centralisée est utilisée pour définir l'URL cible du proxy
  */
+
+// Charger les variables d'environnement
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
+
+// Déterminer le port et l'hôte du backend
+const PORT = process.env.REACT_APP_API_PORT || '8080';
+const HOST = process.env.REACT_APP_API_HOST || 'localhost';
 
 module.exports = function(app) {
   // Proxy pour toutes les requêtes API vers le backend
   app.use(
     '/api',
     createProxyMiddleware({
-      // Cible configurée pour le port actuel du backend (12000)
-      target: 'http://localhost:12000',
+      // Utiliser la configuration dynamique
+      target: `http://${HOST}:${PORT}`,
       changeOrigin: true,
       // Autorise les requêtes non sécurisées (en dev uniquement)
       secure: false,
@@ -48,7 +58,7 @@ module.exports = function(app) {
   app.use(
     '/health',
     createProxyMiddleware({
-      target: 'http://localhost:12000',
+      target: `http://${HOST}:${PORT}`,
       changeOrigin: true,
       secure: false,
       logLevel: 'debug',

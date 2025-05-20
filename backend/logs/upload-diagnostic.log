@@ -2851,3 +2851,55 @@
   "message": "Template 18 créé avec succès, 14 diapositives",
   "data": {}
 },
+{
+  "timestamp": "2025-05-20T01:48:23.224Z",
+  "level": "INFO",
+  "message": "Début de l'upload",
+  "data": {
+    "method": "POST",
+    "url": "/api/templates",
+    "headers": {
+      "host": "localhost:12000",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0",
+      "accept": "application/json",
+      "accept-language": "fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "referer": "http://localhost:4322/",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0NzcwNTY5NCwiZXhwIjoxNzQ4MzEwNDk0fQ.oGCObutbGIB-ZHy_4HqrcDj1jgF5w2_o45zkS-hO1mg",
+      "content-type": "multipart/form-data; boundary=----geckoformboundaryc873fdfd74d7e9a8cf15aecbacd29dac",
+      "content-length": "6163563",
+      "origin": "http://localhost:4322",
+      "connection": "keep-alive",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-site",
+      "priority": "u=0"
+    },
+    "body": {
+      "name": "20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745761630371_1746469482255",
+      "description": ""
+    },
+    "file": {
+      "originalname": "20241028_153047_output_PRICING_HP.HC_avec_bouclier_tarifaire_1745761630371_1746469482255.pptx",
+      "mimetype": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "size": 6162896,
+      "path": "/Users/michaeltenenbaum/CascadeProjects/ppt-template-manager-app/backend/uploads/temp/1747705703204-599505799.pptx"
+    },
+    "user": {
+      "id": 1,
+      "email": "admin@example.com"
+    }
+  }
+},
+{
+  "timestamp": "2025-05-20T01:48:27.892Z",
+  "level": "SUCCESS",
+  "message": "Conversion PPTX réussie",
+  "data": 1
+},
+{
+  "timestamp": "2025-05-20T01:48:28.017Z",
+  "level": "SUCCESS",
+  "message": "Template 1 créé avec succès, 14 diapositives",
+  "data": {}
+},

@@ -22,8 +22,9 @@ if ! brew services list | grep -q "postgresql.*started"; then
 fi
 
 # Variables d'environnement
-export PORT=12000
-export REACT_APP_API_URL=http://localhost:12000/api
+export PORT=8080
+export REACT_APP_API_URL=http://localhost:8080/api
+export REACT_APP_API_PORT=8080
 export CONVERT_API_SECRET=secret_KpZ4EmWSJCFOLYyX
 export JWT_SECRET=your_jwt_secret_key_here
 
@@ -51,7 +52,7 @@ sleep 5
 
 # Vérification que le backend répond
 echo "Test de connexion au backend..."
-if curl -s http://localhost:12000/api/health > /dev/null; then
+if curl -s http://localhost:$PORT/api/health > /dev/null; then
   echo "✅ Backend opérationnel!"
 else
   echo "⚠️ Le backend ne répond pas. Vérifiez les journaux pour plus de détails."
@@ -68,7 +69,7 @@ echo "Frontend démarré avec PID: $FRONTEND_PID"
 trap cleanup SIGINT SIGTERM
 
 echo "\033[0;32m✅ Tous les services sont démarrés:\033[0m"
-echo "📊 Backend: http://localhost:12000"
+echo "📋 Backend: http://localhost:$PORT"
 echo "🖥️ Frontend: http://localhost:4322 (défini dans votre package.json)"
 echo "Pour arrêter tous les services, appuyez sur Ctrl+C"
 

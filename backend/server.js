@@ -7,81 +7,30 @@ const templateRoutes = require('./routes/templateRoutes');
 const categoryRoutes = require('./routes/categoryRoutes');
 const exportRoutes = require('./routes/exportRoutes');
 const emailRoutes = require('./routes/emailRoutes');
-require('dotenv').config();
+const config = require('./config/env');
 
 // Initialize Express app
 const app = express();
-const PORT = process.env.PORT || 5000; // Changement de port pour éviter les conflits potentiels
 
 // Middleware
-// Configuration CORS extensive pour le déploiement
-app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
-}));
-
 // Middleware pour journaliser toutes les requêtes
 app.use((req, res, next) => {
   console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
   next();
 });
 
-// Configuration CORS plus permissive en mode développement
-const corsOptions = {
-  origin: function (origin, callback) {
-    // En développement, accepter toutes les origines
-    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-      // Accepter toutes les origines en mode développement
-      console.log('Mode développement: CORS accepté pour toutes les origines');
-      callback(null, true);
-    } else {
-      // En production, vérifier les origines
-      const allowedOrigins = [
-        // Origines locales pour le développement
-        'http://localhost:4322',
-        'http://127.0.0.1:4322',
-        'http://localhost:4323',
-        'http://127.0.0.1:4323',
-        'http://localhost:4324', 
-        'http://127.0.0.1:4324',
-        'http://localhost:4325',
-        'http://127.0.0.1:4325',
-        
-        // Origines de déploiement
-        'https://cousbo-hoshah1jy-seiyar26s-projects.vercel.app',
-        'https://cousbo.vercel.app',
-        
-        // Domaines Zeabur (permettre tous les sous-domaines de zeabur.app)
-        '.zeabur.app'
-      ];
-      
-      if (!origin) {
-        // Autorise les requêtes sans en-tête d'origine (comme les appels API d'outils)
-        callback(null, true);
-      } else if (allowedOrigins.some(allowed => {
-        // Si c'est un domaine avec préfixe wildcard (comme .zeabur.app)
-        if (allowed.startsWith('.') && origin.endsWith(allowed)) {
-          return true;
-        }
-        // Sinon, vérifier l'origine exacte ou le préfixe
-        return origin.startsWith(allowed);
-      })) {
-        // Autorise les origines qui correspondent à nos critères
-        callback(null, true);
-      } else {
-        console.log(`CORS refusé pour l'origine: ${origin}`);
-        callback(new Error('Non autorisé par CORS'));
-      }
-    }
-  },
-  credentials: true,
-  exposedHeaders: ['Content-Disposition', 'Authorization'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
-};
+// ====== Configuration globale de CORS pour tout le serveur ======
+// Configuration CORS simplifiée pour éviter les conflits
 
-app.use(cors(corsOptions));
+// Configuration CORS standard avec Access-Control-Allow-Origin: *
+// Puisque withCredentials est désactivé côté client, cette configuration est maintenant valide
+app.use(cors({
+  origin: '*', // Autoriser toutes les origines
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
+}));
+
+// Les requêtes OPTIONS sont déjà gérées par le middleware CORS
 
 // Ajouter des en-têtes personnalisés pour le debugging
 app.use((req, res, next) => {
@@ -120,8 +69,8 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads'), {
     res.setHeader('Pragma', 'no-cache');
     res.setHeader('Expires', '0');
     
-    // Permettre le partage des ressources cross-origin (CORS)
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    // Note: Les en-têtes CORS sont gérés par le middleware CORS global
+    // Nous ne définissons pas ici d'en-têtes CORS pour éviter des conflits
   }
 }));
 
@@ -132,7 +81,8 @@ app.use('/api/uploads', express.static(path.join(__dirname, 'uploads'), {
     if (path.endsWith('.jpg') || path.endsWith('.jpeg')) {
       res.setHeader('Content-Type', 'image/jpeg');
     }
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    // Note: Les en-têtes CORS sont gérés par le middleware CORS global
+    // Nous ne définissons aucun en-tête CORS ici pour éviter les conflits
   }
 }));
 
@@ -366,8 +316,10 @@ function logEnvironmentVariables() {
     console.log('DATABASE_URL automatiquement défini à partir de POSTGRES_CONNECTION_STRING');
   }
   
-  console.log(`Port configuré: ${process.env.PORT || '5000 (par défaut)'}`);
-  console.log('=================================================');
+  console.log(`Port configuré: ${config.port} (utiliser config.port)`);
+  console.log(`Base URL: ${config.baseUrl()} (utiliser config.baseUrl())`);
+  console.log(`API URL: ${config.apiUrl()} (utiliser config.apiUrl())`);
+  console.log('================================================');
 }
 
 const startServer = async () => {
@@ -408,10 +360,10 @@ const startServer = async () => {
     console.log('\x1b[33m%s\x1b[0m', 'Le serveur démarrera quand même, mais certaines fonctionnalités ne seront pas disponibles');
   } finally {
     // Start server even if database connection fails
-    app.listen(PORT, '0.0.0.0', () => {
-      console.log('\x1b[32m%s\x1b[0m', `Serveur démarré et en écoute sur le port ${PORT}`);
-      console.log(`URL API: http://localhost:${PORT}/api`);
-      console.log(`Vérification santé: http://localhost:${PORT}/health`);
+    app.listen(config.port, '0.0.0.0', () => {
+      console.log('\x1b[32m%s\x1b[0m', `Serveur démarré et en écoute sur le port ${config.port}`);
+      console.log(`URL API: ${config.apiUrl()}`);
+      console.log(`Vérification santé: ${config.baseUrl()}/health`);
       console.log('\x1b[36m%s\x1b[0m', `Identifiant par défaut: admin@example.com / mot de passe: admin123`);
     });
   }

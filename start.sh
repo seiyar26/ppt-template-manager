@@ -5,8 +5,8 @@ echo "Starting PostgreSQL..."
 pg_ctl -D /var/lib/postgresql/data -l /var/lib/postgresql/data/logfile start
 
 # Set environment variables
-export PORT=12000
-export REACT_APP_API_URL=http://localhost:12000/api
+export PORT=${process.env.PORT || 8080}
+export REACT_APP_API_URL=http://localhost:${process.env.PORT || 8080}/api
 export CONVERT_API_SECRET=secret_KpZ4EmWSJCFOLYyX
 export JWT_SECRET=your_jwt_secret_key_here
 export DATABASE_URL=postgres://postgres:postgres@localhost:5432/ppt_template_manager

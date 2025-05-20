@@ -3,6 +3,7 @@ import AuthContext from '../context/AuthContext';
 import { ELLY_COLORS } from '../App';
 import { useTranslation } from '../context/TranslationContext';
 import testAuth from '../test-auth';
+import config from '../config/env';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -34,7 +35,7 @@ const Login = () => {
     } catch (err) {
       console.error('Erreur capturée dans Login.js:', err);
       if (err.message === 'Network Error' || err.message === 'Failed to fetch') {
-        setFormError(`Erreur de connexion: Le serveur backend n'est pas disponible. Vérifiez que le serveur est bien démarré sur le port 12000.`);
+        setFormError(`Erreur de connexion: Le serveur backend n'est pas disponible. Vérifiez que le serveur est bien démarré sur le port ${config.apiPort}.`);
       } else {
         setFormError(err.message || 'Identifiants invalides');
       }
@@ -61,7 +62,7 @@ const Login = () => {
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
               <p className="font-medium">Erreur de connexion :</p>
               <p>{formError || error}</p>
-              <p className="text-xs mt-1">Vérifiez que le serveur backend est bien démarré sur le port 12000</p>
+              <p className="text-xs mt-1">Vérifiez que le serveur backend est bien démarré sur le port {config.apiPort}</p>
             </div>
           )}
           

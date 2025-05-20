@@ -72,7 +72,7 @@ async function checkApiConfiguration() {
   }
   
   const content = fs.readFileSync(apiFile, 'utf8');
-  const correctApiUrl = "export const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:12000/api';";
+  const correctApiUrl = "export const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:${process.env.PORT || 8080}/api';";
   const hasCorrectApiUrl = content.includes(correctApiUrl);
   
   console.log(`  Configuration API URL: ${hasCorrectApiUrl ? colors.green + 'u2705 CORRECTE' : colors.red + 'u274c INCORRECTE'}${colors.reset}`);
@@ -207,7 +207,7 @@ async function testBackendConnection() {
   console.log(`\n${colors.blue}\u25cf u00c9tape 5: Test de connexion au backend${colors.reset}`);
   
   return new Promise((resolve) => {
-    const req = http.get('http://localhost:12000/api/health', (res) => {
+    const req = http.get('http://localhost:${process.env.PORT || 8080}/api/health', (res) => {
       let data = '';
       
       res.on('data', (chunk) => {
@@ -278,7 +278,7 @@ async function restartServices(services) {
           env: { 
             ...process.env, 
             PORT: '4322',
-            REACT_APP_API_URL: 'http://localhost:12000/api' 
+            REACT_APP_API_URL: 'http://localhost:${process.env.PORT || 8080}/api' 
           },
           detached: true,
           stdio: ['ignore', 'pipe', 'pipe']
@@ -342,8 +342,8 @@ async function main() {
     console.log(`\n${colors.green}===== DIAGNOSTIC TERMINu00c9 =====${colors.reset}`);
     console.log(`${colors.blue}Pour accu00e9der u00e0 l'application:${colors.reset}`);
     console.log(`  Frontend: ${colors.magenta}http://localhost:4322${colors.reset}`);
-    console.log(`  Backend API: ${colors.magenta}http://localhost:12000/api${colors.reset}`);
-    console.log(`  Endpoint santu00e9: ${colors.magenta}http://localhost:12000/_health${colors.reset}`);
+    console.log(`  Backend API: ${colors.magenta}http://localhost:${process.env.PORT || 8080}/api${colors.reset}`);
+    console.log(`  Endpoint santu00e9: ${colors.magenta}http://localhost:${process.env.PORT || 8080}/_health${colors.reset}`);
     
     // Garder le script en vie
     console.log(`\n${colors.yellow}Ce script maintient les services du00e9marru00e9s. Appuyez sur Ctrl+C pour quitter.${colors.reset}`);

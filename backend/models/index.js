@@ -1,4 +1,5 @@
 const sequelize = require('../config/database');
+const bcryptjs = require('bcryptjs');
 const User = require('./User');
 const Template = require('./Template');
 const Slide = require('./Slide');
