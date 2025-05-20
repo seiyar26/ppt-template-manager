@@ -53,5 +53,3 @@ services:
     plan: free
     env: postgres
     autoDeploy: true
-    # Passer l'URI de connexion au backend
-    envVarName: DATABASE_URL
